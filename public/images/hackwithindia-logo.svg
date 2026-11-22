@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none" className="w-auto h-full">
+  <defs>
+    <linearGradient id="hwi-saffron" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9933" />
+      <stop offset="100%" stop-color="#FF6600" />
+    </linearGradient>
+    <linearGradient id="hwi-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#138808" />
+      <stop offset="100%" stop-color="#0E6606" />
+    </linearGradient>
+    <linearGradient id="hwi-crimson" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF2A6D" />
+      <stop offset="100%" stop-color="#E63946" />
+    </linearGradient>
+    <filter id="hwi-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Left Shield Emblem -->
+  <g transform="translate(10, 8)">
+    <!-- Outer Shield with glow -->
+    <path d="M32 2 L58 14 V40 C58 54 32 64 32 64 C32 64 6 54 6 40 V14 Z" 
+          fill="#110F1D" stroke="#000" stroke-width="3" />
+    <path d="M32 4 L56 15 V39 C56 52 32 61 32 61 C32 61 8 52 8 39 V15 Z" 
+          fill="#181528" stroke="url(#hwi-crimson)" stroke-width="2" />
+    
+    <!-- Indian Tricolor Stripes Inside Shield -->
+    <path d="M12 20 L32 12 L52 20 V25 L32 17 L12 25 Z" fill="url(#hwi-saffron)" opacity="0.9" />
+    <path d="M12 28 L32 20 L52 28 V33 L32 25 L12 33 Z" fill="#FFFFFF" opacity="0.9" />
+    <path d="M12 36 L32 28 L52 36 V41 L32 33 L12 41 Z" fill="url(#hwi-green)" opacity="0.9" />
+
+    <!-- Center Cyber Code Brackets & Lightning -->
+    <path d="M25 28 L19 34 L25 40" stroke="#FFF9CB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M39 28 L45 34 L39 40" stroke="#FFF9CB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <polygon points="34,26 29,36 33,36 30,46 37,34 33,34" fill="#FFD23F" filter="url(#hwi-glow)" />
+  </g>
+
+  <!-- Typography: HACK WITH INDIA -->
+  <g transform="translate(82, 14)">
+    <!-- Top small label -->
+    <text x="0" y="14" font-family="'Round Bold', 'Impact', sans-serif" font-weight="900" font-size="11" letter-spacing="4" fill="#FFB0C4">
+      NATIONAL INITIATIVE
+    </text>
+    
+    <!-- Main Bold Brand Name -->
+    <text x="0" y="38" font-family="'Long', 'Round Bold', sans-serif" font-weight="900" font-size="28" letter-spacing="1.5" fill="#FFFFFF" stroke="#000" stroke-width="1.5">
+      HACK WITH INDIA
+    </text>
+
+    <!-- Tricolor bottom accent line -->
+    <rect x="0" y="44" width="70" height="3" rx="1.5" fill="#FF9933" />
+    <rect x="73" y="44" width="70" height="3" rx="1.5" fill="#FFFFFF" />
+    <rect x="146" y="44" width="70" height="3" rx="1.5" fill="#138808" />
+  </g>
+</svg>

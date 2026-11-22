@@ -1,4 +1,5 @@
 import { useMediaQuery } from "react-responsive";
+export * from "../src/constants/hackathonData";
 
 export const useMaskSettings = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });

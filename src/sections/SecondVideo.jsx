@@ -16,18 +16,26 @@ const SecondVideo = () => {
         scrub: 2,
         pin: true
       }
-    })
+    });
 
-    tl.to('.lucia', { opacity: 1, duration: 1, ease: 'power1.inOut' })
+    tl.to('.lucia', { opacity: 1, duration: 1, ease: 'power1.inOut' });
 
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, { currentTime: videoRef.current.duration, duration: 3, ease: 'power1.inOut' }, '<')
+    if (videoRef.current) {
+      const v = videoRef.current;
+      const setScrub = () => {
+        tl.to(v, { currentTime: v.duration || 3, duration: 3, ease: 'power1.inOut' }, '<');
+      };
+      if (v.readyState >= 1) {
+        setScrub();
+      } else {
+        v.onloadedmetadata = setScrub;
+      }
     }
-  })
+  });
 
   return (
-    <section className="lucia">
-      <div className="h-dvh">
+    <section className="lucia relative">
+      <div className="h-dvh relative">
         <video 
           ref={videoRef}
           muted
@@ -39,9 +47,19 @@ const SecondVideo = () => {
             objectPosition: '15% 0%' 
           }}
         />
+
+        {/* Cinematic chapter badge */}
+        <div className="absolute top-24 right-8 md:right-16 z-30 pointer-events-none text-right">
+          <div className="comic-badge text-xs md:text-sm px-3.5 py-1.5 uppercase font-black inline-block">
+            STAGE 02 // HACK WITH MUMBAI 4.0 // ASSEMBLE THE SYNDICATE
+          </div>
+          <p className="text-white font-round-bold text-sm md:text-lg mt-2 drop-shadow-md">
+            2 to 4 Minds. One Shared Vision.
+          </p>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default SecondVideo
+export default SecondVideo;

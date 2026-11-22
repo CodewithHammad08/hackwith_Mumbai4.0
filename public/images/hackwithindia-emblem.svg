@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="emb-saffron" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9933" />
+      <stop offset="100%" stop-color="#FF6600" />
+    </linearGradient>
+    <linearGradient id="emb-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#138808" />
+      <stop offset="100%" stop-color="#0E6606" />
+    </linearGradient>
+    <linearGradient id="emb-crimson" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF2A6D" />
+      <stop offset="100%" stop-color="#E63946" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Cyber Shield -->
+  <path d="M32 2 L58 14 V38 C58 52 32 62 32 62 C32 62 6 52 6 38 V14 Z" 
+        fill="#0D0B16" stroke="#000" stroke-width="3" />
+  <path d="M32 4 L56 15 V37 C56 50 32 59 32 59 C32 59 8 50 8 37 V15 Z" 
+        fill="#161324" stroke="url(#emb-crimson)" stroke-width="2" />
+
+  <!-- Tricolor Bands -->
+  <path d="M12 20 L32 12 L52 20 V25 L32 17 L12 25 Z" fill="url(#emb-saffron)" />
+  <path d="M12 28 L32 20 L52 28 V33 L32 25 L12 33 Z" fill="#FFFFFF" />
+  <path d="M12 36 L32 28 L52 36 V41 L32 33 L12 41 Z" fill="url(#emb-green)" />
+
+  <!-- Center Code brackets & Lightning -->
+  <path d="M24 28 L18 34 L24 40" stroke="#FFF9CB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M40 28 L46 34 L40 40" stroke="#FFF9CB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  <polygon points="34,25 28,36 33,36 29,46 38,34 33,34" fill="#FFD23F" stroke="#000" stroke-width="0.5" />
+</svg>
