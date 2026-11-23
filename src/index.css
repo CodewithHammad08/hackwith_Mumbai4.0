@@ -128,7 +128,17 @@ main {
 
   /* ── HERO SECTION ── */
   .hero-section {
-    @apply w-full min-h-dvh relative overflow-hidden;
+    @apply w-full h-dvh relative overflow-hidden;
+    .scale-out { @apply object-cover md:scale-125 h-full; }
+    .title-logo { @apply absolute h-full md:scale-125 top-0 object-cover; }
+    .trailer-logo { @apply absolute -bottom-5 w-48 left-1/2 -translate-x-1/2; }
+    .play-img {
+      @apply rounded-full md:size-28 size-20 bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center;
+    }
+    .fake-logo-wrapper {
+      @apply absolute z-50 xs:top-[9.5rem] sm:top-[12.8rem] md:top-[8.5rem] 2xl:top-44 3xl:top-48 left-1/2 -translate-x-1/2;
+    }
+    .overlay-logo { @apply size-full object-cover opacity-0 w-60 md:w-60 2xl:w-72 3xl:w-80; }
   }
 
   .first-vd-wrapper .first-vd {
@@ -136,7 +146,12 @@ main {
   }
 
   .entrance-message {
-    @apply relative w-full min-h-dvh flex items-center justify-center z-20 opacity-100;
+    @apply absolute inset-0 w-full h-dvh overflow-hidden z-20;
+    mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 0%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 0%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
   }
 
   .jason {
