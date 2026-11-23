@@ -146,12 +146,7 @@ main {
   }
 
   .entrance-message {
-    @apply absolute inset-0 w-full h-dvh overflow-hidden z-20;
-    mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 0%);
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 0%);
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    -webkit-mask-size: 100% 100%;
+    @apply absolute inset-0 w-full h-dvh overflow-hidden z-20 opacity-100;
   }
 
   .jason {
@@ -196,7 +191,11 @@ main {
 }
 
 .entrance-message {
-  opacity: 1;
+  mask-image: radial-gradient(circle at 50% 100vh, black 0%, transparent 0%);
+  -webkit-mask-image: radial-gradient(circle at 50% 100vh, black 0%, transparent 0%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
 }
 
 .mask-wrapper {
