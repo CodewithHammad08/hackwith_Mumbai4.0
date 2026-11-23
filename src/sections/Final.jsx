@@ -1,44 +1,27 @@
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
+import { useSmoothVideoScrub } from "../utils/useSmoothVideoScrub";
 
 const Final = () => {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    const v = videoRef.current;
-    if (!v) return;
-
-    v.play().catch(() => {});
-
-    const st = ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: 'top top',
-      end: '+=120% top',
-      pin: true,
-      onEnter: () => v.play().catch(() => {}),
-      onEnterBack: () => v.play().catch(() => {}),
-      onLeave: () => v.pause(),
-      onLeaveBack: () => v.pause(),
-    });
-
-    return () => {
-      st.kill();
-    };
-  }, []);
+  // Buttery-smooth hardware-accelerated scroll-scrubbed video
+  useSmoothVideoScrub(videoRef, containerRef, {
+    start: "top top",
+    end: "+=140% top",
+    pin: true,
+    scrub: 0.5,
+  });
 
   return (
     <section ref={containerRef} className="final relative h-dvh w-full overflow-hidden bg-black z-20">
       <video 
         ref={videoRef}
         muted
-        loop
         playsInline
-        autoPlay
         preload="auto"
         src="/videos/output3.mp4"
-        className="size-full object-cover"
+        className="size-full object-cover will-change-transform"
       />
 
       {/* Cinematic finale teaser */}

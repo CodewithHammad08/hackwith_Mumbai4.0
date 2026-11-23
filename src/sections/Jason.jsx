@@ -77,7 +77,7 @@ const Jason = ({ onOpenRegister }) => {
         </div>
       </div>
 
-      <div className="space-y-5 mt-96 img-box z-10">
+      <div className="space-y-5 mt-10 lg:mt-96 img-box z-10">
         <div className="jason-1">
           <img src="/images/jason-1.webp" alt="Coding Deep Dive" />
         </div>

@@ -16,7 +16,7 @@ const Lucia = ({ onOpenRegister }) => {
 
   return (
     <section className="lucia-life">
-      <div className="flex flex-col gap-5 items-end img-box lg:w-1/2 ps-10 mt-96 z-10">
+      <div className="flex flex-col gap-5 items-end img-box lg:w-1/2 ps-4 sm:ps-10 mt-10 lg:mt-96 z-10">
         <div className="lucia-1">
           <img src="/images/lucia-1.webp" alt="Team Lead Persona" />
         </div>
