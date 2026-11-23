@@ -19,8 +19,8 @@ const ComingSoon = ({ onOpenRegister }) => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(230,57,70,0.18)_0%,transparent_75%)]" />
       </div>
 
-      <div className="h-full col-center justify-center px-3 xs:px-4 pt-16 md:pt-20 pb-8 text-center relative z-20 max-w-4xl mx-auto">
-        
+      <div className="h-full flex flex-col items-center justify-center px-3 xs:px-4 pt-16 md:pt-20 pb-8 text-center relative z-20 max-w-4xl mx-auto">
+
         {/* Top Highlight Badge: 36-Hour National Level Hackathon */}
         <div className="inline-block mb-2">
           <span className="comic-badge text-[10px] xs:text-xs md:text-sm px-3 xs:px-4 py-1.5 uppercase font-black inline-flex items-center gap-1.5 sm:gap-2 bg-[#ffd23f] text-black shadow-[3px_3px_0px_#000]">

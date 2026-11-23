@@ -118,7 +118,7 @@ export const HACKATHON_DETAILS = {
     { time: "10:30", title: "BUILD MODE ENGAGED", phase: "PHASE 03", description: "The 36-Hour National Hack begins! Discord war rooms open. Mentorship Round 1: Architecture review." },
     { time: "13:00", title: "CHECKPOINT & REVIEW", phase: "PHASE 04", description: "Mid-way code commits verification. Technical health-check with mentors & lunch recharge break." },
     { time: "15:00", title: "FINAL PUSH & SUBMISSION", phase: "PHASE 05", description: "Code freeze countdown. GitHub repository lock, project video demo upload, and pitch deck finalization." },
-    { time: "16:00", title: "TIME UP & GRAND FINALE", phase: "PHASE 06", description: "Stage presentations to national jury. Live Q&A, scoring, and the ₹2,00,000 award ceremony." }
+    { time: "16:00", title: "TIME UP & GRAND FINALE", phase: "PHASE 06", description: "Stage presentations to national jury. Live Q&A, scoring, and the ₹1,50,000 podium award ceremony." }
   ],
   prizes: [
     { place: "1ST", title: "GRAND CHAMPION", amount: "₹75,000", badge: "👑", perks: ["₹75,000 Direct Cash Prize", "Championship Trophy & Medals", "Direct VC Incubation Pitch", "₹50,000 Cloud Credits", "Wall of Fame Feature"] },
@@ -135,9 +135,9 @@ export const HACKATHON_DETAILS = {
     "You own 100% of the code and IP you build during the hackathon."
   ],
   faqs: [
-    { q: "Are there separate track prizes or is the prize unified?", a: "The prize is ONLY ONE unified grand prize pool! There are no separate track restrictions — you can choose ANY domain you like (or even combine multiple domains). All participants compete together on a single national leaderboard for the ₹2,00,000 prize pool!" },
+    { q: "Are there separate track prizes or is the prize unified?", a: "The prize is ONLY ONE unified grand prize pool! There are no separate track restrictions — you can choose ANY domain you like (or even combine multiple domains). All participants compete together on a single national leaderboard for the ₹1,50,000 podium prize pool (1st: ₹75k, 2nd: ₹50k, 3rd: ₹25k)!" },
     { q: "Can I choose any domain or tech stack?", a: "Yes! You have 100% freedom to choose ANY domain — AI/ML, Web, Mobile, Cloud, Cybersecurity, Web3, IoT, or any wildcard idea. You are judged on innovation, execution, and impact, not restricted by rigid tracks." },
-    { q: "What is the registration fee?", a: "₹200 per Team (2–5 members). Covers 36-hour arena access for all teammates, mentorship, swag boxes, certificates, and eligibility for the ₹2,00,000 grand prize pool." },
+    { q: "What is the registration fee?", a: "₹200 per Team (2–5 members). Covers 36-hour arena access for all teammates, mentorship, swag boxes, certificates, and eligibility for the ₹1,50,000 grand prize pool." },
     { q: "Is this online, offline, or hybrid?", a: "Hybrid! Compete online via Discord War Room or attend at official Mumbai Arena + regional hubs nationwide." },
     { q: "Can beginners participate?", a: "Yes! All skill levels welcome. We have 24/7 mentorship, starter templates, workshops, and dedicated beginner bounties." },
     { q: "Can team members be from different colleges?", a: "Yes — multi-institutional cross-college teams are actively encouraged!" },

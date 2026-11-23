@@ -252,7 +252,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
                     <option value="Open Innovation / Wildcard">Domain 06: Open Innovation / Wildcard (Any Domain)</option>
                   </select>
                   <span className="text-[10px] text-yellow font-bold mt-1 block">
-                    ★ All domains compete for the ONE single unified ₹2,00,000 Grand Prize!
+                    ★ All domains compete for the ONE single unified ₹1,50,000 Podium Prize Pool!
                   </span>
                 </div>
 
@@ -285,7 +285,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
                   <Clock className="w-3.5 h-3.5" /> 36 Hours
                 </span>
                 <span className="flex items-center gap-1 text-green-400">
-                  <Zap className="w-3.5 h-3.5" /> ₹2,00,000 Pool
+                  <Zap className="w-3.5 h-3.5" /> ₹1,50,000 Pool
                 </span>
               </div>
             </div>

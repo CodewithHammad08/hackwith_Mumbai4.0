@@ -8,7 +8,7 @@ const SecondVideo = () => {
   // Buttery-smooth hardware-accelerated scroll-scrubbed video
   useSmoothVideoScrub(videoRef, containerRef, {
     start: "top top",
-    end: "+=140% top",
+    end: "+=140%",
     pin: true,
     scrub: 0.5,
   });

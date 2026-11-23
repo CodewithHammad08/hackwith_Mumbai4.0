@@ -156,7 +156,7 @@ const Domains = ({ onOpenRegister }) => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-left">
               <span className="comic-badge text-xs px-3 py-1 font-black bg-[#ffd23f] text-black">
-                ONE OVERALL CHAMPIONSHIP • ₹2,00,000 PRIZE POOL
+                ONE OVERALL CHAMPIONSHIP • ₹1,50,000 PODIUM PRIZE POOL
               </span>
               <h4 className="font-round-bold text-2xl md:text-3xl font-black uppercase text-white mt-2">
                 HACK IN ANY DOMAIN. WIN THE ULTIMATE PRIZE.

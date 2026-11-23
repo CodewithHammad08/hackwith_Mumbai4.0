@@ -134,7 +134,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
               <div className="bg-[#1b1926] border border-pink/30 p-3 rounded-lg flex items-start gap-3 text-xs md:text-sm text-gray-300">
                 <Sparkles className="w-5 h-5 text-yellow shrink-0 mt-0.5" />
                 <span>
-                  <strong>Organised by Hack With India • BVUDET Navi Mumbai:</strong> Strictly 2 to 5 members per team. Includes 36-hour arena entry for all teammates, 1-on-1 industry mentorship, verified certificates, food & redbull, swag packs, and eligibility for the <strong>₹2,00,000 Grand Prize Pool</strong>.
+                  <strong>Organised by Hack With India • BVUDET Navi Mumbai:</strong> Strictly 2 to 5 members per team. Includes 36-hour arena entry for all teammates, 1-on-1 industry mentorship, verified certificates, food & redbull, swag packs, and eligibility for the <strong>₹1,50,000 Podium Prize Pool</strong>.
                 </span>
               </div>
 

@@ -2,20 +2,24 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/all";
 
 /**
- * Custom React hook for buttery-smooth, non-blocking video scrubbing tied to scroll.
+ * Ultra-smooth, non-blocking video scrubber for scroll-driven video playback.
  * 
- * Solves browser video decoder stalls and freezing during scroll:
- * 1. Decouples ScrollTrigger progress from raw video.currentTime assignments.
- * 2. Never interrupts an in-flight hardware seek (the primary cause of scroll freezes).
- * 3. Utilizes `requestVideoFrameCallback` (Chrome/Edge/Safari/Firefox) + native `seeked`
- *    events to chain frame renders as fast as the hardware decoder can present them.
- * 4. Includes an adaptive hardware watchdog (70-100ms) to ensure scrubbing never locks up.
- * 5. Dynamically adapts thresholds for low-end CPUs/mobile devices to prevent thermal throttling.
+ * Specifically engineered to eliminate browser video decoder stalls and freezes:
+ * 1. Decouples ScrollTrigger updates from direct hardware decode requests.
+ * 2. Strictly prevents seek cancellation: Never assigns video.currentTime while
+ *    the browser media pipeline is actively seeking (video.seeking || isSeeking).
+ * 3. Maintains a pendingSeek queue: Whenever a scroll update arrives while a seek
+ *    is in-flight, it saves the latest timestamp and dispatches it immediately on
+ *    the 'seeked' event or requestVideoFrameCallback.
+ * 4. Limits active RAF and seeks ONLY to when the section is in the viewport
+ *    range (ScrollTrigger onToggle / isActive).
+ * 5. Uses a safe 350ms watchdog to recover from any browser compositor hiccups
+ *    without prematurely interrupting slower hardware decoders on low-end devices.
  */
 export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
   const {
     start = "top top",
-    end = "+=140% top",
+    end = "+=140%",
     pin = true,
     scrub = 0.5,
     onProgress,
@@ -27,35 +31,32 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
     if (!video || !container) return;
 
     let isDestroyed = false;
-    let targetProgress = 0;
-    let currentProgress = 0;
     let isSeeking = false;
-    let lastSeekTime = 0;
+    let pendingSeekTime = null;
+    let targetTime = 0;
+    let currentTime = 0;
     let rafId = null;
     let watchdogTimer = null;
+    let isVisible = false;
 
-    // Detect if device is resource-constrained or mobile
+    // Detect low-end / touch devices to adapt lerp factor
     const isLowEnd = typeof navigator !== "undefined" && (
       (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
       ("ontouchstart" in window) ||
       (typeof window !== "undefined" && window.innerWidth < 768)
     );
+    const lerpFactor = isLowEnd ? 0.35 : 0.22;
+    const minSeekDelta = isLowEnd ? 0.025 : 0.015;
 
-    // Adaptive hardware tolerances
-    const minTimeDelta = isLowEnd ? 0.032 : 0.016; // Min seek delta in seconds
-    const watchdogLimit = isLowEnd ? 100 : 70;     // Watchdog timeout in ms
-    const lerpFactor = isLowEnd ? 0.28 : 0.20;     // Interpolation smoothing factor
-
-    // Configure video properties for optimal scrubbing
+    // Configure video attributes for optimal scrubbing
     video.pause();
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
     video.preload = "auto";
-
-    // Hint GPU compositing
-    video.style.transform = "translateZ(0)";
+    video.style.transform = "translate3d(0, 0, 0)";
     video.style.willChange = "transform";
+    video.style.backfaceVisibility = "hidden";
 
     const unlockDecoder = () => {
       if (isDestroyed) return;
@@ -64,36 +65,47 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
         clearTimeout(watchdogTimer);
         watchdogTimer = null;
       }
+      // If a seek was requested while busy, immediately dispatch the newest queued time
+      if (pendingSeekTime !== null) {
+        const nextTime = pendingSeekTime;
+        pendingSeekTime = null;
+        dispatchSeek(nextTime);
+      }
     };
 
-    const handleSeeked = () => {
-      unlockDecoder();
-    };
-
-    video.addEventListener("seeked", handleSeeked);
-
-    // Dispatch seek to video element safely
     const dispatchSeek = (time) => {
-      if (isDestroyed || !video.duration) return;
+      if (isDestroyed || !video.duration || isNaN(video.duration)) return;
+
+      const dur = video.duration;
+      const safeTime = Math.max(0.01, Math.min(dur - 0.04, time));
+
+      // Skip negligible timestamp deltas
+      if (Math.abs(video.currentTime - safeTime) < minSeekDelta) {
+        return;
+      }
+
+      // If decoder is currently busy, queue the newest time and wait
+      if (isSeeking || video.seeking) {
+        pendingSeekTime = safeTime;
+        return;
+      }
 
       isSeeking = true;
-      lastSeekTime = performance.now();
-
-      // Reset watchdog
       if (watchdogTimer) clearTimeout(watchdogTimer);
+      // Generous 350ms watchdog so low-end decoders have ample time to finish
       watchdogTimer = setTimeout(() => {
         if (!isDestroyed && isSeeking) {
           unlockDecoder();
         }
-      }, watchdogLimit);
+      }, 350);
 
       try {
-        video.currentTime = time;
+        video.currentTime = safeTime;
       } catch {
         unlockDecoder();
       }
 
-      // Synchronize with compositor via requestVideoFrameCallback when supported
+      // Synchronize with compositor when supported
       if ("requestVideoFrameCallback" in video) {
         try {
           video.requestVideoFrameCallback(() => {
@@ -105,39 +117,31 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
       }
     };
 
-    // Animation loop (RAF)
+    const handleSeeked = () => {
+      unlockDecoder();
+    };
+
+    video.addEventListener("seeked", handleSeeked);
+
+    // Continuous smooth animation loop
     const tick = () => {
       if (isDestroyed) return;
 
-      const dur = video.duration;
-      if (dur && !isNaN(dur) && dur > 0 && video.readyState >= 1) {
-        // Smooth lerp progress towards target scroll position
-        const diffProgress = targetProgress - currentProgress;
-        if (Math.abs(diffProgress) > 0.0004) {
-          currentProgress += diffProgress * lerpFactor;
+      if (isVisible && video.duration && !isNaN(video.duration)) {
+        const diff = targetTime - currentTime;
+        if (Math.abs(diff) > 0.002) {
+          currentTime += diff * lerpFactor;
         } else {
-          currentProgress = targetProgress;
+          currentTime = targetTime;
         }
 
-        // Clamp safely to prevent boundary blanking
-        const targetTime = Math.max(0.01, Math.min(dur - 0.04, currentProgress * dur));
-        const timeDiff = Math.abs(video.currentTime - targetTime);
-
-        // Hardware watchdog check
-        if (isSeeking && (performance.now() - lastSeekTime > watchdogLimit)) {
-          unlockDecoder();
-        }
-
-        // Only dispatch seek when hardware decoder is ready and delta is meaningful
-        if (!isSeeking && timeDiff > minTimeDelta) {
-          dispatchSeek(targetTime);
-        }
+        dispatchSeek(currentTime);
       }
 
       rafId = requestAnimationFrame(tick);
     };
 
-    // Create GSAP ScrollTrigger
+    // GSAP ScrollTrigger creation
     const st = ScrollTrigger.create({
       trigger: container,
       start,
@@ -145,34 +149,33 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
       pin,
       scrub,
       anticipatePin: 1,
+      onToggle: (self) => {
+        isVisible = self.isActive;
+      },
       onUpdate: (self) => {
         if (isDestroyed) return;
-        targetProgress = self.progress;
+        isVisible = true;
+        if (video.duration && !isNaN(video.duration)) {
+          targetTime = self.progress * video.duration;
+        }
         if (onProgress) onProgress(self.progress, self);
       },
     });
 
-    // Handle ready state
-    const handleReady = () => {
+    const handleLoadedMetadata = () => {
       if (isDestroyed || !video.duration) return;
-      targetProgress = st.progress;
-      currentProgress = st.progress;
-      try {
-        const initialTime = Math.max(0.01, Math.min(video.duration - 0.04, st.progress * video.duration));
-        video.currentTime = initialTime;
-      } catch {
-        // Ignore boundary seek err
-      }
+      targetTime = st.progress * video.duration;
+      currentTime = targetTime;
+      dispatchSeek(currentTime);
     };
 
     if (video.readyState >= 1 && video.duration) {
-      handleReady();
+      handleLoadedMetadata();
     } else {
-      video.addEventListener("loadedmetadata", handleReady, { once: true });
-      video.addEventListener("canplay", handleReady, { once: true });
+      video.addEventListener("loadedmetadata", handleLoadedMetadata, { once: true });
+      video.addEventListener("canplay", handleLoadedMetadata, { once: true });
     }
 
-    // Start RAF tick
     rafId = requestAnimationFrame(tick);
 
     return () => {
@@ -180,8 +183,8 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
       if (rafId) cancelAnimationFrame(rafId);
       if (watchdogTimer) clearTimeout(watchdogTimer);
       video.removeEventListener("seeked", handleSeeked);
-      video.removeEventListener("loadedmetadata", handleReady);
-      video.removeEventListener("canplay", handleReady);
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      video.removeEventListener("canplay", handleLoadedMetadata);
       st.kill();
     };
   }, [start, end, pin, scrub, containerRef, videoRef, onProgress]);
