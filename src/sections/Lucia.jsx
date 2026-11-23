@@ -4,25 +4,14 @@ import { Users, Check, ArrowRight, Trophy, Sparkles } from "lucide-react";
 
 const Lucia = ({ onOpenRegister }) => {
   useGSAP(() => {
-    gsap.set('.lucia-life', { marginTop: '-80vh'});
-
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: '.lucia-life',
-        start: 'top 80%',
-        end: '10% center',
-        scrub: 2,
-      }
-    }).to('.second-vd', { opacity: 0, duration: 1, ease: 'power1.inOut' });
-
     gsap.to('.lucia-life .img-box', {
       scrollTrigger: {
         trigger: '.lucia-life',
         start: 'top center',
         end: '80% center',
-        scrub: 2
-      }, y: -200, duration: 1, ease: 'power1.inOut'
-    }, '<');
+        scrub: 1.5
+      }, y: -120, duration: 1, ease: 'power1.inOut'
+    });
   }, []);
 
   return (

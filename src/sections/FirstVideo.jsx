@@ -1,63 +1,60 @@
-import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/all';
 import { useRef } from "react";
-import { createSmoothVideoScrub } from "../utils/smoothVideoScrub";
 
 const FirstVideo = () => {
   const videoRef = useRef(null);
+  const containerRef = useRef(null);
 
   useGSAP(() => {
-    gsap.set('.first-vd-wrapper', { marginTop: '-150vh', opacity: 0 });
+    const v = videoRef.current;
+    if (!v) return;
 
-    // Smooth entry fade
-    const fadeTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.first-vd-wrapper',
-        start: 'top top',
-        end: '+=80% top',
-        scrub: true,
-      }
-    });
+    // Ensure video is playing smoothly
+    v.play().catch(() => {});
 
-    fadeTl.to('.hero-section', { delay: 0.2, opacity: 0, ease: 'power1.inOut' });
-    fadeTl.to('.first-vd-wrapper', { opacity: 1, duration: 1.5, ease: 'power1.inOut' });
-
-    // Hardware-accelerated non-blocking video scrub
-    const scrubber = createSmoothVideoScrub(videoRef.current, {
-      trigger: '.first-vd-wrapper',
+    // Pinned cinematic stage without negative margin conflicts
+    const st = ScrollTrigger.create({
+      trigger: containerRef.current,
       start: 'top top',
-      end: '+=200% top',
+      end: '+=120% top',
       pin: true,
-      scrub: 0.3,
+      onEnter: () => v.play().catch(() => {}),
+      onEnterBack: () => v.play().catch(() => {}),
+      onLeave: () => v.pause(),
+      onLeaveBack: () => v.pause(),
     });
 
     return () => {
-      scrubber?.destroy();
+      st.kill();
     };
   }, []);
 
   return (
-    <section className="first-vd-wrapper relative">
-      <div className="h-dvh relative">
-        <video 
-          ref={videoRef}
-          muted
-          playsInline
-          preload="auto"
-          src="/videos/output1.mp4"
-          className="first-vd"
-        />
+    <section ref={containerRef} className="first-vd-wrapper relative h-dvh w-full overflow-hidden bg-black z-20">
+      <video 
+        ref={videoRef}
+        muted
+        loop
+        playsInline
+        autoPlay
+        preload="auto"
+        src="/videos/output1.mp4"
+        className="size-full object-cover first-vd"
+      />
 
-        {/* Cinematic chapter badge */}
-        <div className="absolute top-24 left-6 md:left-16 z-30 pointer-events-none">
-          <div className="comic-badge text-xs md:text-sm px-3.5 py-1.5 uppercase font-black inline-block">
-            STAGE 01 // HACK WITH MUMBAI 4.0 BEGINS • BY HACK WITH INDIA
-          </div>
-          <p className="text-white font-round-bold text-sm md:text-lg mt-2 drop-shadow-md">
-            36 Hours. High Stakes. No Templates.
-          </p>
+      {/* Cinematic chapter badge */}
+      <div className="absolute top-20 md:top-24 left-4 sm:left-8 md:left-16 z-30 pointer-events-none">
+        <div className="comic-badge text-[10px] sm:text-xs md:text-sm px-3.5 py-1.5 uppercase font-black inline-block bg-[#e63946] text-white shadow-[3px_3px_0px_#fff9cb]">
+          STAGE 01 // HACK WITH MUMBAI 4.0 BEGINS • BY HACK WITH INDIA
         </div>
+        <p className="text-white font-round-bold text-xs sm:text-sm md:text-lg mt-2 drop-shadow-md">
+          36 Hours. High Stakes. No Templates.
+        </p>
       </div>
+
+      {/* Subtle vignette gradient */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/40 via-transparent to-black/60" />
     </section>
   );
 };

@@ -1,27 +1,9 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ArrowRight, Trophy, Users, User, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Trophy, Users, ShieldCheck, Sparkles } from "lucide-react";
 
 const Outro = ({ onOpenRegister }) => {
-  useGSAP(() => {
-    gsap.set('.final-message', { marginTop: '-100vh', opacity: 0 });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.final-message',
-        start: 'top 30%',
-        end: 'top 10%',
-        scrub: true,
-      }
-    });
-
-    tl.to('.final-content', { opacity: 0, duration: 1, ease: 'power1.inOut' });
-    tl.to('.final-message', { opacity: 1, duration: 1, ease: 'power1.inOut' });
-  }, []);
-
   return (
-    <section className="final-message pointer-events-auto">
-      <div className="min-h-full col-center justify-center gap-6 px-4 py-16 text-center max-w-4xl mx-auto">
+    <section className="final-message relative w-full py-20 px-4 bg-[#0a0814] border-t-2 border-black/80 pointer-events-auto z-30">
+      <div className="min-h-full col-center justify-center gap-6 text-center max-w-4xl mx-auto">
         
         {/* Organizer Badge */}
         <div className="inline-block animate-bounce">
@@ -36,7 +18,7 @@ const Outro = ({ onOpenRegister }) => {
           <h2 className="gradient-title !leading-[0.92] drop-shadow-[0_4px_25px_rgba(230,57,70,0.6)]">
             HACK WITH<br />MUMBAI 4.0
           </h2>
-          <p className="text-pink text-base md:text-2xl font-round-bold uppercase tracking-widest mt-2 font-bold">
+          <p className="text-pink text-sm sm:text-base md:text-2xl font-round-bold uppercase tracking-widest mt-2 font-bold">
             36-HOUR NATIONAL HACKATHON • 24-25 SEPTEMBER 2026
           </p>
           <div className="text-yellow text-lg sm:text-xl md:text-3xl font-round-bold uppercase font-black mt-1">
@@ -83,10 +65,8 @@ const Outro = ({ onOpenRegister }) => {
 
         {/* Footer info */}
         <div className="text-xs text-neutral-400 font-sans mt-4 space-y-1">
-          <p>© 2026 HACK WITH INDIA. ALL RIGHTS RESERVED.</p>
-          <p className="text-[10px] text-neutral-500">
-            A 36-Hour National Hackathon Initiative • Hack With Mumbai 4.0 • Organised by Hack With India.
-          </p>
+          <p className="font-bold">BVUDET NM CAMPUS, NAVI MUMBAI • 24-25 SEPTEMBER 2026</p>
+          <p>© 2026 Hack With India. All rights reserved. Built with passion for builders nationwide.</p>
         </div>
 
       </div>

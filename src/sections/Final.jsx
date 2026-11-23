@@ -1,61 +1,58 @@
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
-import { createSmoothVideoScrub } from "../utils/smoothVideoScrub";
 
 const Final = () => {
   const videoRef = useRef(null);
+  const containerRef = useRef(null);
 
   useGSAP(() => {
-    gsap.set('.final-content', { opacity: 0 });
+    const v = videoRef.current;
+    if (!v) return;
 
-    const fadeTl = gsap.timeline({ 
-      scrollTrigger: {
-        trigger: '.final',
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: true,
-      }
-    });
+    v.play().catch(() => {});
 
-    fadeTl.to('.final-content', { opacity: 1, duration: 1, scale: 1, ease: 'power1.inOut' });
-
-    // Hardware-accelerated non-blocking video scrub
-    const scrubber = createSmoothVideoScrub(videoRef.current, {
-      trigger: '.final',
+    const st = ScrollTrigger.create({
+      trigger: containerRef.current,
       start: 'top top',
-      end: '+=150% top',
+      end: '+=120% top',
       pin: true,
-      scrub: 0.3,
+      onEnter: () => v.play().catch(() => {}),
+      onEnterBack: () => v.play().catch(() => {}),
+      onLeave: () => v.pause(),
+      onLeaveBack: () => v.pause(),
     });
 
     return () => {
-      scrubber?.destroy();
+      st.kill();
     };
   }, []);
 
   return (
-    <section className="final relative">
-      <div className="final-content size-full relative">
-        <video 
-          ref={videoRef}
-          muted
-          playsInline
-          preload="auto"
-          src="/videos/output3.mp4"
-          className="size-full object-cover"
-        />
+    <section ref={containerRef} className="final relative h-dvh w-full overflow-hidden bg-black z-20">
+      <video 
+        ref={videoRef}
+        muted
+        loop
+        playsInline
+        autoPlay
+        preload="auto"
+        src="/videos/output3.mp4"
+        className="size-full object-cover"
+      />
 
-        {/* Cinematic finale teaser */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-30 pointer-events-none text-center w-full px-4">
-          <div className="comic-badge text-xs md:text-sm px-4 py-1.5 uppercase font-black inline-block">
-            STAGE 03 // HACK WITH MUMBAI 4.0 // THE FINAL COUNTDOWN
-          </div>
-          <p className="text-white font-round-bold text-base md:text-2xl mt-2 drop-shadow-lg">
-            36 Hours. One Legacy. ₹1,50,000 Up For Grabs.
-          </p>
+      {/* Cinematic finale teaser */}
+      <div className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-30 pointer-events-none text-center w-full px-4">
+        <div className="comic-badge text-[10px] sm:text-xs md:text-sm px-4 py-1.5 uppercase font-black inline-block bg-[#e63946] text-white shadow-[3px_3px_0px_#fff9cb]">
+          STAGE 03 // HACK WITH MUMBAI 4.0 // THE FINAL COUNTDOWN
         </div>
+        <p className="text-white font-round-bold text-sm sm:text-base md:text-2xl mt-2 drop-shadow-lg">
+          36 Hours. One Legacy. ₹1,50,000 Up For Grabs.
+        </p>
       </div>
+
+      {/* Subtle vignette gradient */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/40 via-transparent to-black/60" />
     </section>
   );
 };
