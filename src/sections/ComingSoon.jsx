@@ -19,7 +19,7 @@ const ComingSoon = ({ onOpenRegister }) => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(230,57,70,0.18)_0%,transparent_75%)]" />
       </div>
 
-      <div className="h-full col-center justify-center px-3 xs:px-4 pt-16 md:pt-20 pb-8 text-center relative z-20 max-w-4xl mx-auto">
+      <div className="min-h-dvh flex flex-col items-center justify-center px-3 xs:px-4 pt-20 md:pt-24 pb-12 text-center relative z-20 max-w-4xl mx-auto">
         
         {/* Top Highlight Badge: 36-Hour National Level Hackathon */}
         <div className="inline-block mb-2">
