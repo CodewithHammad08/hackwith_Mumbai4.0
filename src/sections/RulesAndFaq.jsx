@@ -6,18 +6,18 @@ const RulesAndFaq = ({ onOpenRegister }) => {
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
-    <section id="rules" className="relative py-28 px-6 md:px-16 z-30 overflow-hidden bg-black/60">
+    <section id="rules" className="relative py-16 md:py-28 px-4 sm:px-6 md:px-16 z-30 overflow-hidden bg-black/60">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <div className="inline-block mb-3">
             <span className="comic-badge text-xs md:text-sm px-4 py-1.5 uppercase font-black inline-flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-[#e63946]" />
               FAIR PLAY & PROTOCOLS • HACK WITH INDIA
             </span>
           </div>
-          <h2 className="font-round-bold text-4xl md:text-7xl font-black uppercase tracking-tight text-white drop-shadow-md">
+          <h2 className="font-round-bold text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight text-white drop-shadow-md">
             RULES & GUIDELINES
           </h2>
           <p className="text-pink text-base md:text-xl font-round-bold uppercase tracking-wider mt-2 max-w-xl mx-auto font-bold">

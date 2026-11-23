@@ -23,7 +23,7 @@ const Jason = ({ onOpenRegister }) => {
         scrub: 2
       }, y: -300, duration: 1, ease: 'power1.inOut'
     }, '<');
-  });
+  }, []);
 
   return (
     <section id="about" className="jason">
@@ -38,7 +38,7 @@ const Jason = ({ onOpenRegister }) => {
         <h1>THE ARCHITECTS</h1>
         <h2>2 to 5 minds. One shared vision. 36 hours of pure unadulterated engineering.</h2>
         <p>
-          Built for ambitious squads who can conceptualize, architect, and ship a production-grade prototype before the 36-hour clock expires. Assemble 2 to 5 hackers from any college nationwide for <strong>Hack With Mumbai 4.0</strong>, combine your superpowers, and stake your claim on the <strong>₹2,00,000 unified prize pool</strong> and <strong>₹15,000 Best Fresher Squad bounty</strong> plus official Hack With India accreditation.
+          Built for ambitious squads who can conceptualize, architect, and ship a production-grade prototype before the 36-hour clock expires. Assemble 2 to 5 hackers from any college nationwide for <strong>Hack With Mumbai 4.0</strong>, combine your superpowers, and stake your claim on the <strong>₹1,50,000 podium prize pool</strong> plus official Hack With India accreditation.
         </p>
 
         {/* Comic Ticket Box */}

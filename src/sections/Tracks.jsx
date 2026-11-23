@@ -59,7 +59,7 @@ const Domains = ({ onOpenRegister }) => {
                 Every Domain Competes on One Single National Leaderboard
               </h3>
               <p className="text-xs md:text-sm font-sans text-neutral-800 mt-1 leading-relaxed">
-                You have <strong>100% freedom</strong> to choose <strong>any domain</strong> or combine multiple technologies together. There are no segregated track budgets — every project contends head-to-head for the <strong>₹2,00,000 Grand Prize Pool</strong>!
+                You have <strong>100% freedom</strong> to choose <strong>any domain</strong> or combine multiple technologies together. There are no segregated track budgets — every project contends head-to-head for the <strong>₹1,50,000 Podium Prize Pool</strong>!
               </p>
             </div>
           </div>

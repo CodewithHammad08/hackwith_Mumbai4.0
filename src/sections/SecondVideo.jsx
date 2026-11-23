@@ -31,7 +31,7 @@ const SecondVideo = () => {
         v.onloadedmetadata = setScrub;
       }
     }
-  });
+  }, []);
 
   return (
     <section className="lucia relative">
@@ -40,7 +40,7 @@ const SecondVideo = () => {
           ref={videoRef}
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           src="/videos/output2.mp4"
           className="size-full object-cover second-vd"
           style={{ 

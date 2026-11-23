@@ -17,10 +17,10 @@ const Timeline = () => {
               36-HOUR TIMELINE MATRIX • HACK WITH INDIA
             </span>
           </div>
-          <h2 className="font-round-bold text-5xl md:text-8xl font-black uppercase tracking-tight text-white drop-shadow-md">
+          <h2 className="font-round-bold text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white drop-shadow-md">
             THE CLOCK BENDS.
           </h2>
-          <p className="text-pink text-base md:text-xl font-round-bold uppercase tracking-wider mt-2 font-bold">
+          <p className="text-pink text-sm sm:text-base md:text-xl font-round-bold uppercase tracking-wider mt-2 font-bold">
             HACK WITH MUMBAI 4.0 • EVERY SECOND, YOUR LEGACY UNFOLDS
           </p>
         </div>

@@ -36,7 +36,7 @@ const Hero = ({ onOpenRegister }) => {
         gsap.to('.overlay-logo', { opacity: 0 });
       } }, '<')
       .to('.entrance-message', { duration: 1, ease: 'power1.inOut', maskImage: 'radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)' }, '<');
-  });
+  }, []);
 
   return (
     <section id="hero" className="hero-section">

@@ -18,7 +18,7 @@ Registration Link: https://unstop.com
 Pass: Team Squad Pass (2 to 5 Members) — ₹200 Total
 
 1. ELIGIBILITY & TEAM COMPOSITION
-- Teams must consist strictly of 2 to 5 members. No solo or duo entries.
+- Teams must consist strictly of 2 to 5 members. Entries below 2 members are not permitted.
 - Cross-college, cross-department, and cross-institutional teams are 100% permitted.
 - All participants must carry a valid college/government photo ID.
 
@@ -61,18 +61,18 @@ Hack With India • Empowering India's Next-Gen Builders
   };
 
   return (
-    <section id="rulebook" className="relative py-20 px-6 md:px-16 z-30 overflow-hidden bg-[#0d0c15] border-t-2 border-b-2 border-black/80">
+    <section id="rulebook" className="relative py-14 md:py-20 px-4 sm:px-6 md:px-16 z-30 overflow-hidden bg-[#0d0c15] border-t-2 border-b-2 border-black/80">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 md:mb-14">
           <div className="inline-block mb-2.5">
             <span className="comic-badge text-xs px-3.5 py-1 uppercase font-black inline-flex items-center gap-2 bg-[#ffb0c4] text-black shadow-[3px_3px_0px_#000]">
               <Shield className="w-4 h-4 text-[#e63946]" />
               OFFICIAL EVENT PORTAL • BVUDET NM CAMPUS
             </span>
           </div>
-          <h2 className="font-round-bold text-4xl md:text-6xl font-black uppercase tracking-tight text-white drop-shadow-[0_4px_16px_rgba(255,249,203,0.15)]">
+          <h2 className="font-round-bold text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white drop-shadow-[0_4px_16px_rgba(255,249,203,0.15)]">
             RULEBOOK & PROBLEMS
           </h2>
           <p className="text-gray-300 text-sm md:text-base font-medium max-w-xl mx-auto mt-2">
@@ -197,16 +197,16 @@ Hack With India • Empowering India's Next-Gen Builders
 
       {/* Interactive Rulebook Preview Modal */}
       {isRulebookOpen && (
-        <div className="fixed inset-0 z-[250] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+        <div className="fixed inset-0 z-[250] flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md">
           <div className="relative w-full max-w-2xl bg-[#14121f] border-3 border-black comic-box text-white rounded-xl overflow-hidden shadow-[10px_10px_0px_#e63946] max-h-[88vh] flex flex-col">
             
             {/* Header */}
-            <div className="bg-[#fff9cb] text-black px-5 py-3.5 flex items-center justify-between border-b-3 border-black">
+            <div className="bg-[#fff9cb] text-black px-4 sm:px-5 py-3 flex items-center justify-between border-b-3 border-black">
               <div className="flex items-center gap-2">
                 <span className="bg-[#e63946] text-white px-2 py-0.5 text-xs font-black uppercase rounded-sm">
                   OFFICIAL RULEBOOK
                 </span>
-                <h3 className="font-round-bold text-base md:text-lg font-black uppercase">
+                <h3 className="font-round-bold text-sm sm:text-base md:text-lg font-black uppercase">
                   Hack With Mumbai 4.0
                 </h3>
               </div>
@@ -220,13 +220,13 @@ Hack With India • Empowering India's Next-Gen Builders
             </div>
 
             {/* Content */}
-            <div className="p-6 overflow-y-auto space-y-4 text-xs md:text-sm text-gray-200">
+            <div className="p-4 sm:p-6 overflow-y-auto space-y-3 sm:space-y-4 text-xs md:text-sm text-gray-200">
               <div className="bg-[#1e1b2d] p-3.5 rounded border border-neutral-700">
                 <h4 className="font-round-bold text-sm uppercase text-[#ffd23f] mb-1">
                   1. Team Composition (Strictly 2–5 Members)
                 </h4>
                 <p className="text-gray-300">
-                  Every squad must have between 2 and 5 members. Solo or duo entries are not permitted. Cross-college and multi-disciplinary teams are strongly encouraged.
+                  Every squad must have between 2 and 5 members. Entries below 2 members are not permitted. Cross-college and multi-disciplinary teams are strongly encouraged.
                 </p>
               </div>
 

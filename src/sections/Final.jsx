@@ -40,7 +40,7 @@ const Final = () => {
         v.onloadedmetadata = setScrub;
       }
     }
-  });
+  }, []);
 
   return (
     <section className="final relative">
@@ -49,7 +49,7 @@ const Final = () => {
           ref={videoRef}
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           src="/videos/output3.mp4"
           className="size-full object-cover"
         />
@@ -59,8 +59,8 @@ const Final = () => {
           <div className="comic-badge text-xs md:text-sm px-4 py-1.5 uppercase font-black inline-block">
             STAGE 03 // HACK WITH MUMBAI 4.0 // THE FINAL COUNTDOWN
           </div>
-          <p className="text-white font-round-bold text-lg md:text-2xl mt-2 drop-shadow-lg">
-            36 Hours. One Legacy. ₹2,00,000 Up For Grabs.
+          <p className="text-white font-round-bold text-base md:text-2xl mt-2 drop-shadow-lg">
+            36 Hours. One Legacy. ₹1,50,000 Up For Grabs.
           </p>
         </div>
       </div>

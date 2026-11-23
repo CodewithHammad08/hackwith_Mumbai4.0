@@ -3,18 +3,18 @@ import { HACKATHON_DETAILS } from "../constants/hackathonData";
 
 const Prizes = ({ onOpenRegister }) => {
   return (
-    <section id="prizes" className="relative py-24 px-6 md:px-16 z-30 overflow-hidden">
+    <section id="prizes" className="relative py-14 md:py-24 px-4 sm:px-6 md:px-16 z-30 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <div className="inline-block mb-3">
             <span className="comic-badge text-xs md:text-sm px-4 py-1.5 uppercase font-black inline-flex items-center gap-2 bg-[#ffd23f] text-black">
               <Trophy className="w-4 h-4 text-[#e63946]" />
-              NATIONAL BOUNTY MATRIX • HACK WITH INDIA
+              NATIONAL PRIZE PODIUM • HACK WITH INDIA
             </span>
           </div>
-          <h2 className="font-round-bold text-5xl md:text-8xl font-black uppercase tracking-tight text-yellow drop-shadow-[0_4px_16px_rgba(255,249,203,0.3)]">
+          <h2 className="font-round-bold text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-yellow drop-shadow-[0_4px_16px_rgba(255,249,203,0.3)]">
             ₹1,50,000 PODIUM
           </h2>
           <p className="text-[#ffb0c4] text-base md:text-xl font-bold uppercase tracking-wider mt-2 max-w-2xl mx-auto">
@@ -173,31 +173,6 @@ const Prizes = ({ onOpenRegister }) => {
             </a>
           </div>
 
-        </div>
-
-        {/* Special Category Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {HACKATHON_DETAILS.specialBounties.map((bounty) => (
-            <div
-              key={bounty.title}
-              className="comic-box bg-[#1b1828] border-2 border-neutral-700 p-5 rounded-lg text-white shadow-[4px_4px_0px_#000]"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-mono font-black text-[#ffd23f] bg-black/50 px-2 py-0.5 rounded">
-                  SPECIAL BOUNTY
-                </span>
-                <span className="text-xl font-round-bold font-black text-[#e63946]">
-                  {bounty.amount}
-                </span>
-              </div>
-              <h4 className="font-round-bold text-lg font-black uppercase text-white mt-1">
-                {bounty.title}
-              </h4>
-              <p className="text-xs text-gray-300 font-sans mt-1">
-                {bounty.desc}
-              </p>
-            </div>
-          ))}
         </div>
 
       </div>

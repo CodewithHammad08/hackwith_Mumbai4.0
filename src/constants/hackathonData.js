@@ -125,11 +125,6 @@ export const HACKATHON_DETAILS = {
     { place: "2ND", title: "FIRST RUNNER-UP", amount: "₹50,000", badge: "🥈", perks: ["₹50,000 Direct Cash Prize", "Silver Trophy", "₹25,000 Cloud Credits", "Internship Fast-Track", "Winner Certificate"] },
     { place: "3RD", title: "SECOND RUNNER-UP", amount: "₹25,000", badge: "🥉", perks: ["₹25,000 Direct Cash Prize", "Bronze Memento", "₹15,000 Cloud Credits", "Mentor Network Access", "Exclusive Swag Kit"] }
   ],
-  specialBounties: [
-    { title: "BEST FRESHER SQUAD", amount: "₹15,000", desc: "For the top performing first-time hackathon team (2–5 members) across any domain.", icon: "⚡" },
-    { title: "BEST ALL-WOMEN TEAM", amount: "₹10,000", desc: "Championing diversity, leadership and top-tier code execution.", icon: "💜" },
-    { title: "BEST UI/UX EXPERIENCE", amount: "₹10,000", desc: "For the slickest, most intuitive and aesthetically pleasing interface.", icon: "🎨" }
-  ],
   rules: [
     "Choose ANY domain: Pick any domain of your choice or combine multiple domains. The prize is ONE unified pool!",
     "Open to all college students, independent developers, and tech enthusiasts nationwide.",
@@ -161,5 +156,3 @@ export const HACKATHON_DETAILS = {
 export const tracks = HACKATHON_DETAILS.domains;
 HACKATHON_DETAILS.tracks = HACKATHON_DETAILS.domains;
 HACKATHON_DETAILS.faq = HACKATHON_DETAILS.faqs;
-HACKATHON_DETAILS.special = HACKATHON_DETAILS.specialBounties;
-HACKATHON_DETAILS.prizes.special = HACKATHON_DETAILS.specialBounties;

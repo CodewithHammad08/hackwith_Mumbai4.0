@@ -113,24 +113,22 @@ main {
 
 /* ───────────── COMPONENTS ───────────── */
 @layer components {
-  main { @apply w-dvw overflow-x-hidden; }
-
-  /* (legacy nav rule removed to prevent conflict with floating glassmorphic navbar) */
+  main { @apply w-full max-w-full overflow-x-hidden; }
 
   /* ── GRADIENT TITLE ── */
   .gradient-title {
-    @apply md:text-[6rem] text-[3.5rem] font-round-bold !font-extrabold uppercase text-center;
-    line-height: 0.9;
+    @apply text-[2.4rem] xs:text-[3rem] sm:text-[4.2rem] md:text-[5.5rem] lg:text-[6.5rem] font-round-bold !font-extrabold uppercase text-center tracking-tight;
+    line-height: 0.92;
     background: linear-gradient(135deg, #ff8c94 0%, #e63946 25%, #ffb0c4 55%, #fff9cb 85%, #ffd23f 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 4px 24px rgba(230,57,70,0.5));
+    filter: drop-shadow(0 4px 20px rgba(230,57,70,0.45));
   }
 
   /* ── HERO SECTION ── */
   .hero-section {
-    @apply w-dvw h-dvh relative overflow-hidden;
+    @apply w-full h-dvh relative overflow-hidden;
     .scale-out { @apply object-cover md:scale-125 h-full; }
     .title-logo { @apply absolute h-full md:scale-125 top-0 object-cover; }
     .trailer-logo { @apply absolute -bottom-5 w-48 left-1/2 -translate-x-1/2; }
@@ -156,10 +154,10 @@ main {
   }
 
   .jason {
-    @apply relative z-10 lg:ps-40 2xl:ps-80 ps-10 py-40 mt-60 flex lg:flex-row flex-col justify-between gap-5 w-dvw overflow-x-hidden;
-    h1 { @apply text-yellow font-long uppercase text-7xl md:text-8xl mb-8; }
-    h2 { @apply text-pink md:text-4xl text-2xl mb-7 md:pe-20 pe-10 font-bold; }
-    p { @apply text-white md:text-xl text-base md:pe-28 pe-14 leading-relaxed; }
+    @apply relative z-10 lg:ps-32 2xl:ps-60 px-4 sm:px-8 lg:px-0 py-20 md:py-36 mt-16 md:mt-48 flex lg:flex-row flex-col justify-between gap-8 w-full max-w-full overflow-hidden;
+    h1 { @apply text-yellow font-long uppercase text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 md:mb-6; }
+    h2 { @apply text-pink text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-7 pe-0 md:pe-16 font-bold; }
+    p { @apply text-white text-sm sm:text-base md:text-lg lg:text-xl pe-0 md:pe-20 leading-relaxed; }
     .jason-1 { @apply bg-yellow lg:h-[80vh] w-auto -translate-x-5; img { @apply size-full object-cover [object-position:5%_center] hover:scale-[0.98] transition duration-700 ease-in-out; } }
     .jason-2 { @apply bg-yellow h-[90vh] w-auto md:mt-36 mt-20 -translate-x-5; img { @apply size-full object-cover [object-position:80%_center] hover:scale-x-[0.97] hover:scale-y-[0.98] transition duration-700 ease-in-out; } }
     .jason-3 { @apply bg-yellow h-[50vh] md:w-[60%] -translate-x-5; img { @apply size-full object-cover [object-position:42%_center] hover:scale-[0.97] transition duration-700 ease-in-out; } }
@@ -167,10 +165,10 @@ main {
 
   .lucia { @apply relative; }
   .lucia-life {
-    @apply relative z-10 py-40 mt-60 flex lg:flex-row flex-col justify-between gap-5 w-dvw overflow-x-hidden;
-    h1 { @apply text-yellow font-long uppercase text-7xl md:text-8xl mb-8; }
-    h2 { @apply text-pink md:text-4xl text-2xl mb-7 md:pe-20 pe-10 font-bold; }
-    p { @apply text-white md:text-xl text-base md:pe-28 pe-14 leading-relaxed; }
+    @apply relative z-10 px-4 sm:px-8 lg:px-0 py-20 md:py-36 mt-16 md:mt-48 flex lg:flex-row flex-col justify-between gap-8 w-full max-w-full overflow-hidden;
+    h1 { @apply text-yellow font-long uppercase text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 md:mb-6; }
+    h2 { @apply text-pink text-lg sm:text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-7 pe-0 md:pe-16 font-bold; }
+    p { @apply text-white text-sm sm:text-base md:text-lg lg:text-xl pe-0 md:pe-20 leading-relaxed; }
     p:last-of-type { @apply md:hidden block xl:block; }
     .lucia-1 { @apply bg-yellow lg:h-[80vh] w-auto -translate-x-5; img { @apply size-full object-cover [object-position:85%_center] hover:scale-[0.98] transition duration-700 ease-in-out; } }
     .lucia-2 { @apply bg-yellow lg:h-[60vh] lg:w-[70%] w-[80%] md:my-36 my-20 lg:-translate-x-5 translate-x-5; img { @apply size-full object-cover [object-position:50%_center] hover:scale-x-[0.98] hover:scale-y-[0.98] transition duration-700 ease-in-out; } }
@@ -178,13 +176,13 @@ main {
   }
 
   .post-card {
-    @apply relative flex justify-center items-center pb-64 shadow-2xl;
+    @apply relative flex justify-center items-center pb-40 md:pb-64 shadow-2xl;
     .animated-gradient-bg { @apply absolute w-full md:h-[200vh] h-[220vh] left-0 xl:-bottom-1/2 md:-bottom-5/6; }
     .post-card-wrapper {
-      @apply xl:mx-56 md:mx-12 mx-5 xl:h-[85vh] md:h-[40vh] h-[30vh] w-full flex justify-center items-center overflow-hidden relative;
+      @apply xl:mx-56 md:mx-12 mx-3 xl:h-[85vh] md:h-[40vh] h-[34vh] w-full flex justify-center items-center overflow-hidden relative;
       video { @apply w-full h-full 2xl:scale-x-105 object-cover; }
       img { @apply absolute z-10 w-full h-full; }
-      button { @apply rounded-full bg-white absolute left-1/2 -translate-x-1/2 md:bottom-16 -bottom-28 md:w-fit w-2/3 px-5 md:px-7 py-4 text-lg font-bold; }
+      button { @apply rounded-full bg-white absolute left-1/2 -translate-x-1/2 bottom-3 md:bottom-12 md:w-fit w-[88%] max-w-xs px-4 md:px-7 py-2 md:py-3.5 text-xs md:text-base font-bold; }
     }
   }
 

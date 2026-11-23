@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
-import { ArrowUpRight, Lock, Unlock, X } from "lucide-react";
+import { ArrowUpRight, Lock, Unlock, X, Menu } from "lucide-react";
 import AudioToggle from "../components/AudioToggle";
+import { HACKATHON_DETAILS } from "../constants/hackathonData";
 
 const NavBar = ({ onOpenRegister }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -78,7 +79,50 @@ const NavBar = ({ onOpenRegister }) => {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────────
-          CINEMATIC SLOW-MOTION FLOATING GLASS DOCK (AWAY FROM TOP)
+          MOBILE TOP FLOATING BAR (SMOOTH & ULTRA COMPACT FOR PHONES)
+      ───────────────────────────────────────────────────────────── */}
+      <div className="flex md:hidden fixed top-3 left-3 right-3 z-[100] items-center justify-between bg-[rgba(10,8,22,0.85)] backdrop-blur-xl border border-white/20 rounded-full px-3 py-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_20px_rgba(230,26,86,0.4)]">
+        <div
+          onClick={() => setMobileMenuOpen(true)}
+          className="flex items-center gap-2 cursor-pointer"
+        >
+          <div className="w-8 h-8 rounded-full overflow-hidden bg-[#18171b] border-2 border-[#e61a56] shadow-[0_0_10px_rgba(230,26,86,0.6)] flex items-center justify-center shrink-0">
+            <img
+              src="/images/hackwithindia-bvudet-logo.jpg"
+              alt="Logo"
+              className="w-full h-full object-contain p-0.5 rounded-full"
+            />
+          </div>
+          <span className="text-[11px] font-round-bold font-black text-white uppercase tracking-tight">
+            HWM 4.0
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <a
+            href={HACKATHON_DETAILS.unstopUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#e61a56] text-white text-[10px] font-round-bold font-black uppercase px-3 py-1.5 rounded-full flex items-center gap-1 shadow-[0_0_10px_rgba(230,26,86,0.6)]"
+          >
+            <span>UNSTOP</span>
+            <ArrowUpRight className="w-3 h-3 stroke-[3]" />
+          </a>
+
+          <AudioToggle />
+
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="p-1.5 rounded-full bg-white/10 text-white border border-white/15 cursor-pointer"
+            aria-label="Open mobile menu"
+          >
+            <Menu className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* ─────────────────────────────────────────────────────────────
+          CINEMATIC SLOW-MOTION FLOATING GLASS DOCK (DESKTOP / TABLET)
           - Opens slowly (~0.92s) with custom easeOutQuint physics.
           - Items blossom sequentially from center outward!
           - Logo is locked in center circle (never leaves).
@@ -93,10 +137,10 @@ const NavBar = ({ onOpenRegister }) => {
             : "width 0.65s cubic-bezier(0.25, 1, 0.5, 1), border-radius 0.65s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s ease, box-shadow 0.5s ease",
           willChange: "width, transform",
         }}
-        className={`fixed left-1/2 -translate-x-1/2 z-[100] select-none pointer-events-auto overflow-hidden ${
+        className={`hidden md:flex fixed left-1/2 -translate-x-1/2 z-[100] select-none pointer-events-auto overflow-hidden ${
           isNavOpen
-            ? "top-5 md:top-6 w-[95vw] lg:w-[92vw] max-w-6xl rounded-2xl md:rounded-full bg-[rgba(10,8,22,0.82)] backdrop-blur-2xl backdrop-saturate-150 border border-white/20 shadow-[inset_0_1px_2px_rgba(255,255,255,0.22),0_24px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(230,26,86,0.35)] py-2 px-3 md:px-6 flex items-center justify-between"
-            : "top-5 md:top-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[rgba(10,8,22,0.75)] backdrop-blur-xl border border-white/20 shadow-[inset_0_1px_2px_rgba(255,255,255,0.3),0_10px_25px_rgba(0,0,0,0.6),0_0_22px_rgba(230,26,86,0.5)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_14px_35px_rgba(0,0,0,0.75),0_0_32px_rgba(230,26,86,0.9)] hover:scale-105 flex items-center justify-center cursor-pointer"
+            ? "top-5 md:top-6 w-[95vw] lg:w-[92vw] max-w-6xl rounded-2xl md:rounded-full bg-[rgba(10,8,22,0.82)] backdrop-blur-2xl backdrop-saturate-150 border border-white/20 shadow-[inset_0_1px_2px_rgba(255,255,255,0.22),0_24px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(230,26,86,0.35)] py-2 px-3 md:px-6 items-center justify-between"
+            : "top-5 md:top-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[rgba(10,8,22,0.75)] backdrop-blur-xl border border-white/20 shadow-[inset_0_1px_2px_rgba(255,255,255,0.3),0_10px_25px_rgba(0,0,0,0.6),0_0_22px_rgba(230,26,86,0.5)] hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_14px_35px_rgba(0,0,0,0.75),0_0_32px_rgba(230,26,86,0.9)] hover:scale-105 items-center justify-center cursor-pointer"
         }`}
       >
         {/* ── TOP SPECULAR GLASS LIGHT BEAM (Expands slowly with dock) ── */}

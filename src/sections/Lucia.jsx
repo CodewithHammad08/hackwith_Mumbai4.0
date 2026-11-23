@@ -23,7 +23,7 @@ const Lucia = ({ onOpenRegister }) => {
         scrub: 2
       }, y: -200, duration: 1, ease: 'power1.inOut'
     }, '<');
-  });
+  }, []);
 
   return (
     <section className="lucia-life">
@@ -48,7 +48,7 @@ const Lucia = ({ onOpenRegister }) => {
           <h1>THE SYNDICATE</h1>
           <h2>Bring your squad. Dominate the 36-hour national leaderboard.</h2>
           <p>
-            Life in tech moves fast. When two to five focused engineers unite—frontend virtuoso, backend architect, AI specialist, and pitch lead—groundbreaking products are shipped in record time. Form your squad of 2 to 5 members for <strong>Hack With Mumbai 4.0</strong>, combine brainpower, and aim straight for the <strong>₹75,000 Grand Championship bounty</strong> organised by Hack With India.
+            Life in tech moves fast. When two to five focused engineers unite—frontend virtuoso, backend architect, AI specialist, and pitch lead—groundbreaking products are shipped in record time. Form your squad of 2 to 5 members for <strong>Hack With Mumbai 4.0</strong>, combine brainpower, and aim straight for the <strong>₹75,000 Grand Championship</strong> organised by Hack With India.
           </p>
         </div>
 

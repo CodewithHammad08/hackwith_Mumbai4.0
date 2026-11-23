@@ -62,7 +62,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-[200] flex items-center justify-center p-3 md:p-6 bg-black/90 backdrop-blur-md overflow-y-auto"
+      className="fixed inset-0 z-[200] flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/90 backdrop-blur-md overflow-y-auto"
       onClick={resetAndClose}
     >
       <div
@@ -73,13 +73,13 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
         <div className="h-1.5 w-full bg-gradient-to-r from-[#e63946] via-[#ffb0c4] to-[#fff9cb]" />
 
         {/* Header Bar */}
-        <div className="bg-[#fff9cb] text-black px-5 md:px-7 py-3.5 flex items-center justify-between border-b-3 border-black">
+        <div className="bg-[#fff9cb] text-black px-4 sm:px-6 py-3 flex items-center justify-between border-b-3 border-black">
           <div className="flex items-center gap-2">
             <span className="bg-[#e63946] text-white px-2 py-0.5 text-[10px] md:text-xs font-black uppercase tracking-wider rounded-sm animate-pulse">
               VIP EARLY ACCESS
             </span>
             <span className="font-round-bold text-xs md:text-sm font-black uppercase text-black">
-              ORGANISED BY HACK WITH INDIA
+              HACK WITH INDIA
             </span>
           </div>
           <button
@@ -92,17 +92,17 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
         </div>
 
         {/* Modal Content Area */}
-        <div className="p-5 md:p-7 max-h-[85vh] overflow-y-auto">
+        <div className="p-4 sm:p-5 md:p-7 max-h-[82vh] overflow-y-auto">
           {!vipPass ? (
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
               
               {/* Badge & Title */}
               <div className="text-center">
-                <div className="inline-flex items-center gap-2 comic-badge text-[10px] md:text-xs px-3.5 py-1 mb-2 font-black">
+                <div className="inline-flex items-center gap-2 comic-badge text-[10px] md:text-xs px-3 py-1 mb-2 font-black">
                   <span className="w-2 h-2 rounded-full bg-[#e63946] animate-ping" />
                   TEAM REGISTRATION OPENING SOON
                 </div>
-                <h3 className="font-round-bold text-2xl md:text-4xl font-black uppercase leading-tight text-white">
+                <h3 className="font-round-bold text-xl sm:text-2xl md:text-4xl font-black uppercase leading-tight text-white">
                   HACK WITH MUMBAI 4.0
                 </h3>
                 <p className="text-pink text-xs md:text-sm font-bold uppercase tracking-wider mt-1">

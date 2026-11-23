@@ -28,7 +28,7 @@ const PostCard = ({ onOpenRegister }) => {
         v.onloadedmetadata = setScrub;
       }
     }
-  });
+  }, []);
 
   const perks = [
     { icon: <Wifi className="w-5 h-5 text-cyan-400" />, title: "1Gbps Low-Latency Mesh", desc: "Unrestricted gigabit bandwidth for neural model downloads and heavy builds." },
@@ -49,7 +49,7 @@ const PostCard = ({ onOpenRegister }) => {
           muted
           playsInline
           autoPlay
-          preload="auto"
+          preload="metadata"
           src="/videos/postcard-vd.mp4"
         />
 
