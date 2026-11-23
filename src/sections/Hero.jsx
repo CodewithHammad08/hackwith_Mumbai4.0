@@ -70,10 +70,6 @@ const Hero = ({ onOpenRegister }) => {
             ⚡ HACK WITH MUMBAI 4.0 ⚡
           </div>
         </div>
-
-        <div className="play-img fade-out cursor-pointer hover:scale-110 transition-transform">
-          <img src="/images/play.png" alt="play" className="w-7 ml-1" />
-        </div>
       </div>
 
       <div>
