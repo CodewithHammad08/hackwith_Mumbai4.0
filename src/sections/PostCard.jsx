@@ -1,7 +1,7 @@
-import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
-import { Wifi, Coffee, Trophy, Terminal, X, Sparkles } from "lucide-react";
+import { Wifi, Coffee, Trophy, Terminal, X } from "lucide-react";
 
 const PostCard = ({ onOpenRegister }) => {
   const videoRef = useRef(null);

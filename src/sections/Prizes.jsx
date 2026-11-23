@@ -68,6 +68,7 @@ const Prizes = ({ onOpenRegister }) => {
               href={HACKATHON_DETAILS.unstopUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => onOpenRegister?.("team")}
               className="w-full comic-box-sm bg-black hover:bg-neutral-800 text-white py-2.5 px-3 text-xs font-round-bold font-black uppercase tracking-wider cursor-pointer mt-2 flex items-center justify-center gap-1.5 transition-colors"
             >
               <span>REGISTER SQUAD ON UNSTOP</span>
@@ -166,6 +167,7 @@ const Prizes = ({ onOpenRegister }) => {
               href={HACKATHON_DETAILS.unstopUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => onOpenRegister?.("team")}
               className="w-full comic-box-sm bg-black hover:bg-neutral-800 text-white py-2.5 px-3 text-xs font-round-bold font-black uppercase tracking-wider cursor-pointer mt-2 flex items-center justify-center gap-1.5 transition-colors"
             >
               <span>REGISTER SQUAD (2-5 MEMBERS)</span>

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
 /**
@@ -90,7 +89,7 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
 
       try {
         video.currentTime = time;
-      } catch (err) {
+      } catch {
         unlockDecoder();
       }
 
@@ -100,7 +99,7 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
           video.requestVideoFrameCallback(() => {
             unlockDecoder();
           });
-        } catch (e) {
+        } catch {
           // Handled by 'seeked' event
         }
       }
@@ -161,7 +160,9 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
       try {
         const initialTime = Math.max(0.01, Math.min(video.duration - 0.04, st.progress * video.duration));
         video.currentTime = initialTime;
-      } catch (e) {}
+      } catch {
+        // Ignore boundary seek err
+      }
     };
 
     if (video.readyState >= 1 && video.duration) {
@@ -183,5 +184,5 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
       video.removeEventListener("canplay", handleReady);
       st.kill();
     };
-  }, [start, end, pin, scrub]);
+  }, [start, end, pin, scrub, containerRef, videoRef, onProgress]);
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FileText, Download, Lock, Shield, Eye, X, CheckCircle2, AlertTriangle, ExternalLink, Sparkles } from "lucide-react";
+import { FileText, Download, Lock, Shield, Eye, X, CheckCircle2 } from "lucide-react";
 import { HACKATHON_DETAILS } from "../constants/hackathonData";
 
 const RulebookAndProblems = () => {

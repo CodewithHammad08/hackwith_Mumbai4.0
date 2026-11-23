@@ -63,6 +63,7 @@ const ComingSoon = ({ onOpenRegister }) => {
             href={HACKATHON_DETAILS.unstopUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => onOpenRegister?.("team")}
             className="w-full sm:w-auto comic-box bg-[#e63946] hover:bg-[#d62839] text-white px-6 md:px-8 py-3 sm:py-3.5 font-round-bold text-xs sm:text-sm md:text-base font-black uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-[5px_5px_0px_#fff9cb] transition-transform hover:scale-105 active:scale-95"
           >
             <span className="w-2 h-2 rounded-full bg-[#fff9cb] animate-ping" />
