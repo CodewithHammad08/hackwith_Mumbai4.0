@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from "react";
+import { createSmoothVideoScrub } from "../utils/smoothVideoScrub";
 
 const FirstVideo = () => {
   const videoRef = useRef(null);
@@ -8,30 +9,31 @@ const FirstVideo = () => {
   useGSAP(() => {
     gsap.set('.first-vd-wrapper', { marginTop: '-150vh', opacity: 0 });
 
-    const tl = gsap.timeline({
+    // Smooth entry fade
+    const fadeTl = gsap.timeline({
       scrollTrigger: {
         trigger: '.first-vd-wrapper',
         start: 'top top',
-        end: '+=200% top',
+        end: '+=80% top',
         scrub: true,
-        pin: true,
       }
     });
 
-    tl.to('.hero-section', { delay: 0.5, opacity: 0, ease: 'power1.inOut' });
-    tl.to('.first-vd-wrapper', { opacity: 1, duration: 2, ease: 'power1.inOut' });
+    fadeTl.to('.hero-section', { delay: 0.2, opacity: 0, ease: 'power1.inOut' });
+    fadeTl.to('.first-vd-wrapper', { opacity: 1, duration: 1.5, ease: 'power1.inOut' });
 
-    if (videoRef.current) {
-      const v = videoRef.current;
-      const setScrub = () => {
-        tl.to(v, { currentTime: v.duration || 3, duration: 3, ease: 'power1.inOut' }, '<');
-      };
-      if (v.readyState >= 1) {
-        setScrub();
-      } else {
-        v.onloadedmetadata = setScrub;
-      }
-    }
+    // Hardware-accelerated non-blocking video scrub
+    const scrubber = createSmoothVideoScrub(videoRef.current, {
+      trigger: '.first-vd-wrapper',
+      start: 'top top',
+      end: '+=200% top',
+      pin: true,
+      scrub: 0.3,
+    });
+
+    return () => {
+      scrubber?.destroy();
+    };
   }, []);
 
   return (
@@ -41,13 +43,13 @@ const FirstVideo = () => {
           ref={videoRef}
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           src="/videos/output1.mp4"
           className="first-vd"
         />
 
         {/* Cinematic chapter badge */}
-        <div className="absolute top-24 left-8 md:left-16 z-30 pointer-events-none">
+        <div className="absolute top-24 left-6 md:left-16 z-30 pointer-events-none">
           <div className="comic-badge text-xs md:text-sm px-3.5 py-1.5 uppercase font-black inline-block">
             STAGE 01 // HACK WITH MUMBAI 4.0 BEGINS • BY HACK WITH INDIA
           </div>

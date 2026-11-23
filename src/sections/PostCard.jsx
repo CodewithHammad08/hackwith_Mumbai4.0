@@ -8,25 +8,19 @@ const PostCard = ({ onOpenRegister }) => {
   const [showPerks, setShowPerks] = useState(false);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.post-card',
-        start: 'top center',
-        end: 'bottom center',
-        scrub: true,
-      }
-    });
-
     if (videoRef.current) {
       const v = videoRef.current;
-      const setScrub = () => {
-        tl.to(v, { currentTime: v.duration || 3, duration: 3, ease: 'power1.inOut' }, '<');
-      };
-      if (v.readyState >= 1) {
-        setScrub();
-      } else {
-        v.onloadedmetadata = setScrub;
-      }
+      v.play().catch(() => {});
+
+      ScrollTrigger.create({
+        trigger: '.post-card',
+        start: 'top bottom',
+        end: 'bottom top',
+        onEnter: () => v.play().catch(() => {}),
+        onEnterBack: () => v.play().catch(() => {}),
+        onLeave: () => v.pause(),
+        onLeaveBack: () => v.pause(),
+      });
     }
   }, []);
 
@@ -47,9 +41,10 @@ const PostCard = ({ onOpenRegister }) => {
         <video 
           ref={videoRef}
           muted
+          loop
           playsInline
           autoPlay
-          preload="metadata"
+          preload="auto"
           src="/videos/postcard-vd.mp4"
         />
 

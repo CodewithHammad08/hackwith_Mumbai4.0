@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { createSmoothVideoScrub } from "../utils/smoothVideoScrub";
 
 const SecondVideo = () => {
   const videoRef = useRef();
@@ -8,29 +9,29 @@ const SecondVideo = () => {
   useGSAP(() => {
     gsap.set('.lucia', { marginTop: '-60vh', opacity: 0 });
 
-    const tl = gsap.timeline({
+    const fadeTl = gsap.timeline({
       scrollTrigger: {
         trigger: '.lucia',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 2,
-        pin: true
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: true,
       }
     });
 
-    tl.to('.lucia', { opacity: 1, duration: 1, ease: 'power1.inOut' });
+    fadeTl.to('.lucia', { opacity: 1, duration: 1, ease: 'power1.inOut' });
 
-    if (videoRef.current) {
-      const v = videoRef.current;
-      const setScrub = () => {
-        tl.to(v, { currentTime: v.duration || 3, duration: 3, ease: 'power1.inOut' }, '<');
-      };
-      if (v.readyState >= 1) {
-        setScrub();
-      } else {
-        v.onloadedmetadata = setScrub;
-      }
-    }
+    // Hardware-accelerated non-blocking video scrub
+    const scrubber = createSmoothVideoScrub(videoRef.current, {
+      trigger: '.lucia',
+      start: 'top top',
+      end: 'bottom top',
+      pin: true,
+      scrub: 0.3,
+    });
+
+    return () => {
+      scrubber?.destroy();
+    };
   }, []);
 
   return (
@@ -40,7 +41,7 @@ const SecondVideo = () => {
           ref={videoRef}
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           src="/videos/output2.mp4"
           className="size-full object-cover second-vd"
           style={{ 
@@ -49,7 +50,7 @@ const SecondVideo = () => {
         />
 
         {/* Cinematic chapter badge */}
-        <div className="absolute top-24 right-8 md:right-16 z-30 pointer-events-none text-right">
+        <div className="absolute top-24 right-6 md:right-16 z-30 pointer-events-none text-right">
           <div className="comic-badge text-xs md:text-sm px-3.5 py-1.5 uppercase font-black inline-block">
             STAGE 02 // HACK WITH MUMBAI 4.0 // ASSEMBLE THE SYNDICATE
           </div>
