@@ -1,13 +1,18 @@
+export const UNSTOP_REGISTRATION_URL = "https://unstop.com";
+
 export const HACKATHON_DETAILS = {
   title: "HACK WITH MUMBAI 4.0",
-  tagline: "WHEN DOES REAL GENIUS CAUSE REPERCUSSION?",
-  subTagline: "BUILD YOUR UNIVERSE • 36-HOUR NATIONAL HACKATHON",
+  tagline: "36-HOUR NATIONAL LEVEL HACKATHON",
+  subTagline: "24-25 SEPTEMBER 2026 • BVUDET NM CAMPUS, NAVI MUMBAI",
   organizer: "HACK WITH INDIA",
   dates: "24-25 SEPTEMBER 2026",
   duration: "36 HOURS NON-STOP",
-  venue: "HYBRID • MUMBAI GRAND ARENA & NATIONWIDE HUBS",
+  venue: "BVUDET NM CAMPUS, NAVI MUMBAI",
+  venueShort: "BVUDET NM CAMPUS",
+  venueFull: "Bharati Vidyapeeth Department of Engineering & Technology, Navi Mumbai",
+  unstopUrl: UNSTOP_REGISTRATION_URL,
   targetDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 42).toISOString(),
-  prizePool: "₹2,00,000",
+  prizePool: "₹1,50,000+",
   pricing: {
     team: {
       title: "TEAM SQUAD",
@@ -18,7 +23,7 @@ export const HACKATHON_DETAILS = {
       description: "Assemble 2 to 5 builders in any domain to conquer the Grand Championship.",
       features: [
         "Full Access for all 2 to 5 Team Members",
-        "Eligible for ₹1,00,000 Grand Championship across ALL domains",
+        "Eligible for ₹75,000 Grand Championship across ALL domains",
         "Freedom to choose or combine ANY domains",
         "Priority Mentorship & Stage Pitch Opportunity",
         "Official Hack With India Certificates for all members",
@@ -116,9 +121,9 @@ export const HACKATHON_DETAILS = {
     { time: "16:00", title: "TIME UP & GRAND FINALE", phase: "PHASE 06", description: "Stage presentations to national jury. Live Q&A, scoring, and the ₹2,00,000 award ceremony." }
   ],
   prizes: [
-    { place: "1ST", title: "GRAND CHAMPION", amount: "₹1,00,000", badge: "👑", perks: ["₹1,00,000 Cash Prize", "Championship Trophy & Medal", "Direct VC Incubation Pitch", "₹50,000 Cloud Credits", "Wall of Fame Feature"] },
-    { place: "2ND", title: "FIRST RUNNER-UP", amount: "₹50,000", badge: "🥈", perks: ["₹50,000 Cash Prize", "Silver Trophy", "₹25,000 Cloud Credits", "Internship Fast-Track", "Winner Certificate"] },
-    { place: "3RD", title: "SECOND RUNNER-UP", amount: "₹25,000", badge: "🥉", perks: ["₹25,000 Cash Prize", "Bronze Memento", "₹15,000 Cloud Credits", "Mentor Network Access", "Exclusive Swag Kit"] }
+    { place: "1ST", title: "GRAND CHAMPION", amount: "₹75,000", badge: "👑", perks: ["₹75,000 Direct Cash Prize", "Championship Trophy & Medals", "Direct VC Incubation Pitch", "₹50,000 Cloud Credits", "Wall of Fame Feature"] },
+    { place: "2ND", title: "FIRST RUNNER-UP", amount: "₹50,000", badge: "🥈", perks: ["₹50,000 Direct Cash Prize", "Silver Trophy", "₹25,000 Cloud Credits", "Internship Fast-Track", "Winner Certificate"] },
+    { place: "3RD", title: "SECOND RUNNER-UP", amount: "₹25,000", badge: "🥉", perks: ["₹25,000 Direct Cash Prize", "Bronze Memento", "₹15,000 Cloud Credits", "Mentor Network Access", "Exclusive Swag Kit"] }
   ],
   specialBounties: [
     { title: "BEST FRESHER SQUAD", amount: "₹15,000", desc: "For the top performing first-time hackathon team (2–5 members) across any domain.", icon: "⚡" },

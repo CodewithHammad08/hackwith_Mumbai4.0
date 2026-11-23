@@ -48,7 +48,7 @@ const Lucia = ({ onOpenRegister }) => {
           <h1>THE SYNDICATE</h1>
           <h2>Bring your squad. Dominate the 36-hour national leaderboard.</h2>
           <p>
-            Life in tech moves fast. When two to five focused engineers unite—frontend virtuoso, backend architect, AI specialist, and pitch lead—groundbreaking products are shipped in record time. Form your squad of 2 to 5 members for <strong>Hack With Mumbai 4.0</strong>, combine brainpower, and aim straight for the <strong>₹1,00,000 Grand Championship bounty</strong> organised by Hack With India.
+            Life in tech moves fast. When two to five focused engineers unite—frontend virtuoso, backend architect, AI specialist, and pitch lead—groundbreaking products are shipped in record time. Form your squad of 2 to 5 members for <strong>Hack With Mumbai 4.0</strong>, combine brainpower, and aim straight for the <strong>₹75,000 Grand Championship bounty</strong> organised by Hack With India.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ const Lucia = ({ onOpenRegister }) => {
             </li>
             <li className="flex items-center gap-2">
               <Check className="w-4 h-4 text-green-700 shrink-0" />
-              <span>Eligible for ₹1,00,000 Grand Champion Trophy across ANY Domain</span>
+              <span>Eligible for ₹75,000 Grand Champion Trophy across ANY Domain</span>
             </li>
             <li className="flex items-center gap-2">
               <Check className="w-4 h-4 text-green-700 shrink-0" />
@@ -89,7 +89,7 @@ const Lucia = ({ onOpenRegister }) => {
             className="w-full comic-box-sm bg-[#e63946] hover:bg-[#d62839] text-white py-3 px-4 font-round-bold text-xs md:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-transform active:translate-y-0.5 cursor-pointer shadow-[3px_3px_0px_#000]"
           >
             <span className="w-2 h-2 rounded-full bg-white animate-ping" />
-            <span>PRE-REGISTER TEAM SQUAD (COMING SOON)</span>
+            <span>REGISTER SQUAD ON UNSTOP</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

@@ -14,10 +14,12 @@ import Lucia from './sections/Lucia';
 import Timeline from './sections/Timeline';
 import PostCard from './sections/PostCard';
 import Prizes from './sections/Prizes';
+import RulebookAndProblems from './sections/RulebookAndProblems';
 import RulesAndFaq from './sections/RulesAndFaq';
 import Final from './sections/Final';
 import Outro from './sections/Outro';
 import ComingSoonPopup from './components/ComingSoonPopup';
+import { HACKATHON_DETAILS } from './constants/hackathonData';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,8 +79,9 @@ const App = () => {
   }, [popupOpen]);
 
   const handleOpenRegister = (tier = 'team') => {
+    // Direct redirect to Unstop hackathon registration website
+    window.open(HACKATHON_DETAILS.unstopUrl, '_blank', 'noopener,noreferrer');
     setSelectedTier(tier);
-    setPopupOpen(true);
   };
 
   const handleClosePopup = () => setPopupOpen(false);
@@ -106,6 +109,8 @@ const App = () => {
       <PostCard onOpenRegister={handleOpenRegister} />
 
       <Prizes onOpenRegister={handleOpenRegister} />
+
+      <RulebookAndProblems />
 
       <RulesAndFaq onOpenRegister={handleOpenRegister} />
 

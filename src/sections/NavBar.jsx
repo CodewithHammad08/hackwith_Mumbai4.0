@@ -71,7 +71,8 @@ const NavBar = ({ onOpenRegister }) => {
   // Right links: ordered from inner to outer (delays reveal from center outward)
   const rightLinks = [
     { label: "PRIZES", href: "#prizes", delay: "0.14s" },
-    { label: "RULES & FAQ", href: "#rules", delay: "0.26s" },
+    { label: "RULEBOOK", href: "#rulebook", delay: "0.22s" },
+    { label: "RULES & FAQ", href: "#rules", delay: "0.30s" },
   ];
 
   return (
@@ -255,7 +256,7 @@ const NavBar = ({ onOpenRegister }) => {
               className="bg-[#e61a56] hover:bg-[#d4154d] text-white px-3.5 py-1.5 md:px-4 md:py-2 rounded-full font-round-bold font-black text-xs md:text-sm uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-transform hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(230,26,86,0.6)] border border-white/20 whitespace-nowrap"
             >
               <span className="w-2 h-2 rounded-full bg-[#fff9cb] animate-ping" />
-              <span>COMING SOON</span>
+              <span>REGISTER ON UNSTOP</span>
               <ArrowUpRight className="w-3.5 h-3.5 stroke-[3]" />
             </button>
           </div>
@@ -359,7 +360,7 @@ const NavBar = ({ onOpenRegister }) => {
               }}
               className="w-full bg-[#e61a56] hover:bg-[#d4154d] text-white font-round-bold font-black text-sm uppercase tracking-wider py-3.5 rounded-full text-center cursor-pointer shadow-[0_0_20px_rgba(230,26,86,0.6)] border border-white/20"
             >
-              REGISTRATION COMING SOON — GET NOTIFIED
+              REGISTER SQUAD ON UNSTOP ↗
             </button>
           </div>
 

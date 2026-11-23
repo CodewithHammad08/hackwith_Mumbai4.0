@@ -64,7 +64,7 @@ const Outro = ({ onOpenRegister }) => {
             </p>
             <div className="flex items-center justify-between text-[11px] font-mono font-bold text-neutral-600 border-t border-black/20 pt-2">
               <span>★ ALL DOMAINS COMPETE TOGETHER</span>
-              <span className="text-[#e63946] font-black">PRE-REGISTER TEAM →</span>
+              <span className="text-[#e63946] font-black">REGISTER SQUAD ON UNSTOP →</span>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ const Outro = ({ onOpenRegister }) => {
             className="comic-box bg-[#e63946] hover:bg-[#d62839] text-white px-8 py-4 font-round-bold text-base md:text-xl font-black uppercase tracking-wider flex items-center justify-center gap-3 cursor-pointer shadow-[6px_6px_0px_#fff9cb] hover:scale-105 active:scale-95 transition-transform"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
-            <span>TEAM REGISTRATION COMING SOON — GET NOTIFIED</span>
+            <span>REGISTER SQUAD ON UNSTOP</span>
             <ArrowRight className="w-6 h-6 stroke-[3]" />
           </button>
         </div>

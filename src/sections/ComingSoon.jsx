@@ -1,22 +1,32 @@
 import CountdownTimer from "../components/CountdownTimer";
-import { ArrowRight, Trophy, Clock, Users, Zap, Sparkles } from "lucide-react";
+import { ExternalLink, Trophy, Clock, Users, Zap, MapPin } from "lucide-react";
+import { HACKATHON_DETAILS } from "../constants/hackathonData";
 
 const ComingSoon = ({ onOpenRegister }) => {
   return (
-    <section className="entrance-message pointer-events-auto">
+    <section className="entrance-message pointer-events-auto relative overflow-hidden">
+      {/* Background Ambient Video Playback */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-20 scale-105"
+          src="/videos/output1.mp4"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07060f] via-[#07060f]/75 to-[#07060f]/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(230,57,70,0.18)_0%,transparent_75%)]" />
+      </div>
+
       <div className="h-full col-center justify-center px-4 pt-16 md:pt-20 pb-8 text-center relative z-20 max-w-4xl mx-auto">
         
-        {/* Top Comic Organizer Badge */}
-        <div className="inline-block mb-2 animate-bounce">
-          <span className="comic-badge text-xs md:text-sm px-4 py-1.5 uppercase font-black inline-flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-[#e63946]" />
-            ORGANISED BY HACK WITH INDIA
+        {/* Top Highlight Badge: 36-Hour National Level Hackathon */}
+        <div className="inline-block mb-2">
+          <span className="comic-badge text-xs md:text-sm px-4 py-1.5 uppercase font-black inline-flex items-center gap-2 bg-[#ffd23f] text-black shadow-[3px_3px_0px_#000]">
+            <Zap className="w-4 h-4 text-[#e63946] fill-[#e63946]" />
+            36-HOUR NATIONAL LEVEL HACKATHON • 24-25 SEPT 2026
           </span>
-        </div>
-
-        {/* 36-Hour National Hackathon Sub-pill */}
-        <div className="text-xs md:text-sm font-round-bold uppercase tracking-widest text-[#ffb0c4] font-bold mb-1">
-          36-HOUR NATIONAL HACKATHON • 24-25 SEPTEMBER 2026
         </div>
 
         {/* Grand Headline Title */}
@@ -26,65 +36,61 @@ const ComingSoon = ({ onOpenRegister }) => {
           </h1>
         </div>
 
-        {/* Taglines */}
-        <div className="space-y-1 mb-2 max-w-2xl">
-          <p className="text-sm md:text-xl font-round-bold text-[#fff9cb] uppercase tracking-wide font-extrabold drop-shadow-md">
-            "WHEN DOES REAL GENIUS CAUSE REPERCUSSION?"
-          </p>
-          <p className="text-xs md:text-sm text-[#fff9cb] font-round-bold uppercase font-bold tracking-wide hidden sm:block">
-            CHOOSE ANY DOMAIN • ONE UNIFIED ₹2,00,000 GRAND PRIZE
-          </p>
-          <p className="text-[11px] md:text-xs text-gray-300 font-sans tracking-normal hidden sm:block">
-            AI/ML • FULL-STACK WEB • MOBILE APPS • CLOUD & CYBER • WEB3 • OPEN INNOVATION
-          </p>
+        {/* Venue & Event Highlights (Punchy, Clean, Non-AI) */}
+        <div className="flex items-center justify-center gap-2.5 flex-wrap my-2 max-w-2xl mx-auto">
+          <div className="bg-[#e63946]/20 border border-[#e63946]/60 text-white px-3.5 py-1.5 rounded-full flex items-center gap-2 text-xs md:text-sm font-bold tracking-wide shadow-sm">
+            <MapPin className="w-4 h-4 text-[#ffb0c4] shrink-0" />
+            <span>VENUE: <strong className="text-[#fff9cb]">BVUDET NM CAMPUS</strong> (NAVI MUMBAI)</span>
+          </div>
+
+          <div className="bg-black/60 border border-neutral-700 text-neutral-300 px-3.5 py-1.5 rounded-full flex items-center gap-1.5 text-xs md:text-sm font-semibold tracking-wide">
+            <span>ORGANISED BY <strong className="text-white">HACK WITH INDIA</strong></span>
+          </div>
         </div>
 
         {/* Live Countdown Timer */}
-        <div className="w-full my-2">
-          <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-pink mb-1 flex items-center justify-center gap-1.5">
+        <div className="w-full my-3">
+          <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#ffb0c4] mb-1.5 flex items-center justify-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#e63946] animate-ping" />
-            HACKATHON COMMENCEMENT COUNTDOWN
+            <span>HACKATHON COMMENCEMENT COUNTDOWN</span>
           </div>
           <CountdownTimer targetDate="2026-09-24T10:00:00" />
         </div>
 
-        {/* Primary Call to Action — Registration Coming Soon */}
-        <div className="my-2.5 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <button
-            onClick={() => onOpenRegister?.("team")}
-            className="comic-box bg-[#e63946] hover:bg-[#d62839] text-white px-6 md:px-8 py-3.5 font-round-bold text-xs md:text-sm font-black uppercase tracking-wider flex items-center gap-2.5 cursor-pointer shadow-[5px_5px_0px_#fff9cb] transition-transform hover:scale-105 active:scale-95"
+        {/* Primary Call to Action — Redirect to Unstop */}
+        <div className="my-3 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <a
+            href={HACKATHON_DETAILS.unstopUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="comic-box bg-[#e63946] hover:bg-[#d62839] text-white px-7 md:px-9 py-3.5 font-round-bold text-sm md:text-base font-black uppercase tracking-wider flex items-center gap-2.5 cursor-pointer shadow-[5px_5px_0px_#fff9cb] transition-transform hover:scale-105 active:scale-95"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-[#fff9cb] animate-ping" />
-            <span>TEAM REGISTRATION COMING SOON — GET NOTIFIED</span>
-            <ArrowRight className="w-4 h-4 stroke-[3]" />
-          </button>
-        </div>
+            <span>REGISTER ON UNSTOP</span>
+            <ExternalLink className="w-4 h-4 stroke-[3]" />
+          </a>
 
-        {/* Pricing Tiers Preview */}
-        <div className="flex items-center justify-center gap-3 my-1">
-          <div 
-            onClick={() => onOpenRegister?.("team")}
-            className="comic-box-sm bg-[#fff9cb] text-black px-4 py-1.5 rounded-md cursor-pointer hover:scale-105 transition-transform flex items-center gap-2"
-          >
-            <Users className="w-3.5 h-3.5 text-[#e63946]" />
-            <span className="text-[11px] font-black uppercase">TEAM PASS (2–5 MEMBERS): </span>
-            <span className="text-xs font-black text-[#e63946]">₹200</span>
+          {/* Single Team Pass Tag (Strictly 2-5 Members) */}
+          <div className="comic-box-sm bg-[#fff9cb] text-black px-4 py-2.5 rounded-md flex items-center gap-2 shadow-[3px_3px_0px_#000]">
+            <Users className="w-4 h-4 text-[#e63946]" />
+            <span className="text-xs font-black uppercase tracking-tight">TEAM SQUAD (2–5 MEMBERS):</span>
+            <span className="text-sm font-black text-[#e63946]">₹200 TOTAL</span>
           </div>
         </div>
 
-        {/* Value Badges Bar */}
+        {/* Bottom Feature Badges */}
         <div className="flex items-center justify-center flex-wrap gap-4 md:gap-8 mt-3 text-xs md:text-sm font-bold text-gray-300 border-t border-neutral-800/80 pt-3">
           <div className="flex items-center gap-1.5 text-yellow">
             <Trophy className="w-4 h-4 text-[#ffd23f]" />
-            <span>₹2,00,000 PRIZE POOL</span>
+            <span>₹1,50,000 PODIUM PRIZES</span>
           </div>
-          <div className="flex items-center gap-1.5 text-pink">
-            <Clock className="w-4 h-4 text-pink" />
-            <span>36 HOURS NON-STOP</span>
+          <div className="flex items-center gap-1.5 text-[#ffb0c4]">
+            <Clock className="w-4 h-4 text-[#ffb0c4]" />
+            <span>36 HOURS LIVE ARENA</span>
           </div>
           <div className="flex items-center gap-1.5 text-cyan-300">
-            <Zap className="w-4 h-4 text-cyan-300" />
-            <span>ORGANISED BY HACK WITH INDIA</span>
+            <MapPin className="w-4 h-4 text-cyan-300" />
+            <span>BVUDET NM CAMPUS</span>
           </div>
         </div>
 

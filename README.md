@@ -1,22 +1,26 @@
-# ⚡ HACK WITH MUMBAI 4.0 | 36-Hour National Hackathon
+# ⚡ HACK WITH MUMBAI 4.0 | 36-Hour National Level Hackathon
 
-> **Organised by Hack With India** • ₹2,00,000 Prize Pool • 36 Hours Non-Stop Innovation
+> **Organised by Hack With India** • **Venue: BVUDET NM Campus, Navi Mumbai** • ₹1,50,000+ Prize Pool • 36 Hours Non-Stop Innovation
 
-Transforming the viral high-octane GTA VI landing page aesthetic into a national-level **Hackathon Registration Web Platform** for **Hack With Mumbai 4.0**, featuring buttery smooth scrolling, video scroll scrubs, live countdown timer, and interactive VIP early access pre-registration.
+Transforming the high-octane visual identity into a national-level **Hackathon Web Platform** for **Hack With Mumbai 4.0**, featuring ambient background video playback, Unstop registration integration, downloadable rulebook, locked problem statements portal, live countdown, and video scroll scrubbing.
 
 ---
 
 ## 🚀 Key Features
 
-- **Iconic Visual Identity**: Preserves the signature GTA VI / Vice City neon color palette (`#fff9cb` yellow, `#ffb0c4` pink, deep obsidian purple background), bold typography (`Long`, `Round`, `Round Bold`), and high-energy comic styling.
+- **Iconic Visual Identity & Typography**: Preserves the signature GTA VI / Vice City neon color palette (`#fff9cb` yellow, `#ffb0c4` pink, deep obsidian purple background), enhanced with Google Fonts (`Plus Jakarta Sans`, `Space Grotesk`, `JetBrains Mono`) and bold typography.
 - **Dynamic Infinite Marquee**: Continuous comic ticker banner celebrating Hack With Mumbai 4.0, Hack With India, and event highlights.
 - **Buttery Smooth Scrolling**: Powered by **Lenis** integrated with **GSAP ScrollTrigger** ticker for zero-jitter, cinematic momentum scrolling.
-- **Scroll-Synced Video Scrubbing**: Pin-and-scrub multi-stage video experiences (`output1.mp4`, `output2.mp4`, `output3.mp4`, `postcard-vd.mp4`).
+- **Scroll-Synced Video Scrubbing & Ambient Playback**: Pin-and-scrub multi-stage video experiences (`output1.mp4`, `output2.mp4`, `output3.mp4`, `postcard-vd.mp4`) plus an ambient video background.
+- **Venue & Hackathon Highlights**: Prominently highlights **BVUDET NM Campus (Navi Mumbai)** and **36-Hour National Level Hackathon**.
 - **Live Event Countdown**: Real-time ticker counting down Days, Hours, Minutes, and Seconds with glowing neon cards.
-- **Registration Coming Soon & VIP Early Access**:
-  - Interactive VIP Pre-Registration Modal
+- **Unstop Registration Integration**:
+  - Direct integration and CTA links to official registration on **Unstop**
   - Team Squad Pass (**₹200** for **2 to 5 members**)
-  - Instant generation of personalized **Digital VIP Early Access Passes** with unique IDs (`#HWM4-VIP-XXXX`).
+  - Personalized **Digital VIP Early Access Passes** with unique IDs (`#HWM4-TEAM-XXXX`).
+- **Official Rulebook & Locked Problem Statements**:
+  - Downloadable official rulebook covering 5-factor judging criteria, GitHub audit, and eligibility
+  - Locked & Embargoed Problem Statements releasing at the opening ceremony on 24 Sept 2026
 - **Choose Any Domain (No Track Restrictions)**:
   - Participants have 100% freedom to choose ANY domain or combine multiple domains:
     - **Domain 01**: AI / ML & Agentic Systems
@@ -25,17 +29,10 @@ Transforming the viral high-octane GTA VI landing page aesthetic into a national
     - **Domain 04**: Cloud Infra & Cybersecurity
     - **Domain 05**: Web3 & Blockchain
     - **Domain 06**: Open Innovation / Wildcard (Any Domain)
-  - **The Prize is ONLY ONE**: All domains compete on a single national leaderboard for the unified **₹2,00,000 Grand Prize Pool**!
+  - **The Prize is ONLY ONE**: All domains compete on a single national leaderboard!
   - **Special Bounties**: Best Fresher Squad (₹15,000), Best All-Women Team (₹10,000), Best UI/UX (₹10,000)
-- **36-Hour Timeline ("The Clock Bends")**:
-  - 09:30 Check-In & Badge Pickup
-  - 10:00 Portal Open & Keynote
-  - 10:30 Build Mode Engaged (Mentorship Round 1)
-  - 13:00 Checkpoint & Code Review
-  - 15:00 Final Push & Submission Freeze
-  - 16:00 Time Up & Grand Finale
 - **Prize Podium**:
-  - 🥇 1st Place: **₹1,00,000** + Championship Cup + Direct VC Pitch + ₹50k Cloud Credits
+  - 🥇 1st Place: **₹75,000** + Championship Cup + Direct VC Pitch + ₹50k Cloud Credits
   - 🥈 2nd Place: **₹50,000** + Runner-up Shield + Internship Referrals + ₹25k Cloud Credits
   - 🥉 3rd Place: **₹25,000** + Podium Plaque + Swag Kit + ₹15k Cloud Credits
 - **Arena Tour & Perks**: 1Gbps WiFi, Red Bull recharge lounges, midnight pizza, and serialized metal hacker badges.

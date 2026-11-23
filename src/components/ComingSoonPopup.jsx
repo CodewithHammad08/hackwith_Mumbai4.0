@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Calendar, Clock, Zap, ArrowRight, Check, Sparkles, Users, ShieldCheck, Copy } from "lucide-react";
+import { X, Calendar, Clock, Zap, ArrowRight, Check, Sparkles, Users, ShieldCheck, Copy, ExternalLink } from "lucide-react";
 import { HACKATHON_DETAILS } from "../constants/hackathonData";
 
 const ComingSoonPopup = ({ isOpen, onClose }) => {
@@ -353,6 +353,16 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
 
               {/* Actions */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                <a
+                  href={HACKATHON_DETAILS.unstopUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="col-span-full comic-box-sm bg-[#ffd23f] hover:bg-white text-black py-2.5 px-3 font-round-bold text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer shadow-[3px_3px_0px_#000] transition-colors"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>REGISTER SQUAD NOW ON UNSTOP</span>
+                </a>
+
                 <button
                   type="button"
                   onClick={handleCopyTicket}
