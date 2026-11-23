@@ -15,7 +15,7 @@ Transforming the viral high-octane GTA VI landing page aesthetic into a national
 - **Live Event Countdown**: Real-time ticker counting down Days, Hours, Minutes, and Seconds with glowing neon cards.
 - **Registration Coming Soon & VIP Early Access**:
   - Interactive VIP Pre-Registration Modal
-  - Solo Dev Pass (**₹100**) & Team Squad Pass (**₹200**) preferences
+  - Team Squad Pass (**₹200** for **2 to 5 members**)
   - Instant generation of personalized **Digital VIP Early Access Passes** with unique IDs (`#HWM4-VIP-XXXX`).
 - **Choose Any Domain (No Track Restrictions)**:
   - Participants have 100% freedom to choose ANY domain or combine multiple domains:
@@ -26,7 +26,7 @@ Transforming the viral high-octane GTA VI landing page aesthetic into a national
     - **Domain 05**: Web3 & Blockchain
     - **Domain 06**: Open Innovation / Wildcard (Any Domain)
   - **The Prize is ONLY ONE**: All domains compete on a single national leaderboard for the unified **₹2,00,000 Grand Prize Pool**!
-  - **Special Bounties**: Best Solo Hacker (₹15,000), Best All-Women Team (₹10,000), Best UI/UX (₹10,000)
+  - **Special Bounties**: Best Fresher Squad (₹15,000), Best All-Women Team (₹10,000), Best UI/UX (₹10,000)
 - **36-Hour Timeline ("The Clock Bends")**:
   - 09:30 Check-In & Badge Pickup
   - 10:00 Portal Open & Keynote

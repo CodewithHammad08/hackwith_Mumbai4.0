@@ -250,7 +250,7 @@ const NavBar = ({ onOpenRegister }) => {
               type="button"
               onClick={() => {
                 if (!isPinned) setIsNavOpen(false);
-                onOpenRegister?.("solo");
+                onOpenRegister?.("team");
               }}
               className="bg-[#e61a56] hover:bg-[#d4154d] text-white px-3.5 py-1.5 md:px-4 md:py-2 rounded-full font-round-bold font-black text-xs md:text-sm uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-transform hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(230,26,86,0.6)] border border-white/20 whitespace-nowrap"
             >
@@ -355,7 +355,7 @@ const NavBar = ({ onOpenRegister }) => {
               type="button"
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenRegister?.("solo");
+                onOpenRegister?.("team");
               }}
               className="w-full bg-[#e61a56] hover:bg-[#d4154d] text-white font-round-bold font-black text-sm uppercase tracking-wider py-3.5 rounded-full text-center cursor-pointer shadow-[0_0_20px_rgba(230,26,86,0.6)] border border-white/20"
             >

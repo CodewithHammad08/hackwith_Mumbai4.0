@@ -9,36 +9,19 @@ export const HACKATHON_DETAILS = {
   targetDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 42).toISOString(),
   prizePool: "₹2,00,000",
   pricing: {
-    solo: {
-      title: "SOLO DEV",
-      price: 100,
-      currency: "₹",
-      per: "Per Participant",
-      badge: "SOLO PASS",
-      description: "For independent rogue coders who want to build in any domain.",
-      features: [
-        "Full 36-Hour Hackathon Arena Access",
-        "Eligible for ₹15,000 Best Solo Hacker Award",
-        "Freedom to choose ANY domain or tech stack",
-        "1-on-1 Dedicated Technical Mentorship",
-        "Official Hack With India Digital Certificate",
-        "Hacker Swag Kit & Cloud Credits",
-        "Access to 24/7 Discord War Room"
-      ]
-    },
     team: {
       title: "TEAM SQUAD",
       price: 200,
       currency: "₹",
-      per: "Per Team (2-4 Members)",
+      per: "Per Team (2-5 Members)",
       badge: "TEAM PASS",
-      description: "Assemble up to 4 builders in any domain to conquer the Grand Championship.",
+      description: "Assemble 2 to 5 builders in any domain to conquer the Grand Championship.",
       features: [
-        "Full Access for up to 4 Team Members",
+        "Full Access for all 2 to 5 Team Members",
         "Eligible for ₹1,00,000 Grand Championship across ALL domains",
         "Freedom to choose or combine ANY domains",
         "Priority Mentorship & Stage Pitch Opportunity",
-        "Official Hack With India Certificates for all",
+        "Official Hack With India Certificates for all members",
         "Premium Swag Box & Cloud Credits for all members",
         "Direct VC Incubation & Job Referral Fast-Track"
       ]
@@ -138,14 +121,14 @@ export const HACKATHON_DETAILS = {
     { place: "3RD", title: "SECOND RUNNER-UP", amount: "₹25,000", badge: "🥉", perks: ["₹25,000 Cash Prize", "Bronze Memento", "₹15,000 Cloud Credits", "Mentor Network Access", "Exclusive Swag Kit"] }
   ],
   specialBounties: [
-    { title: "BEST SOLO HACKER", amount: "₹15,000", desc: "For the top individual dev competing solo across any domain.", icon: "⚡" },
+    { title: "BEST FRESHER SQUAD", amount: "₹15,000", desc: "For the top performing first-time hackathon team (2–5 members) across any domain.", icon: "⚡" },
     { title: "BEST ALL-WOMEN TEAM", amount: "₹10,000", desc: "Championing diversity, leadership and top-tier code execution.", icon: "💜" },
     { title: "BEST UI/UX EXPERIENCE", amount: "₹10,000", desc: "For the slickest, most intuitive and aesthetically pleasing interface.", icon: "🎨" }
   ],
   rules: [
     "Choose ANY domain: Pick any domain of your choice or combine multiple domains. The prize is ONE unified pool!",
     "Open to all college students, independent developers, and tech enthusiasts nationwide.",
-    "Team Size: Solo (1) or Team (2–4). Cross-college teams are fully permitted.",
+    "Team Size: Strictly 2–5 members per team. Cross-college and cross-institutional teams are fully permitted.",
     "All code must be developed during the 36-hour window. Pre-built projects are disqualified.",
     "Projects must be on a public GitHub repo with regular timestamped commits throughout.",
     "Industry mentors available 24/7 on the official Discord server.",
@@ -154,7 +137,7 @@ export const HACKATHON_DETAILS = {
   faqs: [
     { q: "Are there separate track prizes or is the prize unified?", a: "The prize is ONLY ONE unified grand prize pool! There are no separate track restrictions — you can choose ANY domain you like (or even combine multiple domains). All participants compete together on a single national leaderboard for the ₹2,00,000 prize pool!" },
     { q: "Can I choose any domain or tech stack?", a: "Yes! You have 100% freedom to choose ANY domain — AI/ML, Web, Mobile, Cloud, Cybersecurity, Web3, IoT, or any wildcard idea. You are judged on innovation, execution, and impact, not restricted by rigid tracks." },
-    { q: "What is the registration fee?", a: "₹100 for Solo Developer, ₹200 for a Team of 2–4. Covers 36-hour arena access, mentorship, swag, certificates, and entry for the grand prize." },
+    { q: "What is the registration fee?", a: "₹200 per Team (2–5 members). Covers 36-hour arena access for all teammates, mentorship, swag boxes, certificates, and eligibility for the ₹2,00,000 grand prize pool." },
     { q: "Is this online, offline, or hybrid?", a: "Hybrid! Compete online via Discord War Room or attend at official Mumbai Arena + regional hubs nationwide." },
     { q: "Can beginners participate?", a: "Yes! All skill levels welcome. We have 24/7 mentorship, starter templates, workshops, and dedicated beginner bounties." },
     { q: "Can team members be from different colleges?", a: "Yes — multi-institutional cross-college teams are actively encouraged!" },

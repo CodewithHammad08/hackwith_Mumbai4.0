@@ -48,48 +48,35 @@ const Outro = ({ onOpenRegister }) => {
         </div>
 
         {/* Registration Tiers Box Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-xl my-2">
-          
-          <div 
-            onClick={() => onOpenRegister?.("solo")}
-            className="comic-box bg-[#fff9cb] text-black p-4 rounded-xl cursor-pointer hover:scale-105 active:scale-95 transition-transform shadow-[4px_4px_0px_#000]"
-          >
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-[11px] font-black uppercase text-[#e63946] flex items-center gap-1">
-                <User className="w-3.5 h-3.5" /> SOLO PASS
-              </span>
-              <span className="text-xl font-round-bold font-black text-[#e63946]">₹100</span>
-            </div>
-            <p className="text-[11px] text-neutral-700 font-bold text-left">
-              1 Hacker • Arena Access • Eligible for ₹15,000 Solo Bounty
-            </p>
-          </div>
-
+        <div className="w-full max-w-xl my-2">
           <div 
             onClick={() => onOpenRegister?.("team")}
-            className="comic-box bg-[#fff9cb] text-black p-4 rounded-xl cursor-pointer hover:scale-105 active:scale-95 transition-transform shadow-[4px_4px_0px_#000]"
+            className="comic-box bg-[#fff9cb] text-black p-5 rounded-xl cursor-pointer hover:scale-105 active:scale-95 transition-transform shadow-[5px_5px_0px_#000] text-left"
           >
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-[11px] font-black uppercase text-[#e63946] flex items-center gap-1">
-                <Users className="w-3.5 h-3.5" /> TEAM SQUAD
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-black uppercase text-[#e63946] flex items-center gap-1.5">
+                <Users className="w-4 h-4" /> TEAM SQUAD PASS (2–5 MEMBERS)
               </span>
-              <span className="text-xl font-round-bold font-black text-[#e63946]">₹200</span>
+              <span className="text-2xl font-round-bold font-black text-[#e63946]">₹200</span>
             </div>
-            <p className="text-[11px] text-neutral-700 font-bold text-left">
-              Up to 4 Hackers • Eligible for ₹1,00,000 Grand Trophy
+            <p className="text-xs text-neutral-800 font-bold mb-3">
+              2 to 5 Hackers per Team • Arena Access • Dedicated Mentor War Room • Eligible for ₹2,00,000 Grand Prize Pool
             </p>
+            <div className="flex items-center justify-between text-[11px] font-mono font-bold text-neutral-600 border-t border-black/20 pt-2">
+              <span>★ ALL DOMAINS COMPETE TOGETHER</span>
+              <span className="text-[#e63946] font-black">PRE-REGISTER TEAM →</span>
+            </div>
           </div>
-
         </div>
 
         {/* CTA Button */}
         <div>
           <button
-            onClick={() => onOpenRegister?.("solo")}
+            onClick={() => onOpenRegister?.("team")}
             className="comic-box bg-[#e63946] hover:bg-[#d62839] text-white px-8 py-4 font-round-bold text-base md:text-xl font-black uppercase tracking-wider flex items-center justify-center gap-3 cursor-pointer shadow-[6px_6px_0px_#fff9cb] hover:scale-105 active:scale-95 transition-transform"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
-            <span>REGISTRATION COMING SOON — GET NOTIFIED</span>
+            <span>TEAM REGISTRATION COMING SOON — GET NOTIFIED</span>
             <ArrowRight className="w-6 h-6 stroke-[3]" />
           </button>
         </div>

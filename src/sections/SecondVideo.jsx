@@ -54,7 +54,7 @@ const SecondVideo = () => {
             STAGE 02 // HACK WITH MUMBAI 4.0 // ASSEMBLE THE SYNDICATE
           </div>
           <p className="text-white font-round-bold text-sm md:text-lg mt-2 drop-shadow-md">
-            2 to 4 Minds. One Shared Vision.
+            2 to 5 Minds. One Shared Vision.
           </p>
         </div>
       </div>

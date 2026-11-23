@@ -23,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const [popupOpen, setPopupOpen] = useState(false);
-  const [selectedTier, setSelectedTier] = useState('solo');
+  const [selectedTier, setSelectedTier] = useState('team');
   const lenisRef = useRef(null);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const App = () => {
     }
   }, [popupOpen]);
 
-  const handleOpenRegister = (tier = 'solo') => {
+  const handleOpenRegister = (tier = 'team') => {
     setSelectedTier(tier);
     setPopupOpen(true);
   };

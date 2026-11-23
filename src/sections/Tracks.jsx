@@ -139,7 +139,7 @@ const Domains = ({ onOpenRegister }) => {
 
                 {/* Card CTA */}
                 <button
-                  onClick={() => onOpenRegister?.("solo")}
+                  onClick={() => onOpenRegister?.("team")}
                   className="w-full comic-box-sm bg-[#e63946] hover:bg-[#d62839] text-white py-3 px-4 font-round-bold text-xs md:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-transform active:translate-y-0.5 shadow-[3px_3px_0px_#000]"
                 >
                   <span className="w-2 h-2 rounded-full bg-white animate-ping" />

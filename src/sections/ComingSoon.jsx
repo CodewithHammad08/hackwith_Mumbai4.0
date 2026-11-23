@@ -51,11 +51,11 @@ const ComingSoon = ({ onOpenRegister }) => {
         {/* Primary Call to Action — Registration Coming Soon */}
         <div className="my-2.5 flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
-            onClick={() => onOpenRegister?.("solo")}
+            onClick={() => onOpenRegister?.("team")}
             className="comic-box bg-[#e63946] hover:bg-[#d62839] text-white px-6 md:px-8 py-3.5 font-round-bold text-xs md:text-sm font-black uppercase tracking-wider flex items-center gap-2.5 cursor-pointer shadow-[5px_5px_0px_#fff9cb] transition-transform hover:scale-105 active:scale-95"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-[#fff9cb] animate-ping" />
-            <span>REGISTRATION COMING SOON — GET NOTIFIED</span>
+            <span>TEAM REGISTRATION COMING SOON — GET NOTIFIED</span>
             <ArrowRight className="w-4 h-4 stroke-[3]" />
           </button>
         </div>
@@ -63,18 +63,11 @@ const ComingSoon = ({ onOpenRegister }) => {
         {/* Pricing Tiers Preview */}
         <div className="flex items-center justify-center gap-3 my-1">
           <div 
-            onClick={() => onOpenRegister?.("solo")}
-            className="comic-box-sm bg-[#fff9cb] text-black px-3.5 py-1.5 rounded-md cursor-pointer hover:scale-105 transition-transform"
-          >
-            <span className="text-[11px] font-black uppercase">SOLO DEV: </span>
-            <span className="text-xs font-black text-[#e63946]">₹100</span>
-          </div>
-
-          <div 
             onClick={() => onOpenRegister?.("team")}
-            className="comic-box-sm bg-[#fff9cb] text-black px-3.5 py-1.5 rounded-md cursor-pointer hover:scale-105 transition-transform"
+            className="comic-box-sm bg-[#fff9cb] text-black px-4 py-1.5 rounded-md cursor-pointer hover:scale-105 transition-transform flex items-center gap-2"
           >
-            <span className="text-[11px] font-black uppercase">TEAM SQUAD (2-4): </span>
+            <Users className="w-3.5 h-3.5 text-[#e63946]" />
+            <span className="text-[11px] font-black uppercase">TEAM PASS (2–5 MEMBERS): </span>
             <span className="text-xs font-black text-[#e63946]">₹200</span>
           </div>
         </div>

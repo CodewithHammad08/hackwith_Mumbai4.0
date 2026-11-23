@@ -59,11 +59,11 @@ const RulesAndFaq = ({ onOpenRegister }) => {
 
             <div className="mt-8 pt-4 border-t-2 border-black">
               <div className="flex items-center justify-between text-xs font-black uppercase mb-3">
-                <span>SOLO PASS: <strong>₹100</strong></span>
-                <span>TEAM SQUAD: <strong>₹200</strong></span>
+                <span>TEAM PASS (2–5 MEMBERS): <strong>₹200</strong></span>
+                <span className="text-[#e63946]">ANY DOMAIN • UNIFIED PRIZE</span>
               </div>
               <button
-                onClick={() => onOpenRegister?.("solo")}
+                onClick={() => onOpenRegister?.("team")}
                 className="w-full comic-box-sm bg-[#e63946] hover:bg-[#d62839] text-white py-3 px-4 font-round-bold text-xs md:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-transform active:translate-y-0.5 shadow-[3px_3px_0px_#000]"
               >
                 <span className="w-2 h-2 rounded-full bg-white animate-ping" />

@@ -41,14 +41,14 @@ const Lucia = ({ onOpenRegister }) => {
           <div className="inline-block mb-4">
             <span className="comic-badge text-xs px-3.5 py-1.5 font-black inline-flex items-center gap-1.5">
               <Users className="w-3.5 h-3.5" />
-              TEAM SQUAD PASS // ₹200 • ORGANISED BY HACK WITH INDIA
+              TEAM SQUAD PASS // ₹200 (2-5 MEMBERS) • ORGANISED BY HACK WITH INDIA
             </span>
           </div>
 
           <h1>THE SYNDICATE</h1>
           <h2>Bring your squad. Dominate the 36-hour national leaderboard.</h2>
           <p>
-            Life in tech moves fast. When four focused engineers unite—frontend virtuoso, backend architect, AI specialist, and pitch lead—groundbreaking products are shipped in record time. Form your squad for <strong>Hack With Mumbai 4.0</strong>, combine brainpower, and aim straight for the <strong>₹1,00,000 Grand Championship bounty</strong> organised by Hack With India.
+            Life in tech moves fast. When two to five focused engineers unite—frontend virtuoso, backend architect, AI specialist, and pitch lead—groundbreaking products are shipped in record time. Form your squad of 2 to 5 members for <strong>Hack With Mumbai 4.0</strong>, combine brainpower, and aim straight for the <strong>₹1,00,000 Grand Championship bounty</strong> organised by Hack With India.
           </p>
         </div>
 
@@ -65,14 +65,14 @@ const Lucia = ({ onOpenRegister }) => {
             </div>
             <div className="text-right">
               <span className="text-2xl font-round-bold font-black text-[#e63946]">₹200</span>
-              <span className="text-[10px] font-bold block text-neutral-700">Per Team (2-4 Devs)</span>
+              <span className="text-[10px] font-bold block text-neutral-700">Per Team (2-5 Devs)</span>
             </div>
           </div>
 
           <ul className="text-xs space-y-1.5 font-bold mb-4">
             <li className="flex items-center gap-2">
               <Check className="w-4 h-4 text-green-700 shrink-0" />
-              <span>Full Access for all 2 to 4 Team Members</span>
+              <span>Full Access for all 2 to 5 Team Members</span>
             </li>
             <li className="flex items-center gap-2">
               <Check className="w-4 h-4 text-green-700 shrink-0" />

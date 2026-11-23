@@ -96,7 +96,7 @@ const PostCard = ({ onOpenRegister }) => {
             <button
               onClick={() => {
                 setShowPerks(false);
-                onOpenRegister?.("solo");
+                onOpenRegister?.("team");
               }}
               className="w-full comic-box bg-[#e63946] hover:bg-[#d62839] text-white py-3 font-round-bold font-black text-sm uppercase tracking-wider cursor-pointer"
             >

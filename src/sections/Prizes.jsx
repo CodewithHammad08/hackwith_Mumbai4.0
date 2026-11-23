@@ -157,10 +157,10 @@ const Prizes = ({ onOpenRegister }) => {
               </ul>
             </div>
             <button
-              onClick={() => onOpenRegister?.("solo")}
+              onClick={() => onOpenRegister?.("team")}
               className="w-full comic-box-sm bg-black hover:bg-neutral-800 text-white py-2.5 px-3 text-xs font-round-bold font-black uppercase tracking-wider cursor-pointer mt-2"
             >
-              PRE-REGISTER SOLO (COMING SOON)
+              PRE-REGISTER SQUAD (2-5 MEMBERS)
             </button>
           </div>
 

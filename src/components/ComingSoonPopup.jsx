@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { X, Calendar, Clock, Zap, ArrowRight, Check, Sparkles, User, Users, ShieldCheck, Copy, ExternalLink } from "lucide-react";
+import { X, Calendar, Clock, Zap, ArrowRight, Check, Sparkles, Users, ShieldCheck, Copy } from "lucide-react";
 import { HACKATHON_DETAILS } from "../constants/hackathonData";
 
-const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
-  const [tier, setTier] = useState(initialTier);
+const ComingSoonPopup = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
-    name: "",
+    teamName: "",
+    leaderName: "",
     email: "",
     phone: "",
     college: "",
+    teamSize: "4 Members",
     domain: "AI / ML & Agentic Systems",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,7 +18,7 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
 
   if (!isOpen) return null;
 
-  const currentPrice = tier === "solo" ? HACKATHON_DETAILS.pricing.solo.price : HACKATHON_DETAILS.pricing.team.price;
+  const teamPrice = HACKATHON_DETAILS.pricing?.team?.price || 200;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -29,16 +30,18 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
     setIsSubmitting(true);
 
     setTimeout(() => {
-      const generatedId = `HWM4-VIP-${Math.floor(1000 + Math.random() * 9000)}`;
+      const generatedId = `HWM4-TEAM-${Math.floor(1000 + Math.random() * 9000)}`;
       setVipPass({
         id: generatedId,
-        name: formData.name || "Pioneer Hacker",
+        teamName: formData.teamName || "Multiverse Syndicate",
+        leaderName: formData.leaderName || "Team Lead",
+        teamSize: formData.teamSize,
         email: formData.email,
         domain: formData.domain,
         college: formData.college || "Tech University",
-        tier: tier === "solo" ? "SOLO DEV VIP PASS" : "TEAM SQUAD VIP PASS",
-        fee: `₹${currentPrice}`,
-        perks: "Guaranteed Early Slot • 1-on-1 Discord War Room Access • VIP Starter Pack"
+        tier: "TEAM SQUAD VIP PASS (2–5 MEMBERS)",
+        fee: `₹${teamPrice}`,
+        perks: "Guaranteed Early Team Slot • 1-on-1 Discord War Room Access • VIP Team Swag Kit"
       });
       setIsSubmitting(false);
     }, 700);
@@ -46,7 +49,7 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
 
   const handleCopyTicket = () => {
     if (!vipPass) return;
-    const text = `🎟️ HACK WITH MUMBAI 4.0 — VIP EARLY ACCESS PASS\nVIP ID: ${vipPass.id}\nName: ${vipPass.name}\nTier: ${vipPass.tier}\nDomain: ${vipPass.domain}\nFee: ${vipPass.fee}\nOrganised by: HACK WITH INDIA\nStatus: CONFIRMED FOR LAUNCH NOTIFICATION`;
+    const text = `🎟️ HACK WITH MUMBAI 4.0 — VIP TEAM EARLY ACCESS PASS\nVIP ID: ${vipPass.id}\nTeam: ${vipPass.teamName}\nLeader: ${vipPass.leaderName}\nTeam Size: ${vipPass.teamSize}\nTier: ${vipPass.tier}\nDomain: ${vipPass.domain}\nFee: ${vipPass.fee}\nOrganised by: HACK WITH INDIA\nStatus: CONFIRMED FOR LAUNCH NOTIFICATION`;
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -97,58 +100,38 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
               <div className="text-center">
                 <div className="inline-flex items-center gap-2 comic-badge text-[10px] md:text-xs px-3.5 py-1 mb-2 font-black">
                   <span className="w-2 h-2 rounded-full bg-[#e63946] animate-ping" />
-                  REGISTRATION OPENING SOON
+                  TEAM REGISTRATION OPENING SOON
                 </div>
                 <h3 className="font-round-bold text-2xl md:text-4xl font-black uppercase leading-tight text-white">
                   HACK WITH MUMBAI 4.0
                 </h3>
                 <p className="text-pink text-xs md:text-sm font-bold uppercase tracking-wider mt-1">
-                  36-Hour National Hackathon • 24-25 September 2026
+                  36-Hour National Team Hackathon • 24-25 September 2026
                 </p>
                 <p className="text-gray-300 text-xs md:text-sm font-sans mt-2 max-w-md mx-auto">
-                  Official registration will open shortly. Reserve your <strong>Priority Early-Bird VIP Spot</strong> now to get notified first and lock in your tier before slots fill up!
+                  Assemble your squad of <strong>2 to 5 members</strong>. Reserve your <strong>Priority Early-Bird Team Spot</strong> now to get notified first when portal opens!
                 </p>
               </div>
 
-              {/* Pass Tier Selector */}
-              <div className="grid grid-cols-2 gap-3">
-                <button
-                  type="button"
-                  onClick={() => setTier("solo")}
-                  className={`p-3 rounded-xl border-2 border-black flex flex-col items-center text-center transition-all cursor-pointer ${
-                    tier === "solo"
-                      ? "bg-[#fff9cb] text-black comic-box-sm scale-[1.02]"
-                      : "bg-[#181525] text-gray-400 hover:bg-[#201c30]"
-                  }`}
-                >
-                  <div className="flex items-center gap-1.5 font-black text-xs md:text-sm">
-                    <User className="w-4 h-4" />
-                    SOLO DEV
+              {/* Team Pass Banner */}
+              <div className="p-4 rounded-xl border-2 border-black bg-[#fff9cb] text-black comic-box-sm flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 rounded-lg bg-[#e63946] text-white">
+                    <Users className="w-5 h-5" />
                   </div>
-                  <div className="text-lg md:text-xl font-round-bold font-black text-[#e63946] mt-0.5">
-                    ₹100
+                  <div>
+                    <span className="text-[10px] font-black uppercase text-[#e63946] block tracking-wider">
+                      TEAM PASS (2 TO 5 MEMBERS)
+                    </span>
+                    <h4 className="font-round-bold text-base md:text-lg font-black uppercase text-black">
+                      TEAM SQUAD ENTRY
+                    </h4>
                   </div>
-                  <div className="text-[10px] opacity-80">1 Hacker Pass</div>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setTier("team")}
-                  className={`p-3 rounded-xl border-2 border-black flex flex-col items-center text-center transition-all cursor-pointer ${
-                    tier === "team"
-                      ? "bg-[#fff9cb] text-black comic-box-sm scale-[1.02]"
-                      : "bg-[#181525] text-gray-400 hover:bg-[#201c30]"
-                  }`}
-                >
-                  <div className="flex items-center gap-1.5 font-black text-xs md:text-sm">
-                    <Users className="w-4 h-4" />
-                    TEAM SQUAD
-                  </div>
-                  <div className="text-lg md:text-xl font-round-bold font-black text-[#e63946] mt-0.5">
-                    ₹200
-                  </div>
-                  <div className="text-[10px] opacity-80">2 to 4 Hackers</div>
-                </button>
+                </div>
+                <div className="text-right">
+                  <span className="text-2xl font-round-bold font-black text-[#e63946]">₹200</span>
+                  <span className="text-[10px] font-bold block text-neutral-700">Per Team</span>
+                </div>
               </div>
 
               {/* Form */}
@@ -156,14 +139,14 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
                     <label className="block text-[11px] font-bold text-gray-300 mb-1">
-                      Full Name *
+                      Team / Squad Name *
                     </label>
                     <input
                       required
                       type="text"
-                      name="name"
-                      placeholder="e.g. Jason Duval"
-                      value={formData.name}
+                      name="teamName"
+                      placeholder="e.g. Cyber Titans"
+                      value={formData.teamName}
                       onChange={handleInputChange}
                       className="w-full bg-[#181525] border-2 border-neutral-700 focus:border-pink rounded-lg px-3.5 py-2 text-xs md:text-sm text-white outline-none"
                     />
@@ -171,14 +154,14 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
 
                   <div>
                     <label className="block text-[11px] font-bold text-gray-300 mb-1">
-                      Email Address *
+                      Team Leader Full Name *
                     </label>
                     <input
                       required
-                      type="email"
-                      name="email"
-                      placeholder="hacker@universe.dev"
-                      value={formData.email}
+                      type="text"
+                      name="leaderName"
+                      placeholder="e.g. Jason Duval"
+                      value={formData.leaderName}
                       onChange={handleInputChange}
                       className="w-full bg-[#181525] border-2 border-neutral-700 focus:border-pink rounded-lg px-3.5 py-2 text-xs md:text-sm text-white outline-none"
                     />
@@ -186,6 +169,21 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-[11px] font-bold text-gray-300 mb-1">
+                      Leader Email Address *
+                    </label>
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      placeholder="leader@squad.dev"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full bg-[#181525] border-2 border-neutral-700 focus:border-pink rounded-lg px-3.5 py-2 text-xs md:text-sm text-white outline-none"
+                    />
+                  </div>
+
                   <div>
                     <label className="block text-[11px] font-bold text-gray-300 mb-1">
                       WhatsApp / Phone *
@@ -200,7 +198,9 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
                       className="w-full bg-[#181525] border-2 border-neutral-700 focus:border-pink rounded-lg px-3.5 py-2 text-xs md:text-sm text-white outline-none"
                     />
                   </div>
+                </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
                     <label className="block text-[11px] font-bold text-gray-300 mb-1">
                       College / Institute / Company *
@@ -209,17 +209,34 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
                       required
                       type="text"
                       name="college"
-                      placeholder="e.g. IIT Bombay / Independent"
+                      placeholder="e.g. BVUDET Navi Mumbai / Any College"
                       value={formData.college}
                       onChange={handleInputChange}
                       className="w-full bg-[#181525] border-2 border-neutral-700 focus:border-pink rounded-lg px-3.5 py-2 text-xs md:text-sm text-white outline-none"
                     />
                   </div>
+
+                  <div>
+                    <label className="block text-[11px] font-bold text-gray-300 mb-1">
+                      Expected Team Size (2 to 5 Members) *
+                    </label>
+                    <select
+                      name="teamSize"
+                      value={formData.teamSize}
+                      onChange={handleInputChange}
+                      className="w-full bg-[#181525] border-2 border-neutral-700 focus:border-pink rounded-lg px-3 py-2 text-xs md:text-sm text-white outline-none"
+                    >
+                      <option value="2 Members">2 Members</option>
+                      <option value="3 Members">3 Members</option>
+                      <option value="4 Members">4 Members</option>
+                      <option value="5 Members">5 Members</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>
                   <label className="block text-[11px] font-bold text-gray-300 mb-1">
-                    Choose Any Domain (You can hack in ANY domain!)
+                    Preferred Domain (Choose ANY Domain!)
                   </label>
                   <select
                     name="domain"
@@ -248,11 +265,11 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
                   {isSubmitting ? (
                     <span className="flex items-center gap-2">
                       <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Reserving VIP Spot...
+                      Reserving Team VIP Spot...
                     </span>
                   ) : (
                     <span className="flex items-center gap-2">
-                      CLAIM VIP PRE-REGISTRATION SPOT ({tier === "solo" ? "₹100" : "₹200"})
+                      CLAIM TEAM VIP PRE-REGISTRATION SPOT (₹200)
                       <ArrowRight className="w-4 h-4 stroke-[3]" />
                     </span>
                   )}
@@ -281,17 +298,17 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
 
               <div>
                 <h3 className="text-2xl md:text-3xl font-round-bold font-black text-yellow uppercase">
-                  VIP SPOT RESERVED!
+                  TEAM VIP SPOT RESERVED!
                 </h3>
                 <p className="text-xs text-gray-300 max-w-sm mx-auto mt-1">
-                  You are officially on the priority VIP list for <strong>Hack With Mumbai 4.0</strong>, organised by <strong>Hack With India</strong>.
+                  Your squad is officially on the priority VIP list for <strong>Hack With Mumbai 4.0</strong>, organised by <strong>Hack With India</strong>.
                 </p>
               </div>
 
               {/* Comic VIP Badge */}
               <div className="comic-box bg-[#fff9cb] text-black p-5 rounded-xl text-left relative overflow-hidden">
                 <div className="absolute top-0 right-0 bg-[#e63946] text-white text-[9px] font-black uppercase px-2.5 py-0.5 border-b-2 border-l-2 border-black">
-                  VIP CREDENTIAL
+                  TEAM VIP CREDENTIAL
                 </div>
 
                 <div className="border-b-2 border-black pb-2.5 mb-3">
@@ -305,25 +322,29 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
 
                 <div className="grid grid-cols-2 gap-2.5 text-xs mb-3">
                   <div>
-                    <span className="text-[9px] uppercase font-bold text-gray-600 block">VIP Attendee</span>
-                    <strong className="text-sm font-black text-black">{vipPass.name}</strong>
+                    <span className="text-[9px] uppercase font-bold text-gray-600 block">Squad Name</span>
+                    <strong className="text-sm font-black text-black">{vipPass.teamName}</strong>
                   </div>
                   <div>
-                    <span className="text-[9px] uppercase font-bold text-gray-600 block">Pass Type</span>
-                    <strong className="text-xs font-black text-[#e63946]">{vipPass.tier}</strong>
+                    <span className="text-[9px] uppercase font-bold text-gray-600 block">Team Leader</span>
+                    <strong className="text-xs font-black text-black">{vipPass.leaderName}</strong>
                   </div>
                   <div>
-                    <span className="text-[9px] uppercase font-bold text-gray-600 block">Selected Domain</span>
-                    <strong className="text-xs font-bold text-black">{vipPass.domain}</strong>
+                    <span className="text-[9px] uppercase font-bold text-gray-600 block">Team Size</span>
+                    <strong className="text-xs font-black text-[#e63946]">{vipPass.teamSize}</strong>
                   </div>
                   <div>
                     <span className="text-[9px] uppercase font-bold text-gray-600 block">VIP Pass ID</span>
                     <strong className="text-xs font-mono font-black text-black">{vipPass.id}</strong>
                   </div>
+                  <div className="col-span-2">
+                    <span className="text-[9px] uppercase font-bold text-gray-600 block">Selected Domain</span>
+                    <strong className="text-xs font-bold text-black">{vipPass.domain}</strong>
+                  </div>
                 </div>
 
                 <div className="pt-2 border-t border-dashed border-black/40 flex items-center justify-between text-[10px] font-bold">
-                  <span>Target Fee: <strong>{vipPass.fee}</strong></span>
+                  <span>Squad Entry Fee: <strong>{vipPass.fee}</strong></span>
                   <span className="bg-black text-[#fff9cb] px-2 py-0.5 rounded text-[10px] font-black">
                     EARLY ACCESS GUARANTEED
                   </span>
@@ -338,7 +359,7 @@ const ComingSoonPopup = ({ isOpen, onClose, initialTier = "solo" }) => {
                   className="bg-[#1f1c2d] hover:bg-[#28243a] text-white py-2.5 px-3 rounded-lg border border-neutral-700 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <Copy className="w-4 h-4" />
-                  {copied ? "Pass Details Copied!" : "Copy VIP Details"}
+                  {copied ? "Squad Details Copied!" : "Copy VIP Squad Details"}
                 </button>
 
                 <button

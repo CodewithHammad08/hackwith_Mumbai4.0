@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { User, Check, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
+import { Users, Check, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 
 const Jason = ({ onOpenRegister }) => {
   useGSAP(() => {
@@ -30,15 +30,15 @@ const Jason = ({ onOpenRegister }) => {
       <div className="max-w-xl jason-content z-20">
         <div className="inline-block mb-4">
           <span className="comic-badge text-xs px-3.5 py-1.5 font-black inline-flex items-center gap-1.5">
-            <User className="w-3.5 h-3.5" />
-            SOLO PASS // ₹100 • ORGANISED BY HACK WITH INDIA
+            <Users className="w-3.5 h-3.5" />
+            TEAM PASS // ₹200 (2-5 MEMBERS) • ORGANISED BY HACK WITH INDIA
           </span>
         </div>
 
-        <h1>THE SOLO DEV</h1>
-        <h2>One hacker. One terminal. 36 hours of pure unadulterated engineering.</h2>
+        <h1>THE ARCHITECTS</h1>
+        <h2>2 to 5 minds. One shared vision. 36 hours of pure unadulterated engineering.</h2>
         <p>
-          Built for solitary code commandos who can conceptualize, architect, and ship a full-stack miracle before the 36-hour clock expires. Compete alongside top minds nationwide in <strong>Hack With Mumbai 4.0</strong>, prove your solo supremacy, and stake your claim on the <strong>₹15,000 Best Solo Hacker bounty</strong> plus official Hack With India accreditation.
+          Built for ambitious squads who can conceptualize, architect, and ship a production-grade prototype before the 36-hour clock expires. Assemble 2 to 5 hackers from any college nationwide for <strong>Hack With Mumbai 4.0</strong>, combine your superpowers, and stake your claim on the <strong>₹2,00,000 unified prize pool</strong> and <strong>₹15,000 Best Fresher Squad bounty</strong> plus official Hack With India accreditation.
         </p>
 
         {/* Comic Ticket Box */}
@@ -49,23 +49,23 @@ const Jason = ({ onOpenRegister }) => {
                 NATIONAL REGISTRATION TIER
               </span>
               <h3 className="font-round-bold text-xl font-black uppercase leading-tight">
-                SOLO HACKER PASS
+                TEAM SQUAD PASS
               </h3>
             </div>
             <div className="text-right">
-              <span className="text-2xl font-round-bold font-black text-[#e63946]">₹100</span>
-              <span className="text-[10px] font-bold block text-neutral-700">Per Dev</span>
+              <span className="text-2xl font-round-bold font-black text-[#e63946]">₹200</span>
+              <span className="text-[10px] font-bold block text-neutral-700">Per Team (2-5 Devs)</span>
             </div>
           </div>
 
           <ul className="text-xs space-y-1.5 font-bold mb-4">
             <li className="flex items-center gap-2">
               <Check className="w-4 h-4 text-green-700 shrink-0" />
-              <span>Full 36-Hour Hackathon Arena Access</span>
+              <span>Full 36-Hour Hackathon Arena Access for All 2-5 Members</span>
             </li>
             <li className="flex items-center gap-2">
               <Check className="w-4 h-4 text-green-700 shrink-0" />
-              <span>Eligible for ₹15,000 Solo Hacker Award across ANY Domain</span>
+              <span>Eligible for ₹1,00,000 Grand Champion Trophy across ANY Domain</span>
             </li>
             <li className="flex items-center gap-2">
               <Check className="w-4 h-4 text-green-700 shrink-0" />
@@ -74,17 +74,17 @@ const Jason = ({ onOpenRegister }) => {
           </ul>
 
           <button
-            onClick={() => onOpenRegister?.("solo")}
+            onClick={() => onOpenRegister?.("team")}
             className="w-full comic-box-sm bg-[#e63946] hover:bg-[#d62839] text-white py-3 px-4 font-round-bold text-xs md:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-transform active:translate-y-0.5 cursor-pointer shadow-[3px_3px_0px_#000]"
           >
             <span className="w-2 h-2 rounded-full bg-white animate-ping" />
-            <span>PRE-REGISTER SOLO DEV (COMING SOON)</span>
+            <span>PRE-REGISTER TEAM SQUAD (COMING SOON)</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
         <div className="jason-2">
-          <img src="/images/jason-2.webp" alt="Solo Hacker Persona" />
+          <img src="/images/jason-2.webp" alt="Lead Architect Persona" />
         </div>
       </div>
 

@@ -8,8 +8,8 @@ const Marquee = () => {
     { text: "ONE UNIFIED GRAND PRIZE", icon: <Trophy className="w-4 h-4 text-[#ffd23f]" /> },
     { text: "36 HOURS NON-STOP", icon: <Clock className="w-4 h-4 text-[#05d9e8]" /> },
     { text: "₹2,00,000 PRIZE POOL", icon: <Trophy className="w-4 h-4 text-[#ffd23f]" /> },
-    { text: "SOLO PASS ₹100", icon: <Flame className="w-4 h-4 text-[#e63946]" /> },
-    { text: "TEAM SQUAD ₹200", icon: <Shield className="w-4 h-4 text-[#ffb0c4]" /> },
+    { text: "TEAM REGISTRATION (2–5 MEMBERS)", icon: <Shield className="w-4 h-4 text-[#ffb0c4]" /> },
+    { text: "TEAM SQUAD ₹200", icon: <Flame className="w-4 h-4 text-[#ffd23f]" /> },
     { text: "REGISTRATION COMING SOON", icon: <Sparkles className="w-4 h-4 text-[#ffd23f]" /> },
     { text: "MUMBAI GRAND ARENA", icon: <Zap className="w-4 h-4 text-[#05d9e8]" /> },
   ];
