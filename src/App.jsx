@@ -15,6 +15,7 @@ import Timeline from './sections/Timeline';
 import PostCard from './sections/PostCard';
 import Prizes from './sections/Prizes';
 import RulebookAndProblems from './sections/RulebookAndProblems';
+import PreviousEvents from './sections/PreviousEvents';
 import RulesAndFaq from './sections/RulesAndFaq';
 import Final from './sections/Final';
 import Outro from './sections/Outro';
@@ -114,6 +115,8 @@ const App = () => {
       <Prizes onOpenRegister={handleOpenRegister} />
 
       <RulebookAndProblems />
+
+      <PreviousEvents onOpenRegister={handleOpenRegister} />
 
       <RulesAndFaq onOpenRegister={handleOpenRegister} />
 

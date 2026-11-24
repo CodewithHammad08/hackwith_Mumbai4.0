@@ -72,8 +72,9 @@ const NavBar = ({ onOpenRegister }) => {
   // Right links: ordered from inner to outer (delays reveal from center outward)
   const rightLinks = [
     { label: "PRIZES", href: "#prizes", delay: "0.14s" },
-    { label: "RULEBOOK", href: "#rulebook", delay: "0.22s" },
-    { label: "RULES & FAQ", href: "#rules", delay: "0.30s" },
+    { label: "RULEBOOK", href: "#rulebook", delay: "0.20s" },
+    { label: "EDITIONS", href: "#past-events", delay: "0.26s" },
+    { label: "FAQ", href: "#rules", delay: "0.32s" },
   ];
 
   return (
