@@ -1,28 +1,19 @@
-import { ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import { Wifi, Coffee, Trophy, Terminal, X, Zap } from "lucide-react";
+import { useSmoothVideoScrub } from "../utils/useSmoothVideoScrub";
 
 const PostCard = ({ onOpenRegister }) => {
   const videoRef = useRef(null);
+  const containerRef = useRef(null);
   const [showPerks, setShowPerks] = useState(false);
 
-  useGSAP(() => {
-    if (videoRef.current) {
-      const v = videoRef.current;
-      v.play().catch(() => {});
-
-      ScrollTrigger.create({
-        trigger: '.post-card',
-        start: 'top bottom',
-        end: 'bottom top',
-        onEnter: () => v.play().catch(() => {}),
-        onEnterBack: () => v.play().catch(() => {}),
-        onLeave: () => v.pause(),
-        onLeaveBack: () => v.pause(),
-      });
-    }
-  }, []);
+  // Synchronize 3-second postcard video with scroll
+  useSmoothVideoScrub(videoRef, containerRef, {
+    start: "top 75%",
+    end: "bottom 25%",
+    pin: false,
+    scrub: 0.8,
+  });
 
   const perks = [
     { icon: <Wifi className="w-5 h-5 text-cyan-400" />, title: "1Gbps Low-Latency Mesh", desc: "Unrestricted gigabit bandwidth for neural model downloads and heavy builds." },
@@ -32,7 +23,7 @@ const PostCard = ({ onOpenRegister }) => {
   ];
 
   return (
-    <section className="post-card">
+    <section ref={containerRef} className="post-card">
       <div className="animated-gradient-bg" />
 
       <div className="post-card-wrapper group hover:rotate-1 hover:scale-[1.01] transition duration-700">
@@ -49,11 +40,10 @@ const PostCard = ({ onOpenRegister }) => {
         <video 
           ref={videoRef}
           muted
-          loop
           playsInline
-          autoPlay
           preload="auto"
           src="/videos/postcard-vd.mp4"
+          className="w-full h-full object-cover will-change-transform"
         />
 
         <button 
