@@ -72,7 +72,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-3 md:p-6 bg-black/85 backdrop-blur-md overflow-y-auto">
-      <div 
+      <div
         className="relative w-full max-w-2xl bg-[#121118] border-3 border-black comic-box text-white rounded-xl overflow-hidden my-auto max-h-[92vh] flex flex-col shadow-[10px_10px_0px_#e63946]"
         onClick={(e) => e.stopPropagation()}
       >
@@ -86,7 +86,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
               Hack With Mumbai 4.O
             </h3>
           </div>
-          <button 
+          <button
             onClick={resetAndClose}
             className="p-1.5 hover:bg-black hover:text-white rounded-md transition-colors cursor-pointer"
             aria-label="Close modal"
