@@ -170,7 +170,7 @@ const Domains = ({ onOpenRegister }) => {
               onClick={() => onOpenRegister?.("team")}
               className="comic-box bg-[#fff9cb] hover:bg-white text-black font-round-bold font-black text-sm uppercase px-6 py-3.5 whitespace-nowrap cursor-pointer transition-transform hover:scale-105 active:scale-95 shadow-[4px_4px_0px_#000]"
             >
-              PRE-REGISTER SQUAD (₹200)
+              REGISTER SQUAD ON UNSTOP
             </button>
           </div>
         </div>

@@ -20,7 +20,7 @@ const Jason = ({ onOpenRegister }) => {
         <div className="inline-block mb-4">
           <span className="comic-badge text-xs px-3.5 py-1.5 font-black inline-flex items-center gap-1.5">
             <Users className="w-3.5 h-3.5" />
-            TEAM PASS // ₹200 (2-5 MEMBERS) • ORGANISED BY HACK WITH INDIA
+            TEAM PASS // 2-5 MEMBERS • ORGANISED BY HACK WITH INDIA
           </span>
         </div>
 
@@ -42,8 +42,8 @@ const Jason = ({ onOpenRegister }) => {
               </h3>
             </div>
             <div className="text-right">
-              <span className="text-2xl font-round-bold font-black text-[#e63946]">₹200</span>
-              <span className="text-[10px] font-bold block text-neutral-700">Per Team (2-5 Devs)</span>
+              <span className="text-xl sm:text-2xl font-round-bold font-black text-[#e63946]">UNSTOP</span>
+              <span className="text-[10px] font-bold block text-neutral-700">2–5 Devs Squad</span>
             </div>
           </div>
 

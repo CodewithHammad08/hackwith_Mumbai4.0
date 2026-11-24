@@ -16,7 +16,7 @@ Transforming the high-octane visual identity into a national-level **Hackathon W
 - **Live Event Countdown**: Real-time ticker counting down Days, Hours, Minutes, and Seconds with glowing neon cards.
 - **Unstop Registration Integration**:
   - Direct integration and CTA links to official registration on **Unstop**
-  - Team Squad Pass (**₹200** for **2 to 5 members**)
+  - Team Squad Pass (for **2 to 5 members**)
   - Personalized **Digital VIP Early Access Passes** with unique IDs (`#HWM4-TEAM-XXXX`).
 - **Official Rulebook & Locked Problem Statements**:
   - Downloadable official rulebook covering 5-factor judging criteria, GitHub audit, and eligibility

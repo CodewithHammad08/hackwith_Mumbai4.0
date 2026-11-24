@@ -39,7 +39,9 @@ const Outro = ({ onOpenRegister }) => {
               <span className="text-xs font-black uppercase text-[#e63946] flex items-center gap-1.5">
                 <Users className="w-4 h-4" /> TEAM SQUAD PASS (2–5 MEMBERS)
               </span>
-              <span className="text-xl sm:text-2xl font-round-bold font-black text-[#e63946]">₹200</span>
+              <span className="text-sm sm:text-base font-round-bold font-black bg-[#e63946] text-white px-2 py-0.5 rounded">
+                UNSTOP
+              </span>
             </div>
             <p className="text-xs text-neutral-800 font-bold mb-3">
               2 to 5 Hackers per Team • Arena Access • Dedicated Mentor War Room • Eligible for ₹1,50,000 Grand Prize Pool

@@ -15,7 +15,7 @@ Date: 24-25 September 2026 (36 Hours Non-Stop)
 Venue: BVUDET NM Campus, Navi Mumbai
 Grand Prize Pool: ₹1,50,000+ Podium (1st: ₹75k, 2nd: ₹50k, 3rd: ₹25k)
 Registration Link: https://unstop.com
-Pass: Team Squad Pass (2 to 5 Members) — ₹200 Total
+Pass: Team Squad Pass (2 to 5 Members) — Official Unstop Portal
 
 1. ELIGIBILITY & TEAM COMPOSITION
 - Teams must consist strictly of 2 to 5 members. Entries below 2 members are not permitted.

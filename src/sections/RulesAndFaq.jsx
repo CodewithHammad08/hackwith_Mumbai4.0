@@ -59,7 +59,7 @@ const RulesAndFaq = ({ onOpenRegister }) => {
 
             <div className="mt-8 pt-4 border-t-2 border-black">
               <div className="flex items-center justify-between text-xs font-black uppercase mb-3">
-                <span>TEAM PASS (2–5 MEMBERS): <strong>₹200</strong></span>
+                <span>TEAM PASS: <strong>2–5 MEMBERS</strong></span>
                 <span className="text-[#e63946]">ANY DOMAIN • UNIFIED PRIZE</span>
               </div>
               <button

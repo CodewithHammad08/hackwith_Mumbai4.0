@@ -18,8 +18,6 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const teamPrice = HACKATHON_DETAILS.pricing?.team?.price || 200;
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -40,7 +38,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
         domain: formData.domain,
         college: formData.college || "Tech University",
         tier: "TEAM SQUAD VIP PASS (2–5 MEMBERS)",
-        fee: `₹${teamPrice}`,
+        fee: "OFFICIAL UNSTOP PORTAL",
         perks: "Guaranteed Early Team Slot • 1-on-1 Discord War Room Access • VIP Team Swag Kit"
       });
       setIsSubmitting(false);
@@ -129,8 +127,8 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="text-2xl font-round-bold font-black text-[#e63946]">₹200</span>
-                  <span className="text-[10px] font-bold block text-neutral-700">Per Team</span>
+                  <span className="text-base sm:text-lg font-round-bold font-black text-[#e63946]">UNSTOP</span>
+                  <span className="text-[10px] font-bold block text-neutral-700">2–5 Members</span>
                 </div>
               </div>
 
@@ -269,7 +267,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
                     </span>
                   ) : (
                     <span className="flex items-center gap-2">
-                      CLAIM TEAM VIP PRE-REGISTRATION SPOT (₹200)
+                      CLAIM TEAM VIP PRE-REGISTRATION SPOT
                       <ArrowRight className="w-4 h-4 stroke-[3]" />
                     </span>
                   )}
@@ -344,7 +342,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
                 </div>
 
                 <div className="pt-2 border-t border-dashed border-black/40 flex items-center justify-between text-[10px] font-bold">
-                  <span>Squad Entry Fee: <strong>{vipPass.fee}</strong></span>
+                  <span>Squad Registration: <strong>UNSTOP OFFICIAL</strong></span>
                   <span className="bg-black text-[#fff9cb] px-2 py-0.5 rounded text-[10px] font-black">
                     EARLY ACCESS GUARANTEED
                   </span>

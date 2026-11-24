@@ -28,8 +28,6 @@ const RegisterModal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const currentPrice = HACKATHON_DETAILS.pricing.team.price;
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -44,7 +42,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
       setTicketData({
         ticketId: generatedId,
         tier: "TEAM SQUAD PASS (2-5 MEMBERS)",
-        amountPaid: `₹${currentPrice}`,
+        amountPaid: "UNSTOP CONFIRMED",
         name: formData.name || "Pioneer Hacker",
         teamName: formData.teamName || "Multiverse Syndicate",
         teamSize: formData.teamSize,
@@ -123,10 +121,10 @@ const RegisterModal = ({ isOpen, onClose }) => {
                 </div>
 
                 <div className="text-right ml-auto">
-                  <div className="text-2xl md:text-3xl font-round-bold font-black text-[#e63946] leading-none">
-                    ₹{currentPrice}
+                  <div className="text-xl md:text-2xl font-round-bold font-black text-[#e63946] leading-none">
+                    TEAM PASS
                   </div>
-                  <div className="text-[11px] font-bold text-black/60 uppercase">Per Team Total</div>
+                  <div className="text-[11px] font-bold text-black/60 uppercase">2–5 Members</div>
                 </div>
               </div>
 
@@ -417,10 +415,10 @@ const RegisterModal = ({ isOpen, onClose }) => {
               <div className="bg-[#191624] border-2 border-black p-4 rounded-lg flex items-center justify-between flex-wrap gap-2">
                 <div>
                   <div className="text-xs text-gray-400 uppercase tracking-wider font-bold">
-                    Total Team Pass Amount
+                    Registration Pass
                   </div>
-                  <div className="text-2xl font-round-bold font-black text-yellow">
-                    ₹{currentPrice} <span className="text-xs text-gray-400 font-normal">INR / For Entire Team (2–5 Members)</span>
+                  <div className="text-xl font-round-bold font-black text-yellow">
+                    TEAM SQUAD PASS <span className="text-xs text-gray-400 font-normal">/ For Entire Team (2–5 Members)</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-green-400 font-bold bg-green-950/40 px-3 py-1.5 rounded border border-green-800">
@@ -442,7 +440,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   </span>
                 ) : (
                   <span className="flex items-center gap-2">
-                    Complete Team Registration (₹{currentPrice})
+                    Complete Team Registration
                     <ArrowRight className="w-5 h-5" />
                   </span>
                 )}

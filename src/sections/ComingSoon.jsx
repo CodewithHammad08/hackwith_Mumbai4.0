@@ -74,8 +74,8 @@ const ComingSoon = ({ onOpenRegister }) => {
           {/* Single Team Pass Tag (Strictly 2-5 Members) */}
           <div className="comic-box-sm bg-[#fff9cb] text-black px-3.5 py-2 sm:py-2.5 rounded-md flex items-center justify-center gap-1.5 shadow-[3px_3px_0px_#000] text-center">
             <Users className="w-3.5 h-3.5 text-[#e63946]" />
-            <span className="text-[11px] sm:text-xs font-black uppercase tracking-tight">TEAM SQUAD (2–5 MEMBERS):</span>
-            <span className="text-xs sm:text-sm font-black text-[#e63946]">₹200 TOTAL</span>
+            <span className="text-[11px] sm:text-xs font-black uppercase tracking-tight">TEAM SQUAD PASS:</span>
+            <span className="text-xs sm:text-sm font-black text-[#e63946]">2–5 MEMBERS</span>
           </div>
         </div>
 

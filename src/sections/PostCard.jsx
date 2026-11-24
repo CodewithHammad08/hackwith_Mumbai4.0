@@ -1,7 +1,7 @@
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
-import { Wifi, Coffee, Trophy, Terminal, X } from "lucide-react";
+import { Wifi, Coffee, Trophy, Terminal, X, Zap } from "lucide-react";
 
 const PostCard = ({ onOpenRegister }) => {
   const videoRef = useRef(null);
@@ -37,6 +37,14 @@ const PostCard = ({ onOpenRegister }) => {
 
       <div className="post-card-wrapper group hover:rotate-1 hover:scale-[1.01] transition duration-700">
         <img src="/images/overlay.webp" alt="Card Frame" />
+
+        {/* Video badge overlay */}
+        <div className="absolute top-4 left-4 z-20 pointer-events-none">
+          <span className="comic-badge text-[10px] sm:text-xs px-2.5 py-1 bg-[#e63946] text-white shadow-[2px_2px_0px_#000] inline-flex items-center gap-1.5">
+            <Zap className="w-3.5 h-3.5 text-[#fff9cb] fill-[#fff9cb]" />
+            ARENA EXPERIENCE • 36H NON-STOP WAR ROOM
+          </span>
+        </div>
 
         <video 
           ref={videoRef}
@@ -95,7 +103,7 @@ const PostCard = ({ onOpenRegister }) => {
               }}
               className="w-full comic-box bg-[#e63946] hover:bg-[#d62839] text-white py-3 font-round-bold font-black text-sm uppercase tracking-wider cursor-pointer"
             >
-              PRE-REGISTER FOR ARENA PASS (COMING SOON)
+              REGISTER SQUAD ON UNSTOP
             </button>
           </div>
         </div>

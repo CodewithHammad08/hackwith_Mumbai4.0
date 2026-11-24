@@ -9,7 +9,7 @@ const Marquee = () => {
     { text: "36 HOURS NON-STOP", icon: <Clock className="w-4 h-4 text-[#05d9e8]" /> },
     { text: "₹1,50,000 PODIUM PRIZES", icon: <Trophy className="w-4 h-4 text-[#ffd23f]" /> },
     { text: "TEAM REGISTRATION (2–5 MEMBERS)", icon: <Shield className="w-4 h-4 text-[#ffb0c4]" /> },
-    { text: "TEAM SQUAD ₹200", icon: <Flame className="w-4 h-4 text-[#ffd23f]" /> },
+    { text: "TEAM SQUAD (2–5 MEMBERS)", icon: <Flame className="w-4 h-4 text-[#ffd23f]" /> },
     { text: "REGISTER ON UNSTOP", icon: <Sparkles className="w-4 h-4 text-[#ffd23f]" /> },
     { text: "BVUDET NM CAMPUS", icon: <Zap className="w-4 h-4 text-[#05d9e8]" /> },
   ];
