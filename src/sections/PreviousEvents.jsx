@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { PAST_EVENTS } from "../constants/pastEventsData";
+import { PAST_EVENTS, HWI_COMMUNITY_STATS } from "../constants/pastEventsData";
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -101,6 +101,26 @@ const PreviousEvents = ({ onOpenRegister }) => {
           <p className="text-xs sm:text-sm text-neutral-400 font-sans mt-2 max-w-xl mx-auto">
             Explore our proven track record of shipping production-grade software, packed war rooms, and empowering thousands of developers nationwide.
           </p>
+        </div>
+
+        {/* Official HWI Community Metrics From Brochure */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 max-w-5xl mx-auto mb-10">
+          {HWI_COMMUNITY_STATS.map((stat, idx) => (
+            <div 
+              key={idx}
+              className="bg-[#151322] border-2 border-black p-3 rounded-xl text-center shadow-[3px_3px_0px_#000]"
+            >
+              <div className="font-round-bold text-base sm:text-lg lg:text-xl font-black text-[#ffd23f]">
+                {stat.value}
+              </div>
+              <div className="text-[10px] font-black uppercase text-white tracking-wider mt-0.5">
+                {stat.label}
+              </div>
+              <div className="text-[9px] text-gray-400 font-mono">
+                {stat.desc}
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Top Interactive Event Selector Tabs */}
