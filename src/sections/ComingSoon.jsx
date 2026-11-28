@@ -23,16 +23,16 @@ const ComingSoon = ({ onOpenRegister }) => {
 
         {/* Top Highlight Badge: 36-Hour National Level Hackathon */}
         <div className="inline-block mb-2">
-          <span className="comic-badge text-[10px] xs:text-xs md:text-sm px-3 xs:px-4 py-1.5 uppercase font-black inline-flex items-center gap-1.5 sm:gap-2 bg-[#ffd23f] text-black shadow-[3px_3px_0px_#000]">
+          <span className="tag !rotate-0 sm:!rotate-[-2deg] mb-0 text-[10px] xs:text-xs md:text-sm px-3 xs:px-4 py-1.5 uppercase font-bold inline-flex items-center gap-1.5 sm:gap-2 bg-[#ffd23f] text-black shadow-[3px_3px_0px_#000]">
             <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#e63946] fill-[#e63946]" />
-            36-HOUR NATIONAL LEVEL HACKATHON • 24-25 SEPT 2026
+            HACK-VERSE · BVUDET NM • 36-HOUR NATIONAL LEVEL HACKATHON
           </span>
         </div>
 
         {/* Grand Headline Title */}
         <div className="my-1 md:my-2">
-          <h1 className="gradient-title !leading-[0.92] drop-shadow-[0_6px_25px_rgba(230,57,70,0.6)]">
-            HACK WITH<br />MUMBAI 4.0
+          <h1 className="d gl text-[2.6rem] xs:text-[3.2rem] sm:text-[4.6rem] md:text-[6rem] lg:text-[7.2rem] leading-[0.92] text-white">
+            HACK WITH<br /><span className="g">MUMBAI 4.0</span>
           </h1>
         </div>
 
@@ -71,11 +71,11 @@ const ComingSoon = ({ onOpenRegister }) => {
             <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[3]" />
           </a>
 
-          {/* Single Team Pass Tag (Strictly 2-5 Members) */}
+          {/* Single Team Pass Tag (Strictly 2-4 Members) */}
           <div className="comic-box-sm bg-[#fff9cb] text-black px-3.5 py-2 sm:py-2.5 rounded-md flex items-center justify-center gap-1.5 shadow-[3px_3px_0px_#000] text-center">
             <Users className="w-3.5 h-3.5 text-[#e63946]" />
             <span className="text-[11px] sm:text-xs font-black uppercase tracking-tight">TEAM SQUAD PASS:</span>
-            <span className="text-xs sm:text-sm font-black text-[#e63946]">2–5 MEMBERS</span>
+            <span className="text-xs sm:text-sm font-black text-[#e63946]">2–4 MEMBERS</span>
           </div>
         </div>
 

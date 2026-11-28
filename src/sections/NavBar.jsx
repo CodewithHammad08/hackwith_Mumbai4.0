@@ -87,15 +87,15 @@ const NavBar = ({ onOpenRegister }) => {
           onClick={() => setMobileMenuOpen(true)}
           className="flex items-center gap-2 cursor-pointer"
         >
-          <div className="w-8 h-8 rounded-full overflow-hidden bg-[#18171b] border-2 border-[#e61a56] shadow-[0_0_10px_rgba(230,26,86,0.6)] flex items-center justify-center shrink-0">
+          <div className="w-8 h-8 rounded-full overflow-hidden shadow-[0_0_12px_rgba(230,26,86,0.65)] flex items-center justify-center shrink-0">
             <img
-              src="/images/hackwithindia-bvudet-logo.jpg"
+              src="/images/hackwithindia-bvudet-logo.png"
               alt="Logo"
-              className="w-full h-full object-contain p-0.5 rounded-full"
+              className="w-full h-full object-cover rounded-full"
             />
           </div>
-          <span className="text-[11px] font-round-bold font-black text-white uppercase tracking-tight">
-            HWM 4.0
+          <span className="text-[12px] font-anton text-white uppercase tracking-wider flex items-center gap-1.5">
+            <b className="d g text-sm font-normal">HWI</b> · HWM 4.0
           </span>
         </div>
 
@@ -193,7 +193,7 @@ const NavBar = ({ onOpenRegister }) => {
                   ? `all 0.55s cubic-bezier(0.22, 1, 0.36, 1) ${l.delay}`
                   : "all 0.2s ease 0s",
               }}
-              className={`text-xs lg:text-[13px] font-round-bold font-black uppercase tracking-wider px-3 lg:px-4 py-1.5 rounded-full hover:bg-white/[0.12] hover:text-[#fff9cb] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] transition-colors whitespace-nowrap text-center cursor-pointer ${
+              className={`text-xs lg:text-[12px] font-inter font-bold uppercase tracking-[0.14em] px-3 lg:px-4 py-1.5 rounded-full hover:bg-white/[0.12] hover:text-[#ff3d8b] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] transition-colors whitespace-nowrap text-center cursor-pointer ${
                 isNavOpen
                   ? "opacity-100 translate-x-0 scale-100 text-white/85"
                   : "opacity-0 -translate-x-4 scale-95 text-transparent"
@@ -215,7 +215,7 @@ const NavBar = ({ onOpenRegister }) => {
             style={{
               transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
-            className={`rounded-full overflow-hidden flex items-center justify-center relative bg-[#18171b] border-2 border-[#e61a56] shadow-[0_0_16px_rgba(230,26,86,0.55)] group-hover:border-[#ff2a6d] group-hover:shadow-[0_0_24px_rgba(230,26,86,0.85)] ${
+            className={`rounded-full overflow-hidden flex items-center justify-center relative bg-[#18171b] shadow-[0_0_16px_rgba(230,26,86,0.55)] group-hover:shadow-[0_0_24px_rgba(230,26,86,0.85)] ${
               isNavOpen
                 ? "w-10 h-10 md:w-11 md:h-11 shadow-[0_0_20px_rgba(230,26,86,0.7)]"
                 : "w-10 h-10 md:w-12 md:h-12 hover:scale-105"
@@ -223,9 +223,9 @@ const NavBar = ({ onOpenRegister }) => {
           >
             {/* Logo Image cleanly fitted inside circle without leaving bounds */}
             <img
-              src="/images/hackwithindia-bvudet-logo.jpg"
+              src="/images/hackwithindia-bvudet-logo.png"
               alt="Hack With India - BVUDET Navi Mumbai"
-              className="w-full h-full object-contain p-0.5 rounded-full transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover rounded-full transition-transform duration-500 group-hover:scale-105"
             />
 
             {/* Glowing Beacon Indicator when collapsed */}
@@ -261,7 +261,7 @@ const NavBar = ({ onOpenRegister }) => {
                   ? `all 0.55s cubic-bezier(0.22, 1, 0.36, 1) ${l.delay}`
                   : "all 0.2s ease 0s",
               }}
-              className={`text-xs lg:text-[13px] font-round-bold font-black uppercase tracking-wider px-3 lg:px-4 py-1.5 rounded-full hover:bg-white/[0.12] hover:text-[#fff9cb] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] transition-colors whitespace-nowrap text-center cursor-pointer ${
+              className={`text-xs lg:text-[12px] font-inter font-bold uppercase tracking-[0.14em] px-3 lg:px-4 py-1.5 rounded-full hover:bg-white/[0.12] hover:text-[#ff3d8b] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] transition-colors whitespace-nowrap text-center cursor-pointer ${
                 isNavOpen
                   ? "opacity-100 translate-x-0 scale-100 text-white/85"
                   : "opacity-0 translate-x-4 scale-95 text-transparent"
@@ -368,11 +368,11 @@ const NavBar = ({ onOpenRegister }) => {
 
           {/* Hack With India BVUDET Navi Mumbai Official Logo & Title */}
           <div className="mb-6 pb-4 border-b border-white/10 flex flex-col items-center text-center">
-            <div className="w-20 h-20 rounded-full overflow-hidden bg-[#18171b] border-2 border-[#e61a56] shadow-[0_0_25px_rgba(230,26,86,0.7)] mb-3 flex items-center justify-center">
+            <div className="w-20 h-20 rounded-full overflow-hidden shadow-[0_0_25px_rgba(230,26,86,0.7)] mb-3 flex items-center justify-center">
               <img
-                src="/images/hackwithindia-bvudet-logo.jpg"
+                src="/images/hackwithindia-bvudet-logo.png"
                 alt="Hack With India - BVUDET Navi Mumbai"
-                className="w-full h-full object-contain p-1 rounded-full"
+                className="w-full h-full object-cover rounded-full"
               />
             </div>
             <span className="text-sm font-round-bold font-black uppercase tracking-wider text-white">

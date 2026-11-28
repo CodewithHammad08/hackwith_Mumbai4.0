@@ -16,11 +16,11 @@ export const HACKATHON_DETAILS = {
   pricing: {
     team: {
       title: "TEAM SQUAD",
-      per: "Per Team (2-5 Members)",
+      per: "Per Team (2-4 Members)",
       badge: "TEAM PASS",
-      description: "Assemble 2 to 5 builders in any domain to conquer the Grand Championship.",
+      description: "Assemble 2 to 4 builders in any domain to conquer the Grand Championship.",
       features: [
-        "Full Access for all 2 to 5 Team Members",
+        "Full Access for all 2 to 4 Team Members",
         "Eligible for ₹75,000 Grand Championship across ALL domains",
         "Freedom to choose or combine ANY domains",
         "Priority Mentorship & Stage Pitch Opportunity",
@@ -126,7 +126,7 @@ export const HACKATHON_DETAILS = {
   rules: [
     "Choose ANY domain: Pick any domain of your choice or combine multiple domains. The prize is ONE unified pool!",
     "Open to all college students, independent developers, and tech enthusiasts nationwide.",
-    "Team Size: Strictly 2–5 members per team. Cross-college and cross-institutional teams are fully permitted.",
+    "Team Size: Strictly 2–4 members per team. Cross-college and cross-institutional teams are fully permitted.",
     "All code must be developed during the 36-hour window. Pre-built projects are disqualified.",
     "Projects must be on a public GitHub repo with regular timestamped commits throughout.",
     "Industry mentors available 24/7 on the official Discord server.",
@@ -135,18 +135,22 @@ export const HACKATHON_DETAILS = {
   faqs: [
     { q: "Are there separate track prizes or is the prize unified?", a: "The prize is ONLY ONE unified grand prize pool! There are no separate track restrictions — you can choose ANY domain you like (or even combine multiple domains). All participants compete together on a single national leaderboard for the ₹1,50,000 podium prize pool (1st: ₹75k, 2nd: ₹50k, 3rd: ₹25k)!" },
     { q: "Can I choose any domain or tech stack?", a: "Yes! You have 100% freedom to choose ANY domain — AI/ML, Web, Mobile, Cloud, Cybersecurity, Web3, IoT, or any wildcard idea. You are judged on innovation, execution, and impact, not restricted by rigid tracks." },
-    { q: "How does team registration work?", a: "Register your squad (2–5 members) directly on Unstop via the official Hack With Mumbai 4.0 portal. Covers 36-hour arena access for all teammates, mentorship, swag boxes, certificates, and eligibility for the ₹1,50,000 grand prize pool." },
+    { q: "How does team registration work?", a: "Register your squad (2–4 members) directly on Unstop via the official Hack With Mumbai 4.0 portal. Covers 36-hour arena access for all teammates, mentorship, swag boxes, certificates, and eligibility for the ₹1,50,000 grand prize pool." },
     { q: "Is this online, offline, or hybrid?", a: "Hybrid! Compete online via Discord War Room or attend at official Mumbai Arena + regional hubs nationwide." },
     { q: "Can beginners participate?", a: "Yes! All skill levels welcome. We have 24/7 mentorship, starter templates, workshops, and dedicated beginner bounties." },
     { q: "Can team members be from different colleges?", a: "Yes — multi-institutional cross-college teams are actively encouraged!" },
     { q: "When are prizes disbursed?", a: "Within 7 business days after the ceremony via direct bank transfer, with official certificates and trophies." }
   ],
   sponsors: [
-    { name: "HACK WITH INDIA", role: "Title Organiser" },
-    { name: "GITHUB CAMPUS", role: "Platform Partner" },
-    { name: "AWS STARTUPS", role: "Cloud Partner" },
-    { name: "POSTMAN", role: "API Partner" },
-    { name: "DEVVERSE GLOBAL", role: "Co-Sponsor" }
+    { id: 1, name: "Civora Nexus", role: "Past Sponsor", logo: "/images/sponsors/civora-nexus.png", theme: "light" },
+    { id: 2, name: "GMC", role: "Past Sponsor", logo: "/images/sponsors/gmc.png", theme: "light" },
+    { id: 3, name: "InterviewBuddy", role: "Past Sponsor", logo: "/images/sponsors/interviewbuddy.png", theme: "light" },
+    { id: 4, name: "SP Jain", role: "Past Sponsor", logo: "/images/sponsors/sp-jain.png", theme: "light" },
+    { id: 5, name: "Unstop", role: "Past Sponsor", logo: "/images/sponsors/unstop.png", theme: "light" },
+    { id: 6, name: "Adapts", role: "Past Sponsor", logo: "/images/sponsors/adapts.png", theme: "dark" },
+    { id: 7, name: "Vaygo Travels", role: "Past Sponsor", logo: "/images/sponsors/vaygo-travels.png", theme: "light" },
+    { id: 8, name: "Quality Softech", role: "Past Sponsor", logo: "/images/sponsors/quality-softech.png", theme: "light" },
+    { id: 9, name: "College Rivals", role: "Past Sponsor", logo: "/images/sponsors/college-rivals.png", theme: "dark" }
   ]
 };
 

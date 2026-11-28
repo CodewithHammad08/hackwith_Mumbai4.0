@@ -37,7 +37,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
         email: formData.email,
         domain: formData.domain,
         college: formData.college || "Tech University",
-        tier: "TEAM SQUAD VIP PASS (2–5 MEMBERS)",
+        tier: "TEAM SQUAD VIP PASS (2–4 MEMBERS)",
         fee: "OFFICIAL UNSTOP PORTAL",
         perks: "Guaranteed Early Team Slot • 1-on-1 Discord War Room Access • VIP Team Swag Kit"
       });
@@ -107,7 +107,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
                   36-Hour National Team Hackathon • 24-25 September 2026
                 </p>
                 <p className="text-gray-300 text-xs md:text-sm font-sans mt-2 max-w-md mx-auto">
-                  Assemble your squad of <strong>2 to 5 members</strong>. Reserve your <strong>Priority Early-Bird Team Spot</strong> now to get notified first when portal opens!
+                  Assemble your squad of <strong>2 to 4 members</strong>. Reserve your <strong>Priority Early-Bird Team Spot</strong> now to get notified first when portal opens!
                 </p>
               </div>
 
@@ -119,7 +119,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
                   </div>
                   <div>
                     <span className="text-[10px] font-black uppercase text-[#e63946] block tracking-wider">
-                      TEAM PASS (2 TO 5 MEMBERS)
+                      TEAM PASS (2 TO 4 MEMBERS)
                     </span>
                     <h4 className="font-round-bold text-base md:text-lg font-black uppercase text-black">
                       TEAM SQUAD ENTRY
@@ -128,7 +128,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
                 </div>
                 <div className="text-right">
                   <span className="text-base sm:text-lg font-round-bold font-black text-[#e63946]">UNSTOP</span>
-                  <span className="text-[10px] font-bold block text-neutral-700">2–5 Members</span>
+                  <span className="text-[10px] font-bold block text-neutral-700">2–4 Members</span>
                 </div>
               </div>
 
@@ -216,7 +216,7 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
 
                   <div>
                     <label className="block text-[11px] font-bold text-gray-300 mb-1">
-                      Expected Team Size (2 to 5 Members) *
+                      Expected Team Size (2 to 4 Members) *
                     </label>
                     <select
                       name="teamSize"
@@ -227,7 +227,6 @@ const ComingSoonPopup = ({ isOpen, onClose }) => {
                       <option value="2 Members">2 Members</option>
                       <option value="3 Members">3 Members</option>
                       <option value="4 Members">4 Members</option>
-                      <option value="5 Members">5 Members</option>
                     </select>
                   </div>
                 </div>

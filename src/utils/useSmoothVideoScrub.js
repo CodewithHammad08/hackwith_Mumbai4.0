@@ -169,6 +169,16 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
       dispatchSeek(currentTime);
     };
 
+    // Ensure any ScrollTriggers below this pinned video recalculate their offsets
+    const refreshId = pin
+      ? setTimeout(() => {
+          if (!isDestroyed) {
+            ScrollTrigger.sort();
+            ScrollTrigger.refresh();
+          }
+        }, 60)
+      : null;
+
     if (video.readyState >= 1 && video.duration) {
       handleLoadedMetadata();
     } else {
@@ -180,6 +190,7 @@ export function useSmoothVideoScrub(videoRef, containerRef, options = {}) {
 
     return () => {
       isDestroyed = true;
+      if (refreshId) clearTimeout(refreshId);
       if (rafId) cancelAnimationFrame(rafId);
       if (watchdogTimer) clearTimeout(watchdogTimer);
       video.removeEventListener("seeked", handleSeeked);

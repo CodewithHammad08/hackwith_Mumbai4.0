@@ -12,15 +12,16 @@ const Timeline = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-3">
-            <span className="comic-badge text-xs md:text-sm px-4 py-1.5 uppercase font-black inline-flex items-center gap-2">
+            <span className="tag !rotate-0 mb-0 text-xs md:text-sm px-4 py-1.5 uppercase font-bold inline-flex items-center gap-2 bg-[#ffd23f] text-black shadow-[3px_3px_0px_#000]">
               <Clock className="w-4 h-4 text-[#e63946]" />
               36-HOUR TIMELINE MATRIX • HACK WITH INDIA
             </span>
           </div>
-          <h2 className="font-round-bold text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white drop-shadow-md">
-            THE CLOCK BENDS.
+          <h2 className="d text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-md">
+            <small className="font-inter text-xs md:text-sm tracking-[0.3em] text-[#ff3d8b] mb-2 block font-bold">MISSION LOG</small>
+            THE CLOCK <span className="g">BENDS</span>
           </h2>
-          <p className="text-pink text-sm sm:text-base md:text-xl font-round-bold uppercase tracking-wider mt-2 font-bold">
+          <p className="font-inter text-pink text-sm sm:text-base md:text-lg font-bold uppercase tracking-[0.14em] mt-2">
             HACK WITH MUMBAI 4.0 • EVERY SECOND, YOUR LEGACY UNFOLDS
           </p>
         </div>

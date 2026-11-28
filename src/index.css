@@ -17,17 +17,36 @@
 }
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", "Round", sans-serif;
+  --font-sans: "Inter", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Anton", Impact, "Arial Narrow", sans-serif;
+  --font-anton: "Anton", Impact, "Arial Narrow", sans-serif;
+  --font-inter: "Inter", system-ui, sans-serif;
   --font-tech: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  --font-long: "Long", sans-serif;
-  --font-round-bold: "Round Bold", sans-serif;
+  --font-long: "Anton", "Long", Impact, sans-serif;
+  --font-round-bold: "Anton", "Round Bold", Impact, sans-serif;
   --color-yellow: #fff9cb;
   --color-pink: #ffb0c4;
   --color-red: #e63946;
+  --color-orange: #ff8a3d;
+  --color-teal: #19b5a5;
+  --color-purple: #6a3df0;
   --breakpoint-sm: 40rem;
   --breakpoint-xs: 20rem;
   --breakpoint-3xl: 120rem;
+}
+
+:root {
+  --bg: #07060f;
+  --ink: #fff9cb;
+  --mute: #a79a86;
+  --line: #4a4036;
+  --card: #151322;
+  --pink: #ff3d8b;
+  --orange: #ff8a3d;
+  --teal: #19b5a5;
+  --purple: #6a3df0;
+  --dot: rgba(255, 61, 139, 0.22);
 }
 
 /* ───────────── LENIS ───────────── */
@@ -56,12 +75,115 @@ html.lenis body {
 }
 
 body {
-  width: 100dvw;
-  overflow-x: hidden;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  background-color: #07060f;
+  width: 100%;
+  overflow-x: clip;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg);
   color: #fff;
+  line-height: 1.6;
   letter-spacing: -0.01em;
+  background-image: radial-gradient(var(--dot) 1.2px, transparent 1.4px);
+  background-size: 14px 14px;
+}
+
+/* ───────────── HWI TYPOGRAPHY (FROM BVDUDET NM SPEC) ───────────── */
+.d {
+  font-family: "Anton", Impact, 'Arial Narrow', sans-serif !important;
+  text-transform: uppercase !important;
+  line-height: 0.95 !important;
+}
+
+.font-anton {
+  font-family: "Anton", Impact, 'Arial Narrow', sans-serif !important;
+}
+
+.font-inter {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.g {
+  background: linear-gradient(100deg, var(--orange, #ff8a3d), var(--pink, #ff3d8b) 50%, var(--purple, #6a3df0)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.gl {
+  text-shadow: 3px 3px 0 var(--teal, #19b5a5), -3px -3px 0 var(--pink, #ff3d8b);
+  animation: glt 4s infinite;
+}
+
+@keyframes glt {
+  0%, 92%, 100% {
+    transform: none;
+  }
+  94% {
+    transform: translate(4px, -2px) skewX(4deg);
+  }
+  96% {
+    transform: translate(-4px, 2px);
+  }
+}
+
+.tag {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  padding: 5px 12px;
+  background: #fff9cb;
+  color: #000;
+  box-shadow: 3px 3px 0px #000;
+  transform: rotate(-2deg);
+}
+
+/* Headings base typography from HTML */
+h1, h2, h3, h4 {
+  font-family: "Anton", Impact, 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
+}
+
+h2 small, h3 small, .section-kicker {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--pink, #ff3d8b);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.dayh {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--pink, #ff3d8b);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Button & interactive typography */
+button, .btn {
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Form inputs & labels typography */
+label {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+input, select, textarea {
+  font-family: "Inter", sans-serif;
 }
 
 main {
@@ -241,7 +363,8 @@ main {
 /* ───────────── COMPONENTS ───────────── */
 @layer components {
   main {
-    @apply w-full max-w-full overflow-x-hidden;
+    @apply w-full max-w-full;
+    overflow-x: clip;
   }
 
   /* ── GRADIENT TITLE ── */
@@ -379,7 +502,7 @@ main {
   }
 
   .post-card {
-    @apply relative flex justify-center items-center pb-40 md:pb-64 shadow-2xl;
+    @apply relative flex justify-center items-center pb-10 md:pb-14 shadow-2xl;
 
     .animated-gradient-bg {
       @apply absolute w-full md:h-[200vh] h-[220vh] left-0 xl:-bottom-1/2 md:-bottom-5/6;
@@ -507,8 +630,7 @@ main {
 .comic-badge {
   background-color: #fff9cb;
   color: #000;
-  font-family: "Round Bold", sans-serif;
-  font-weight: 800;
+  font-family: "Anton", Impact, 'Arial Narrow', sans-serif;
   text-transform: uppercase;
   border: 2px solid #000;
   box-shadow: 3px 3px 0px #000;
@@ -519,11 +641,11 @@ main {
 .comic-badge-red {
   background-color: #e63946;
   color: #fff;
-  font-family: "Round Bold", sans-serif;
-  font-weight: 800;
+  font-family: "Anton", Impact, 'Arial Narrow', sans-serif;
   text-transform: uppercase;
   border: 2px solid #000;
   box-shadow: 3px 3px 0px #000;
+  letter-spacing: 0.05em;
   display: inline-block;
 }
 
@@ -630,8 +752,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: "Round Bold", sans-serif;
-  font-weight: 800;
+  font-family: "Anton", Impact, sans-serif;
   font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -655,10 +776,11 @@ main {
 
 /* ───────────── STAT COUNTER ───────────── */
 .stat-number {
-  font-family: "Long", sans-serif;
+  font-family: "Anton", Impact, 'Arial Narrow', sans-serif;
   font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
+  line-height: 0.95;
   letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 /* ───────────── TIMELINE LINE ───────────── */

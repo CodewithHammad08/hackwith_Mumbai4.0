@@ -39,13 +39,13 @@ const CountdownTimer = ({ targetDate = "2026-09-24T10:00:00" }) => {
               {/* Scanline */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e63946] to-transparent opacity-60" />
               <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e63946] to-transparent opacity-30" />
-              <span className="font-long text-lg xs:text-xl sm:text-2xl md:text-4xl font-black text-white tracking-tight leading-none block"
+              <b className="d text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-none block"
                 style={{ textShadow: '0 0 15px rgba(230,57,70,0.8)' }}>
                 {unit.value}
-              </span>
-              <span className="text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] font-black uppercase tracking-widest text-[#e63946] mt-0.5 sm:mt-1 block">
+              </b>
+              <small className="font-inter text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-[#ff3d8b] mt-1 block">
                 {unit.label}
-              </span>
+              </small>
             </div>
           </div>
           {/* Separator */}

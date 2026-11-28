@@ -9,19 +9,20 @@ const Prizes = ({ onOpenRegister }) => {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-block mb-3">
-            <span className="comic-badge text-xs md:text-sm px-4 py-1.5 uppercase font-black inline-flex items-center gap-2 bg-[#ffd23f] text-black">
+            <span className="tag !rotate-0 mb-0 text-xs md:text-sm px-4 py-1.5 uppercase font-bold inline-flex items-center gap-2 bg-[#ffd23f] text-black shadow-[3px_3px_0px_#000]">
               <Trophy className="w-4 h-4 text-[#e63946]" />
               NATIONAL PRIZE PODIUM • HACK WITH INDIA
             </span>
           </div>
-          <h2 className="font-round-bold text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-yellow drop-shadow-[0_4px_16px_rgba(255,249,203,0.3)]">
-            ₹1,50,000 PODIUM
+          <h2 className="d text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight text-yellow drop-shadow-[0_4px_16px_rgba(255,249,203,0.3)]">
+            <small className="font-inter text-xs md:text-sm tracking-[0.3em] text-[#ff3d8b] mb-2 block font-bold">PODIUM / REWARDS</small>
+            ₹1,50,000 <span className="g">PODIUM</span>
           </h2>
-          <p className="text-[#ffb0c4] text-base md:text-xl font-bold uppercase tracking-wider mt-2 max-w-2xl mx-auto">
+          <p className="font-inter text-[#ffb0c4] text-sm md:text-xl font-bold uppercase tracking-[0.14em] mt-2 max-w-2xl mx-auto">
             1ST: ₹75K • 2ND: ₹50K • 3RD: ₹25K
           </p>
-          <div className="mt-3 inline-block bg-[#1c1829] border border-neutral-700 px-4 py-1.5 rounded-full text-xs text-neutral-300">
-            ★ <strong className="text-yellow">One Unified Grand Prize:</strong> No separate domain restrictions — every squad (2–5 members) contends on one national leaderboard!
+          <div className="mt-3 inline-block bg-[#1c1829] border border-neutral-700 px-4 py-1.5 rounded-full text-xs font-inter text-neutral-300">
+            ★ <strong className="text-yellow">One Unified Grand Prize:</strong> No separate domain restrictions — every squad (2–4 members) contends on one national leaderboard!
           </div>
         </div>
 
@@ -116,15 +117,6 @@ const Prizes = ({ onOpenRegister }) => {
                 </li>
               </ul>
             </div>
-            <a
-              href={HACKATHON_DETAILS.unstopUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full comic-box bg-[#fff9cb] hover:bg-white text-black py-3 px-4 text-sm font-round-bold font-black uppercase tracking-wider cursor-pointer shadow-[4px_4px_0px_#000] mt-2 flex items-center justify-center gap-2 transition-colors"
-            >
-              <span>REGISTER SQUAD TO WIN ₹75,000</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
           </div>
 
           {/* 3rd Place (Right) */}
@@ -170,7 +162,7 @@ const Prizes = ({ onOpenRegister }) => {
               onClick={() => onOpenRegister?.("team")}
               className="w-full comic-box-sm bg-black hover:bg-neutral-800 text-white py-2.5 px-3 text-xs font-round-bold font-black uppercase tracking-wider cursor-pointer mt-2 flex items-center justify-center gap-1.5 transition-colors"
             >
-              <span>REGISTER SQUAD (2-5 MEMBERS)</span>
+              <span>REGISTER SQUAD (2-4 MEMBERS)</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>

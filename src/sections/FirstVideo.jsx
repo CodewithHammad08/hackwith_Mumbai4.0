@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Zap, Trophy, Users, Terminal, Sparkles, MapPin } from "lucide-react";
+import { Zap, Sparkles, MapPin } from "lucide-react";
 import { useSmoothVideoScrub } from "../utils/useSmoothVideoScrub";
 
 const FirstVideo = () => {
@@ -61,27 +61,6 @@ const FirstVideo = () => {
           <span>BVUDET NM CAMPUS, NAVI MUMBAI</span>
           <span className="text-white/60">•</span>
           <span>24–25 SEPTEMBER 2026</span>
-        </p>
-
-        {/* Feature Badges Row */}
-        <div className="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mt-4 sm:mt-6 max-w-3xl">
-          <div className="bg-black/85 backdrop-blur-md border border-[#e63946]/70 text-white px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs md:text-sm font-black flex items-center gap-1.5 shadow-lg">
-            <Trophy className="w-3.5 h-3.5 text-[#ffd23f]" />
-            <span>₹1,50,000 GRAND PODIUM</span>
-          </div>
-          <div className="bg-black/85 backdrop-blur-md border border-white/20 text-white px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs md:text-sm font-black flex items-center gap-1.5 shadow-lg">
-            <Users className="w-3.5 h-3.5 text-[#ffb0c4]" />
-            <span>2 TO 5 HACKERS PER SQUAD</span>
-          </div>
-          <div className="bg-black/85 backdrop-blur-md border border-white/20 text-white px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs md:text-sm font-black flex items-center gap-1.5 shadow-lg">
-            <Terminal className="w-3.5 h-3.5 text-green-400" />
-            <span>ALL TECH DOMAINS WELCOME</span>
-          </div>
-        </div>
-
-        {/* Bottom Punchline */}
-        <p className="text-neutral-300 text-[10px] sm:text-xs font-mono uppercase tracking-widest mt-4 drop-shadow-md">
-          ★ NO SLIDES • NO TEMPLATES • ONLY SHIPPED PRODUCTION CODE
         </p>
       </div>
     </section>

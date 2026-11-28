@@ -84,21 +84,22 @@ const PreviousEvents = ({ onOpenRegister }) => {
         {/* Section Header */}
         <div className="text-center mb-10 md:mb-14">
           <div className="inline-block mb-3">
-            <span className="comic-badge text-xs sm:text-sm px-4 py-1.5 uppercase font-black inline-flex items-center gap-2 bg-[#ffd23f] text-black shadow-[3px_3px_0px_#000]">
+            <span className="tag !rotate-0 mb-0 text-xs sm:text-sm px-4 py-1.5 uppercase font-bold inline-flex items-center gap-2 bg-[#ffd23f] text-black shadow-[3px_3px_0px_#000]">
               <Sparkles className="w-4 h-4 text-[#e63946]" />
               THE BUILDER ARCHIVES • HACK WITH INDIA
             </span>
           </div>
 
-          <h2 className="font-round-bold text-3xl sm:text-5xl md:text-7xl font-black uppercase text-white tracking-tight drop-shadow-[0_4px_20px_rgba(230,57,70,0.5)]">
-            PREVIOUS EDITIONS
+          <h2 className="d text-3xl sm:text-5xl md:text-7xl tracking-tight text-white drop-shadow-[0_4px_20px_rgba(230,57,70,0.5)]">
+            <small className="font-inter text-xs md:text-sm tracking-[0.3em] text-[#ff3d8b] mb-2 block font-bold">LEGACY / EDITIONS</small>
+            PREVIOUS <span className="g">EDITIONS</span>
           </h2>
           
-          <p className="text-pink text-sm sm:text-lg md:text-xl font-round-bold uppercase font-bold tracking-wider mt-2 max-w-2xl mx-auto">
+          <p className="font-inter text-pink text-sm sm:text-base md:text-lg font-bold uppercase tracking-[0.14em] mt-2 max-w-2xl mx-auto">
             From 12-Hour Genesis Sprints to 36-Hour National Arenas
           </p>
 
-          <p className="text-xs sm:text-sm text-neutral-400 font-sans mt-2 max-w-xl mx-auto">
+          <p className="font-inter text-xs sm:text-sm text-neutral-400 mt-2 max-w-xl mx-auto leading-relaxed">
             Explore our proven track record of shipping production-grade software, packed war rooms, and empowering thousands of developers nationwide.
           </p>
         </div>
@@ -271,22 +272,14 @@ const PreviousEvents = ({ onOpenRegister }) => {
                   </div>
                 </div>
 
-                {/* Bottom Action Buttons */}
+                {/* Bottom Action Button */}
                 <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t-2 border-black/20">
                   <button
                     onClick={() => setSelectedEvent(activeEvent)}
-                    className="w-full sm:w-auto flex-1 comic-box-sm bg-[#e63946] hover:bg-[#d62839] text-white py-3 px-5 font-round-bold text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-transform active:translate-y-0.5 shadow-[3px_3px_0px_#000]"
+                    className="w-full comic-box-sm bg-[#e63946] hover:bg-[#d62839] text-white py-3 px-5 font-round-bold text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-transform active:translate-y-0.5 shadow-[3px_3px_0px_#000]"
                   >
                     <span>INSPECT EDITION ARCHIVE</span>
                     <ExternalLink className="w-3.5 h-3.5" />
-                  </button>
-
-                  <button
-                    onClick={() => onOpenRegister?.("team")}
-                    className="w-full sm:w-auto comic-box-sm bg-black hover:bg-neutral-800 text-white py-3 px-5 font-round-bold text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-transform active:translate-y-0.5 shadow-[3px_3px_0px_#e63946]"
-                  >
-                    <span>JOIN HWM 4.0 SQUAD</span>
-                    <Trophy className="w-3.5 h-3.5 text-[#ffd23f]" />
                   </button>
                 </div>
 

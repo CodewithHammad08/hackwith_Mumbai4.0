@@ -46,13 +46,13 @@ const SecondVideo = () => {
         <div className="mb-2 sm:mb-3">
           <span className="comic-badge text-[10px] sm:text-xs md:text-sm px-3.5 py-1.5 uppercase font-black bg-[#e63946] text-white shadow-[3px_3px_0px_#000] inline-flex items-center gap-1.5">
             <Users className="w-3.5 h-3.5 text-[#fff9cb]" />
-            SQUAD FORMATION PROTOCOL (2–5 MEMBERS)
+            SQUAD FORMATION PROTOCOL (2–4 MEMBERS)
           </span>
         </div>
 
         {/* Grand Bold Headline */}
         <h2 className="font-round-bold text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase text-white tracking-tight leading-[0.92] drop-shadow-[0_8px_30px_rgba(0,0,0,0.95)] max-w-5xl">
-          2 TO 5 MINDS. <br />
+          2 TO 4 MINDS. <br />
           <span className="text-[#ffd23f] drop-shadow-[0_0_35px_rgba(255,210,63,0.85)]">
             ONE SHARED VISION.
           </span>

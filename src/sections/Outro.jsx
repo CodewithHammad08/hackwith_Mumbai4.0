@@ -15,13 +15,13 @@ const Outro = ({ onOpenRegister }) => {
 
         {/* Clean Grand Headline with Reduced Text Clutter */}
         <div>
-          <h2 className="gradient-title !leading-[0.92] drop-shadow-[0_4px_25px_rgba(230,57,70,0.6)]">
-            HACK WITH<br />MUMBAI 4.0
+          <h2 className="d gl text-[2.6rem] xs:text-[3.2rem] sm:text-[4.6rem] md:text-[5.8rem] lg:text-[7rem] leading-[0.92] text-white">
+            HACK WITH<br /><span className="g">MUMBAI 4.0</span>
           </h2>
-          <p className="text-pink text-sm sm:text-base md:text-xl font-round-bold uppercase tracking-widest mt-3 font-bold">
+          <p className="font-inter text-pink text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.14em] mt-3">
             36-HOUR NATIONAL HACKATHON • 24-25 SEPTEMBER 2026
           </p>
-          <div className="text-yellow text-lg sm:text-2xl md:text-3xl font-round-bold uppercase font-black mt-1">
+          <div className="d text-yellow text-2xl sm:text-3xl md:text-4xl mt-2">
             ₹1,50,000 PODIUM PRIZES
           </div>
         </div>
@@ -30,7 +30,7 @@ const Outro = ({ onOpenRegister }) => {
         <div className="w-full max-w-md px-2 mt-2">
           <button
             onClick={() => onOpenRegister?.("team")}
-            className="w-full comic-box bg-[#e63946] hover:bg-[#d62839] text-white px-6 py-4 font-round-bold text-base sm:text-lg md:text-xl font-black uppercase tracking-wider flex items-center justify-center gap-3 cursor-pointer shadow-[6px_6px_0px_#fff9cb] hover:scale-105 active:scale-95 transition-transform"
+            className="w-full comic-box bg-[#e63946] hover:bg-[#d62839] text-white px-6 py-4 font-inter text-sm sm:text-base md:text-lg font-bold uppercase tracking-wider flex items-center justify-center gap-3 cursor-pointer shadow-[6px_6px_0px_#fff9cb] hover:scale-105 active:scale-95 transition-transform"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
             <span>REGISTER SQUAD ON UNSTOP</span>
@@ -38,14 +38,15 @@ const Outro = ({ onOpenRegister }) => {
           </button>
           
           <div className="text-xs text-neutral-400 font-mono mt-2.5">
-            Strictly 2–5 Members Per Squad • All Tech Domains Welcome
+            Strictly 2–4 Members Per Squad • All Tech Domains Welcome
           </div>
         </div>
 
-        {/* Minimal Footer */}
-        <div className="text-xs text-neutral-500 font-sans mt-3 space-y-0.5">
-          <p className="font-semibold">BVUDET NM Campus, Navi Mumbai • Unstop Official Portal</p>
-          <p>© 2026 Hack With India. All rights reserved.</p>
+        {/* Minimal Footer from HTML spec */}
+        <div className="text-xs text-neutral-400 font-inter tracking-[0.15em] uppercase mt-5 space-y-1">
+          <p className="font-bold text-neutral-300">END CREDITS · HACK WITH INDIA · BVUDET NM</p>
+          <p className="text-[11px] text-neutral-500">BVUDET NM Campus, Navi Mumbai • Unstop Official Portal</p>
+          <p className="text-[10px] text-neutral-600">© 2026 Hack With India. All rights reserved.</p>
         </div>
 
       </div>

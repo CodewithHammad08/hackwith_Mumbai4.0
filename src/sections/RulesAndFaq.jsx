@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { HACKATHON_DETAILS } from "../constants/hackathonData";
-import { ShieldCheck, HelpCircle, ChevronDown, Check, ArrowRight, ExternalLink, Sparkles } from "lucide-react";
+import { ShieldCheck, HelpCircle, ChevronDown, Check, ExternalLink, Sparkles } from "lucide-react";
 
-const RulesAndFaq = ({ onOpenRegister }) => {
+const RulesAndFaq = () => {
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
@@ -12,15 +12,16 @@ const RulesAndFaq = ({ onOpenRegister }) => {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-block mb-3">
-            <span className="comic-badge text-xs md:text-sm px-4 py-1.5 uppercase font-black inline-flex items-center gap-2">
+            <span className="tag !rotate-0 mb-0 text-xs md:text-sm px-4 py-1.5 uppercase font-bold inline-flex items-center gap-2 bg-[#ffd23f] text-black shadow-[3px_3px_0px_#000]">
               <ShieldCheck className="w-4 h-4 text-[#e63946]" />
               FAIR PLAY & PROTOCOLS • HACK WITH INDIA
             </span>
           </div>
-          <h2 className="font-round-bold text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight text-white drop-shadow-md">
-            RULES & GUIDELINES
+          <h2 className="d text-3xl sm:text-5xl md:text-7xl tracking-tight text-white drop-shadow-md">
+            <small className="font-inter text-xs md:text-sm tracking-[0.3em] text-[#ff3d8b] mb-2 block font-bold">MISSION PROTOCOLS</small>
+            RULES &amp; <span className="g">GUIDELINES</span>
           </h2>
-          <p className="text-pink text-base md:text-xl font-round-bold uppercase tracking-wider mt-2 max-w-xl mx-auto font-bold">
+          <p className="font-inter text-pink text-sm md:text-lg font-bold uppercase tracking-[0.14em] mt-2 max-w-xl mx-auto">
             HACK WITH MUMBAI 4.0 • EVERYTHING YOU NEED TO KNOW
           </p>
         </div>
@@ -58,18 +59,10 @@ const RulesAndFaq = ({ onOpenRegister }) => {
             </div>
 
             <div className="mt-8 pt-4 border-t-2 border-black">
-              <div className="flex items-center justify-between text-xs font-black uppercase mb-3">
-                <span>TEAM PASS: <strong>2–5 MEMBERS</strong></span>
+              <div className="flex items-center justify-between text-xs font-black uppercase">
+                <span>TEAM PASS: <strong>2–4 MEMBERS</strong></span>
                 <span className="text-[#e63946]">ANY DOMAIN • UNIFIED PRIZE</span>
               </div>
-              <button
-                onClick={() => onOpenRegister?.("team")}
-                className="w-full comic-box-sm bg-[#e63946] hover:bg-[#d62839] text-white py-3 px-4 font-round-bold text-xs md:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-transform active:translate-y-0.5 shadow-[3px_3px_0px_#000]"
-              >
-                <span className="w-2 h-2 rounded-full bg-white animate-ping" />
-                <span>REGISTER SQUAD ON UNSTOP</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
             </div>
           </div>
 
@@ -110,20 +103,26 @@ const RulesAndFaq = ({ onOpenRegister }) => {
 
         </div>
 
-        {/* Partners & Sponsors Ribbon */}
+        {/* Past Sponsors Strip */}
         <div className="comic-box bg-[#13111c] border-2 border-neutral-800 p-6 rounded-xl text-center shadow-[6px_6px_0px_#000]">
-          <span className="text-xs font-bold uppercase tracking-widest text-pink block mb-4">
-            ORGANISED & SUPPORTED BY INDUSTRY LEADERS
+          <span className="text-xs font-bold uppercase tracking-widest text-pink block mb-5">
+            PAST SPONSORS • ORGANISED BY HACK WITH INDIA
           </span>
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {HACKATHON_DETAILS.sponsors.map((sponsor) => (
-              <div key={sponsor.name} className="flex flex-col items-center">
-                <span className="font-round-bold text-base md:text-xl font-black text-white hover:text-yellow transition-colors">
-                  {sponsor.name}
-                </span>
-                <span className="text-[10px] uppercase font-bold text-neutral-400">
-                  {sponsor.role}
-                </span>
+              <div
+                key={sponsor.name}
+                className={`px-3.5 py-2 rounded-lg border border-black/30 flex items-center justify-center h-12 sm:h-14 w-28 sm:w-32 transition-transform hover:scale-105 ${
+                  sponsor.theme === "dark" ? "bg-[#1b1729]" : "bg-[#f8f7f2]"
+                }`}
+                title={`${sponsor.name} — Past Sponsor`}
+              >
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
             ))}
           </div>

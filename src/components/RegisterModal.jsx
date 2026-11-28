@@ -18,8 +18,6 @@ const RegisterModal = ({ isOpen, onClose }) => {
     member3Email: "",
     member4Name: "",
     member4Email: "",
-    member5Name: "",
-    member5Email: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -41,7 +39,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
       const generatedId = `HWM4-TEAM-${Math.floor(1000 + Math.random() * 9000)}`;
       setTicketData({
         ticketId: generatedId,
-        tier: "TEAM SQUAD PASS (2-5 MEMBERS)",
+        tier: "TEAM SQUAD PASS (2-4 MEMBERS)",
         amountPaid: "UNSTOP CONFIRMED",
         name: formData.name || "Pioneer Hacker",
         teamName: formData.teamName || "Multiverse Syndicate",
@@ -111,11 +109,11 @@ const RegisterModal = ({ isOpen, onClose }) => {
                         TEAM SQUAD PASS
                       </span>
                       <span className="bg-[#e63946] text-white text-[10px] font-black uppercase px-2 py-0.5 rounded">
-                        2 TO 5 MEMBERS
+                        2 TO 4 MEMBERS
                       </span>
                     </div>
                     <div className="text-xs text-black/70 font-medium">
-                      One unified registration covers your entire squad (2–5 members)
+                      One unified registration covers your entire squad (2–4 members)
                     </div>
                   </div>
                 </div>
@@ -124,7 +122,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   <div className="text-xl md:text-2xl font-round-bold font-black text-[#e63946] leading-none">
                     TEAM PASS
                   </div>
-                  <div className="text-[11px] font-bold text-black/60 uppercase">2–5 Members</div>
+                  <div className="text-[11px] font-bold text-black/60 uppercase">2–4 Members</div>
                 </div>
               </div>
 
@@ -132,7 +130,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
               <div className="bg-[#1b1926] border border-pink/30 p-3 rounded-lg flex items-start gap-3 text-xs md:text-sm text-gray-300">
                 <Sparkles className="w-5 h-5 text-yellow shrink-0 mt-0.5" />
                 <span>
-                  <strong>Organised by Hack With India • BVUDET Navi Mumbai:</strong> Strictly 2 to 5 members per team. Includes 36-hour arena entry for all teammates, 1-on-1 industry mentorship, verified certificates, food & redbull, swag packs, and eligibility for the <strong>₹1,50,000 Podium Prize Pool</strong>.
+                  <strong>Organised by Hack With India • BVUDET Navi Mumbai:</strong> Strictly 2 to 4 members per team. Includes 36-hour arena entry for all teammates, 1-on-1 industry mentorship, verified certificates, food & redbull, swag packs, and eligibility for the <strong>₹1,50,000 Podium Prize Pool</strong>.
                 </span>
               </div>
 
@@ -160,7 +158,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
 
                   <div>
                     <label className="block text-xs font-bold text-gray-300 mb-1">
-                      Team Size (Strictly 2 to 5 Members) *
+                      Team Size (Strictly 2 to 4 Members) *
                     </label>
                     <select
                       name="teamSize"
@@ -170,8 +168,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                     >
                       <option value="2">2 Members</option>
                       <option value="3">3 Members</option>
-                      <option value="4">4 Members (Standard Squad)</option>
-                      <option value="5">5 Members (Full Squad)</option>
+                      <option value="4">4 Members (Full Squad)</option>
                     </select>
                   </div>
                 </div>
@@ -378,37 +375,6 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   </div>
                 )}
 
-                {/* Member 5 (Shown if size >= 5) */}
-                {sizeNum >= 5 && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <div>
-                      <label className="block text-xs font-bold text-gray-300 mb-1">
-                        Member 5 Name
-                      </label>
-                      <input
-                        type="text"
-                        name="member5Name"
-                        placeholder="Teammate 5 Name"
-                        value={formData.member5Name}
-                        onChange={handleInputChange}
-                        className="w-full bg-[#181622] border-2 border-neutral-700 focus:border-pink rounded-md px-3.5 py-2.5 text-sm text-white outline-none"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-gray-300 mb-1">
-                        Member 5 Email
-                      </label>
-                      <input
-                        type="email"
-                        name="member5Email"
-                        placeholder="member5@squad.dev"
-                        value={formData.member5Email}
-                        onChange={handleInputChange}
-                        className="w-full bg-[#181622] border-2 border-neutral-700 focus:border-pink rounded-md px-3.5 py-2.5 text-sm text-white outline-none"
-                      />
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Fee & Payment breakdown */}
@@ -418,7 +384,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                     Registration Pass
                   </div>
                   <div className="text-xl font-round-bold font-black text-yellow">
-                    TEAM SQUAD PASS <span className="text-xs text-gray-400 font-normal">/ For Entire Team (2–5 Members)</span>
+                    TEAM SQUAD PASS <span className="text-xs text-gray-400 font-normal">/ For Entire Team (2–4 Members)</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-green-400 font-bold bg-green-950/40 px-3 py-1.5 rounded border border-green-800">
